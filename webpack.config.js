@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
 	context: __dirname,
-	entry: './app/frontend/niles.jsx',
+	entry: './frontend/niles.jsx',
 	output: {
 		path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
 		filename: 'bundle.js'
