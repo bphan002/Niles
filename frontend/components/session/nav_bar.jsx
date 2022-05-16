@@ -11,17 +11,21 @@ export default ({ currentUser, logoutUser }) => {
             <button onClick={logoutUser}>Log Out</button>
         </div>
     ) : (
-        <div>
+        <>
+            <Link to='/demo'>Demo User</Link>
             <Link to='/signup'>Sign Up</Link>
             <Link to='/login'>Login</Link>
-        </div>
+        </>
     )
     
     return (
-        <header>
-            <div>
+                //Niles logo needed //
+                //shopping cart/
+        <header className='headers'>
+                <img className='whiteLogo' src={window.white_logo} alt="" />
+                <label htmlFor="search-bar"></label>
+                <input type="text"/>
                 {display}
-            </div>
         </header>
     )
 }

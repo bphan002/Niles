@@ -7,6 +7,9 @@
 }
 
 form {
+    display: flex;
+    // align-c÷ontent: center;
+    justify-content: center;
     font-size: 28px;
     font-weight: 400;
     line-height: 1.8;
@@ -62,7 +65,7 @@ p {
 }
 
 
-.btn {
+.btn, .session-submit {
     background-color: rgb(243,209,124);
     border: black 1px solid;
     border-radius: 3px;
@@ -117,4 +120,8 @@ input[type=placehoder] {
 
 .business {
     padding-top: 5px;
+}
+
+.logo {
+    width: 300px;
 }

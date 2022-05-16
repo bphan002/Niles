@@ -11,7 +11,6 @@ export default () => (
     //i need to add the other routes into this file
     //adding to cart is a protected route
     <div>   
-        Niles
         <NavBarContainer />
         <Switch>
             {/* <ProtectedRoute path='/signup'  component={SignUpContainer} /> */}

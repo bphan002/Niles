@@ -6,15 +6,18 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <script type='text/javascript'>
+        window.white_logo = "<%=image_url('white_logo.png') %>"
+               window.black_logo = "<%=image_url('black_logo.png') %>"
+    </script>
     <%= javascript_include_tag 'application' %>
     <% if current_user %>
       <script type='text/javascript'>
-        window.logo = '<%=image_url('niles_logo.jpg') %>'
-        // window.currentUser = {
-        //   'id' : <%= current_user.id %>,
-        //   'name': '<%= current_user.name %>',
-        //   'email': '<%= current_user.email %>',
-        // }
+        window.currentUser = {
+          'id' : <%= current_user.id %>,
+          'name': '<%= current_user.name %>',
+          'email': '<%= current_user.email %>',
+        }
       </script>
     <% end %>
   </head>

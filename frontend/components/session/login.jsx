@@ -36,7 +36,8 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='log-in'>
+        <img className='logo'src={window.black_logo} alt="" />
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           <div className="login-form-container">
@@ -66,7 +67,7 @@ class Login extends React.Component {
               <p> Need help?</p>
             </div>
 
-            <p>New to Amazon?</p>
+            <h2 className='line'><span>New to Amazon?</span></h2>
 
             <button onClick={()=>history.push('/signup')}>Create your Amazon account</button>
           </div>

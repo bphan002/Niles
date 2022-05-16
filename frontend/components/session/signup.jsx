@@ -31,7 +31,7 @@ class Signup extends React.Component {
     render() {
         return (
             <div className='session-form'>
-                <img src={window.logo}/>
+                <img className='logo' src={window.black_logo}/>
                 <div className='container-form'>
                     <form onSubmit={this.handleSubmit}>Create Account</form>
                     <label htmlFor='name'>Your name</label>

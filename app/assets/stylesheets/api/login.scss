@@ -5,3 +5,34 @@
     height: 500px;
     border: rgb(227,227,227) solid;
 }
+
+button {
+    width: 100%;
+    background-color: rgb(238,239,242);
+    border: black 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width:100%
+}
+
+.line-text {
+
+}
+
+.line { 
+    width:100%; 
+    text-align:center; 
+    border-bottom: 2px solid rgb(242,242,242); 
+    line-height:0.1em; 
+    margin:10px 0 20px; 
+} 
+
+.line span { 
+    color: rgb(163,163,163);
+    font-size: 14px;
+    background:white; 
+    padding:0 10px; }
+
+    
