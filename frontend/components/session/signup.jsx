@@ -34,64 +34,64 @@ class Signup extends React.Component {
                 <img src="./amazon.png" alt="" />
 
                 <div className='container-form'>
-                <form onSubmit={this.handleSubmit}>Create Account</form>
-                <label htmlFor='name'>Your name</label>
-                <br></br>
-                <input
-                    placeholder='First and last name'
-                    name='name' 
-                    id='name' 
-                    type='text'
+                    <form onSubmit={this.handleSubmit}>Create Account</form>
+                    <label htmlFor='name'>Your name</label>
+                    <br></br>
+                    <input
+                        placeholder='First and last name'
+                        name='name' 
+                        id='name' 
+                        type='text'
 
-                    onChange={this.handleChange('name')} 
-                />
-                <br></br>
-                <label htmlFor='email'>Mobile number or email</label>
-                <br></br>
-                <input 
-                    name='email' 
-                    id='email' 
-                    type='text' 
-                    onChange={this.handleChange('email')} 
-                />
-                <br></br>
-                <label htmlFor='password'>Password</label>
-                <br></br>
-                <input
-                    placeholder='At least 6 characters'
-                    name='password'
-                    id='password' 
-                    type='password'
-                    onChange={this.handleChange('password')}
-                />
+                        onChange={this.handleChange('name')} 
+                    />
+                    <br></br>
+                    <label htmlFor='email'>Mobile number or email</label>
+                    <br></br>
+                    <input 
+                        name='email' 
+                        id='email' 
+                        type='text' 
+                        onChange={this.handleChange('email')} 
+                    />
+                    <br></br>
+                    <label htmlFor='password'>Password</label>
+                    <br></br>
+                    <input
+                        placeholder='At least 6 characters'
+                        name='password'
+                        id='password' 
+                        type='password'
+                        onChange={this.handleChange('password')}
+                    />
 
-                <p><span className="i">i</span>Passwords must be at least 6 characters</p>
+                    <p><span className="i">i</span>Passwords must be at least 6 characters</p>
 
-                
-                {
-
-                /*
-                go back to this later if i have time 
-                <label htmlFor='password2'>Re-enter password</label>
-                <input
-                    name='password2'
-                    id='password2'
-                    type='password'
                     
-                /> */}
+                    {
 
-                <input
-                    className='btn' 
-                    type='submit' 
-                    value='Continue'
-                    onClick={this.handleSubmit} 
-                />
+                    /*
+                    go back to this later if i have time 
+                    <label htmlFor='password2'>Re-enter password</label>
+                    <input
+                        name='password2'
+                        id='password2'
+                        type='password'
+                        
+                    /> */}
 
-                <div className='border-shadow'>
-                    <p>By creating an account, you agree to Nile's <Link className='text-link'><span>Conditions of Use</span></Link> and <Link className='text-link'><span>Privacy Notice.</span></Link></p>
-                </div>
-                <p>Already have an account?<span><Link className='text-link'>Sign-In</Link></span></p>
-                <p>Buying for work?<span><Link className='text-link'>Create a free business account</Link></span></p>
+                    <input
+                        className='btn' 
+                        type='submit' 
+                        value='Continue'
+                        onClick={this.handleSubmit} 
+                    />
+
+                    <div className='border-shadow'>
+                        <p>By creating an account, you agree to Nile's <Link className='text-link'><span>Conditions of Use</span></Link> and <Link className='text-link'><span>Privacy Notice.</span></Link></p>
+                    </div>
+                    <p >Already have an account?<span><Link className='text-link'> Sign-In</Link></span></p>
+                    <p className='business' >Buying for work?<span><Link className='text-link'> Create a free business account</Link></span></p>
                 </div>
                 <footer>
                     <ul className='footer-nav'>

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 * {
     font-family: Arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 form {
@@ -17,7 +17,19 @@ label {
     color: #111;
     line-height: 19px;
     font-weight: 525;
+    padding-bottom: 15px;
+  
 }
+
+p {
+    
+    font-size:14px; 
+    border-bottom: 20px;
+    padding-top: 20px;
+}
+
+
+
 
 
 .session-form {
@@ -29,10 +41,10 @@ label {
 }
 
 .container-form {
-    padding: 15px;
+    padding: 25px;
     border-radius: 3px;
     width: 300px;
-    height: 300px;
+    height: 500px;
     border: rgb(227,227,227) solid;
 }
 
@@ -67,7 +79,9 @@ label {
 input {
     width: 100%;
     border-radius: 3px;
-    
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: rgb(186,186,186) 1px solid;
 }
 
 .text-link {
@@ -94,4 +108,17 @@ input {
 .border-shadow {
     border-bottom: 1px solid rgb(234,234,234);
     padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+// .border-shadow ~ p {
+//     padding-top: ;
+// }
+
+input[type=placehoder] {
+    padding-left: 55px;
+}
+
+.business {
+    padding-top: 5px;
 }
