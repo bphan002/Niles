@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let preloadedState = undefined
     const store = configureStore(preloadedState)
     window.store = store
-    window.login = loginUser
+    window.loginUser = loginUser
     window.logoutUser = logoutUser
+    window.getState = store.getState
+    window.dispatch = store.dispatch
 
     if (window.currentUser) {
         preloadedState = {

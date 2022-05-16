@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 //now we can pass in this.props.createNewUser(pass in a json object to create a new user)
 class Signup extends React.Component {
@@ -6,7 +8,7 @@ class Signup extends React.Component {
         super(props)
         //creating localState
         this.state = {
-            username: '',
+            name: '',
             email: '',
             password: ''
         }
@@ -29,32 +31,41 @@ class Signup extends React.Component {
     render() {
         return (
             <div className='session-form'>
+                <img src="./amazon.png" alt="" />
+
+                <div className='container-form'>
                 <form onSubmit={this.handleSubmit}>Create Account</form>
                 <label htmlFor='name'>Your name</label>
-                <input 
+                <br></br>
+                <input
+                    placeholder='First and last name'
                     name='name' 
                     id='name' 
                     type='text'
-                    onChange={this.handleChange('username')} 
-                />
 
+                    onChange={this.handleChange('name')} 
+                />
+                <br></br>
                 <label htmlFor='email'>Mobile number or email</label>
+                <br></br>
                 <input 
                     name='email' 
                     id='email' 
                     type='text' 
                     onChange={this.handleChange('email')} 
                 />
-
+                <br></br>
                 <label htmlFor='password'>Password</label>
+                <br></br>
                 <input
+                    placeholder='At least 6 characters'
                     name='password'
                     id='password' 
                     type='password'
                     onChange={this.handleChange('password')}
                 />
 
-                <p><span>i</span>Passwords must be at least 6 characters</p>
+                <p><span className="i">i</span>Passwords must be at least 6 characters</p>
 
                 
                 {
@@ -69,24 +80,27 @@ class Signup extends React.Component {
                     
                 /> */}
 
-                <input 
+                <input
+                    className='btn' 
                     type='submit' 
                     value='Continue'
                     onClick={this.handleSubmit} 
                 />
 
-                <p>By creating an account, you agree to Nile's <span>Conditions of Use</span> and <span>Privacy Notice.</span></p>
-
-                <p>Already have an account?<span>Sign-In</span></p>
-                <p>Buying for work?<span>Create a free business account</span></p>
+                <div className='border-shadow'>
+                    <p>By creating an account, you agree to Nile's <Link className='text-link'><span>Conditions of Use</span></Link> and <Link className='text-link'><span>Privacy Notice.</span></Link></p>
+                </div>
+                <p>Already have an account?<span><Link className='text-link'>Sign-In</Link></span></p>
+                <p>Buying for work?<span><Link className='text-link'>Create a free business account</Link></span></p>
+                </div>
                 <footer>
-                    <ul>
-                        <li>Conditions of Use</li>
-                        <li>Privacy Notice</li>
-                        <li>Help</li>
+                    <ul className='footer-nav'>
+                        <Link className='text-link' to='/'><li>Conditions of Use</li></Link>
+                        <Link className='text-link' to='/'><li>Privacy Notice</li></Link>
+                        <Link className='text-link' to='/'><li>Help</li></Link>
                     </ul>
-                    <footer>2020, Niles.com,Inc. or its affiliates</footer>
                 </footer>
+                <p className='copyright'>&copy; 2020, Niles.com, Inc. or its affiliates</p>
             </div>
         )
     }

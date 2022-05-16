@@ -1,3 +1,97 @@
 // Place all the styles related to the api/Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+form {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+label {
+    font-size: 13px;
+    color: #111;
+    line-height: 19px;
+    font-weight: 525;
+}
+
+
+.session-form {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
+}
+
+.container-form {
+    padding: 15px;
+    border-radius: 3px;
+    width: 300px;
+    height: 300px;
+    border: rgb(227,227,227) solid;
+}
+
+.footer-nav {
+    
+    ul {
+        border: 3px green solid;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            list-style-type: none;
+            font-size: 50px;
+        }
+    
+    } 
+
+    
+}
+
+
+.btn {
+    background-color: rgb(243,209,124);
+    border: black 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width:100%
+}
+
+input {
+    width: 100%;
+    border-radius: 3px;
+    
+}
+
+.text-link {
+    text-decoration: none;
+}
+
+.i {
+    color: rgb(185,216,233);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 15px;
+    padding-right: 5px;
+}
+
+
+.copyright {
+    font-size: 12px;
+    color: rgb(134,134,134);
+    width: 100%;
+    border: red solid;
+}
+
+
+.border-shadow {
+    border-bottom: 1px solid rgb(234,234,234);
+    padding-bottom: 20px;
+}
