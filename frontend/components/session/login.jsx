@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -36,30 +36,39 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-            <label>Email:
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+          <div className="login-form-container">
+            <h1>Sign-In</h1>
+            {this.renderErrors()}
+            <div className="login-form">
+              <br/>
+              <label>Email or mobile phone number:
+                <input type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="login-input"
+                />
+              </label>
+              <br/>
+              <label>Password:
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                />
+              </label>
+              <br/>
+              <input className="session-submit" type="submit" value='Continue' />
+              <p>By continuing, you agree to Nile's Conditions of Use and Privacy Notice.</p>
+              
+              <p> Need help?</p>
+            </div>
+
+            <p>New to Amazon?</p>
+
+            <button onClick={()=>history.push('/signup')}>Create your Amazon account</button>
           </div>
         </form>
       </div>

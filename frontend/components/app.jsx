@@ -14,7 +14,7 @@ export default () => (
         Niles
         <NavBarContainer />
         <Switch>
-            {/* <ProtectedRoute path="/somepath  component= */}
+            {/* <ProtectedRoute path='/signup'  component={SignUpContainer} /> */}
             <AuthRoute exact path='/login' component={LogInContainer}  />
             <AuthRoute exact path='/signup' component={SignUpContainer} />
         </Switch>
