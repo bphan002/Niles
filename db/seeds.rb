@@ -9,4 +9,4 @@
 User.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
-const demoUser = User.create(name:'demo',email: 'demouser@gmail.com', password:'123456')
+demoUser = User.create(name:'demo',email: 'demouser@gmail.com', password:'123456')
