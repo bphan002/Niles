@@ -28,9 +28,23 @@ class Signup extends React.Component {
             .then( ()=> this.props.history.push())
     }
 
+    renderErrors() {
+        return(
+          <ul>
+            {this.props.receiveSessionErrors.map((error, i) => (
+              <li key={`error-${i}`}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        );
+      }
+
     render() {
         return (
+             
             <div className='session-form'>
+                {this.renderErrors()}
                 <Link to='/' className='logo'><img src={window.black_logo}/></Link>
                 <div className='container-form'>
                     <form onSubmit={this.handleSubmit}>Create Account</form>
@@ -65,8 +79,9 @@ class Signup extends React.Component {
                     />
 
                     <p><span className="i">i</span>Passwords must be at least 6 characters</p>
+                    {/* {this.renderErrors()} */}
                     {
-
+                        
                     //put a component will unmount to remove errors
 
                     /*
@@ -92,6 +107,8 @@ class Signup extends React.Component {
                     <p >Already have an account?<span><Link to='/login' className='text-link'> Sign-In</Link></span></p>
                     <p className='business' >Buying for work?<Link to='/signup' className='text-link'><span>Create a free business account</span></Link></p>
                 </div>
+
+                
                 <footer>
                     <ul className='footer-nav'>
                         <Link className='text-link' to='/'><li>Conditions of Use</li></Link>

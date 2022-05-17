@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { loginUser } from '../../actions/session_actions';
 import Login from './login';
 
-const mapStateToProps = ({ errors }) => {
+const mSTP = ({ errors }) => {
   return {
     errors: errors.login,
     formType: 'login',
@@ -12,10 +12,10 @@ const mapStateToProps = ({ errors }) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mDTP = dispatch => {
   return {
     processForm: (user) => dispatch(loginUser(user)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mSTP, mDTP)(Login);
