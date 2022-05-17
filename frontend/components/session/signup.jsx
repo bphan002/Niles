@@ -83,11 +83,7 @@ class Signup extends React.Component {
                     />
 
                     <p><span className="i">i</span>Passwords must be at least 6 characters</p>
-<<<<<<< HEAD
-                    {/* {this.renderErrors()} */}
-=======
                     {this.renderErrors()}
->>>>>>> d3033071e02e6b75cbe6cec117a4cde13405d69f
                     {
                         
                     //put a component will unmount to remove errors
