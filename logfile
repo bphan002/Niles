@@ -1,0 +1,19 @@
+2022-05-16 10:40:50.316 PDT [8593] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-05-16 10:40:50.318 PDT [8593] LOG:  listening on IPv6 address "::1", port 5432
+2022-05-16 10:40:50.318 PDT [8593] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-05-16 10:40:50.319 PDT [8593] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-05-16 10:40:50.321 PDT [8594] LOG:  database system was shut down at 2022-05-16 10:40:40 PDT
+2022-05-16 10:40:50.322 PDT [8593] LOG:  database system is ready to accept connections
+2022-05-16 10:41:14.236 PDT [8634] FATAL:  database "Amazon_development" does not exist
+2022-05-16 10:42:20.418 PDT [8659] FATAL:  lock file "postmaster.pid" already exists
+2022-05-16 10:42:20.418 PDT [8659] HINT:  Is another postmaster (PID 8593) running in data directory "/usr/local/var/postgres"?
+2022-05-16 10:42:31.614 PDT [8687] FATAL:  lock file "postmaster.pid" already exists
+2022-05-16 10:42:31.614 PDT [8687] HINT:  Is another postmaster (PID 8593) running in data directory "/usr/local/var/postgres"?
+2022-05-16 10:42:46.444 PDT [8727] FATAL:  lock file "postmaster.pid" already exists
+2022-05-16 10:42:46.444 PDT [8727] HINT:  Is another postmaster (PID 8593) running in data directory "/usr/local/var/postgres"?
+2022-05-16 10:42:50.418 PDT [8741] FATAL:  lock file "postmaster.pid" already exists
+2022-05-16 10:42:50.418 PDT [8741] HINT:  Is another postmaster (PID 8593) running in data directory "/usr/local/var/postgres"?
+2022-05-16 10:43:03.181 PDT [8593] LOG:  received smart shutdown request
+2022-05-16 10:43:03.185 PDT [8593] LOG:  background worker "logical replication launcher" (PID 8600) exited with exit code 1
+2022-05-16 10:43:03.185 PDT [8595] LOG:  shutting down
+2022-05-16 10:43:03.200 PDT [8593] LOG:  database system is shut down
