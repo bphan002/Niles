@@ -31,7 +31,7 @@ class Signup extends React.Component {
     render() {
         return (
             <div className='session-form'>
-                <img className='logo' src={window.black_logo}/>
+                <Link to='/' className='logo'><img src={window.black_logo}/></Link>
                 <div className='container-form'>
                     <form onSubmit={this.handleSubmit}>Create Account</form>
                     <label htmlFor='name'>Your name</label>
@@ -65,9 +65,9 @@ class Signup extends React.Component {
                     />
 
                     <p><span className="i">i</span>Passwords must be at least 6 characters</p>
-
-                    
                     {
+
+                    //put a component will unmount to remove errors
 
                     /*
                     go back to this later if i have time 
@@ -87,10 +87,10 @@ class Signup extends React.Component {
                     />
 
                     <div className='border-shadow'>
-                        <p>By creating an account, you agree to Nile's <Link className='text-link'><span>Conditions of Use</span></Link> and <Link className='text-link'><span>Privacy Notice.</span></Link></p>
+                        <p>By creating an account, you agree to Nile's <Link to='/' className='text-link'><span>Conditions of Use</span></Link> and <Link to='/' className='text-link'><span>Privacy Notice.</span></Link></p>
                     </div>
-                    <p >Already have an account?<span><Link className='text-link'> Sign-In</Link></span></p>
-                    <p className='business' >Buying for work?<span><Link className='text-link'> Create a free business account</Link></span></p>
+                    <p >Already have an account?<span><Link to='/login' className='text-link'> Sign-In</Link></span></p>
+                    <p className='business' >Buying for work?<Link to='/signup' className='text-link'><span>Create a free business account</span></Link></p>
                 </div>
                 <footer>
                     <ul className='footer-nav'>
@@ -106,3 +106,7 @@ class Signup extends React.Component {
 }
 
 export default Signup
+
+
+
+

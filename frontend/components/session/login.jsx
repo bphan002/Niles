@@ -8,7 +8,10 @@ class Login extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this)
   }
+  //put a component will unmount to remove errors
+
 
   update(field) {
     return e => this.setState({
@@ -19,6 +22,15 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    this.props.processForm(user);
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    const user = {
+      email: 'demouser@gmail.com',
+      password: '123456'
+    }
     this.props.processForm(user);
   }
 
@@ -37,7 +49,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className='log-in'>
-        <img className='logo'src={window.black_logo} alt="" />
+        <Link to="/"><img className='logo'src={window.black_logo} alt="" /></Link>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           <div className="login-form-container">
@@ -62,14 +74,15 @@ class Login extends React.Component {
               </label>
               <br/>
               <input className="session-submit" type="submit" value='Continue' />
+              <button onClick={this.handleDemo}>Demo User</button>
               <p>By continuing, you agree to Nile's Conditions of Use and Privacy Notice.</p>
               
               <p> Need help?</p>
+              <h2 className='line'><span>New to Amazon?</span></h2>
+              <Link className='account-button' to='/signup'>Create your Amazon Account</Link>
             </div>
+            
 
-            <h2 className='line'><span>New to Amazon?</span></h2>
-
-            <button onClick={()=>history.push('/signup')}>Create your Amazon account</button>
           </div>
         </form>
       </div>
