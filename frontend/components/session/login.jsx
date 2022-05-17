@@ -12,9 +12,7 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    console.log('hi')
     this.props.clearErrors()
-    console.log('after')
   }
 
   update(field) {
@@ -40,7 +38,7 @@ class Login extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className='errors'>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -58,8 +56,8 @@ class Login extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           <div className="login-form-container">
-            <h1>Sign-In</h1>
             {this.renderErrors()}
+            <h1>Sign-In</h1>
             <div className="login-form">
               <br/>
               <label>Email or mobile phone number:

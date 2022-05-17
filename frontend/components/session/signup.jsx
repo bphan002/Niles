@@ -48,9 +48,9 @@ class Signup extends React.Component {
         return (
              
             <div className='session-form'>
-                {this.renderErrors()}
                 <Link to='/' className='logo'><img src={window.black_logo}/></Link>
                 <div className='container-form'>
+                   {this.renderErrors()}
                     <form onSubmit={this.handleSubmit}>Create Account</form>
                     <label htmlFor='name'>Your name</label>
                     <br></br>
@@ -83,7 +83,7 @@ class Signup extends React.Component {
                     />
 
                     <p><span className="i">i</span>Passwords must be at least 6 characters</p>
-                    {this.renderErrors()}
+                   
                     {
                         
                     //put a component will unmount to remove errors
