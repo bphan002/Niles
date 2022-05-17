@@ -13,6 +13,32 @@ form {
     font-size: 28px;
     font-weight: 400;
     line-height: 1.8;
+    input {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    label {
+        margin-bottom: 5px;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
+}
+
+.container-form {
+
+    input {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    label {
+        margin-bottom: 5px;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
 }
 
 label {
@@ -24,11 +50,11 @@ label {
   
 }
 
-p {
-    
+.login-in p {
     font-size:14px; 
     border-bottom: 20px;
     padding-top: 20px;
+    margin-bottom: 5px;
 }
 
 .session-form {
@@ -158,4 +184,10 @@ input[type=placehoder] {
     size: 16px; 
     font-weight: bold;
     color: white;
+}
+
+.errors {
+    color: red;
+    margin-bottom: 5px;
+
 }

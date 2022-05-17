@@ -1,19 +1,18 @@
 import {connect} from 'react-redux'
 import { createNewUser } from '../../actions/session_actions'
 import Signup from './signup'
+import { clearErrors } from '../../actions/session_actions';
 
-// const mSTP = ({ errors }) => {
-//     return {
-//       errors: errors.session,
-//       formType: 'signup',
-//       navLink: <Link to="/login">log in instead</Link>,
-//     };
-//   };
+const mSTP = ({ errors }) => {
+    return {
+      errors: errors.session,
+    };
+  };
 
 
 const mDTP = dispatch => ({
     createNewUser: formUser => dispatch(createNewUser(formUser)),
-    // receiveSessionErrors: errors => dispatch(receiveErrors(errors))
+    clearErrors: () => dispatch(clearErrors())
 })
 
-export default connect(null, mDTP)(Signup)
+export default connect(mSTP, mDTP)(Signup)

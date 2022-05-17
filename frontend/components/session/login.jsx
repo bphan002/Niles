@@ -10,8 +10,12 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this)
   }
-  //put a component will unmount to remove errors
 
+  componentDidMount() {
+    console.log('hi')
+    this.props.clearErrors()
+    console.log('after')
+  }
 
   update(field) {
     return e => this.setState({

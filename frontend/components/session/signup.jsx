@@ -31,14 +31,18 @@ class Signup extends React.Component {
     renderErrors() {
         return(
           <ul>
-            {this.props.receiveSessionErrors.map((error, i) => (
-              <li key={`error-${i}`}>
+            {this.props.errors.map((error, i) => (
+              <li className='errors' key={`error-${i}`}>
                 {error}
               </li>
             ))}
           </ul>
         );
       }
+
+    componentDidMount() {
+        this.props.clearErrors()
+    }
 
     render() {
         return (
@@ -79,7 +83,11 @@ class Signup extends React.Component {
                     />
 
                     <p><span className="i">i</span>Passwords must be at least 6 characters</p>
+<<<<<<< HEAD
                     {/* {this.renderErrors()} */}
+=======
+                    {this.renderErrors()}
+>>>>>>> d3033071e02e6b75cbe6cec117a4cde13405d69f
                     {
                         
                     //put a component will unmount to remove errors
