@@ -1,10 +1,11 @@
 import React from 'react'
 import SignUpContainer from './session/signup_container'
-import { Route } from 'react-router-dom'
+import { Redirect, Route } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils'
 import { Switch } from 'react-router-dom'
 import NavBarContainer from './navbar/nav_bar_container'
 import LogInContainer from './session/login_container'
+import NotFoundPage from './not_found/not_found'
 
 
 export default () => (
@@ -15,7 +16,8 @@ export default () => (
             {/* <ProtectedRoute path='/signup'  component={SignUpContainer} /> */}
             <AuthRoute exact path='/login' component={LogInContainer}  />
             <AuthRoute exact path='/signup' component={SignUpContainer} />
-            <NavBarContainer />
+            <Route exact path='/' component={NavBarContainer} />
+            <Route path="*" component={NotFoundPage} />
         </Switch>
     </div>
 )
