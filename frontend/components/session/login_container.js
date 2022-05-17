@@ -5,7 +5,6 @@ import { loginUser } from '../../actions/session_actions';
 import Login from './login';
 import { clearErrors } from '../../actions/session_actions';
 
-
 const mSTP = ({ errors }) => {
   return {
     errors: errors.session,

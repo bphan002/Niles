@@ -48,6 +48,7 @@ class Signup extends React.Component {
         return (
              
             <div className='session-form'>
+                {this.renderErrors()}
                 <Link to='/' className='logo'><img src={window.black_logo}/></Link>
                 <div className='container-form'>
                     <form onSubmit={this.handleSubmit}>Create Account</form>
