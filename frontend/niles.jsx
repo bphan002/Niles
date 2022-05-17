@@ -8,11 +8,13 @@ import { loginUser, logoutUser} from './actions/session_actions'
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root')
     let preloadedState = undefined
-    const store = configureStore(preloadedState)
+    let store = configureStore(preloadedState)
     window.store = store
-    window.login = loginUser
+    window.loginUser = loginUser
     window.logoutUser = logoutUser
-
+    window.getState = store.getState
+    window.dispatch = store.dispatch
+ 
     if (window.currentUser) {
         preloadedState = {
             session: {
@@ -20,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+    store = configureStore(preloadedState)
     window.root = root;
     ReactDOM.render(<Root store={store}/>, root)
 })
