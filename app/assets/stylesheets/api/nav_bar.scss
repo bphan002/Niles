@@ -21,7 +21,7 @@ label {
 .search-bar {
     border-radius: 3px;
     padding: 10px;
-    margin: 35px;
+    margin: 20px;
     background-color: white;
 }
 
@@ -117,3 +117,13 @@ ul li:hover ul {
     height: 30px;
 }
 
+.category-bar {
+    display:flex;
+    justify-content: space-around;
+    background-color: rgb(35,47,62);
+    padding: 10px;
+    .category-item {
+        font-size: 15px;
+        color: white;
+    }
+}

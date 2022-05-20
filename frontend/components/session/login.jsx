@@ -50,9 +50,8 @@ class Login extends React.Component {
 
   render() {
     return (
-      
       <div className='log-in'>
-        <Link to="/"><img className='logo'src={window.black_logo} alt="" /></Link>
+        <Link to="/"><img className='logo' src={window.black_logo} alt="" /></Link>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           <div className="login-form-container">
