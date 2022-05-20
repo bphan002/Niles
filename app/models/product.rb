@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
-    validates :title, :bullet, :category, :description, :price, :quantity, presence: true
+    validates :title, :bullet, :category_id, :description, :price, :quantity, presence: true
 
     has_one_attached :picture
-
-
+    belongs_to :category
 end

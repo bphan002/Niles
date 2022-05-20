@@ -5,17 +5,30 @@ import { AuthRoute, ProtectedRoute } from '../utils/route_utils'
 import { Switch } from 'react-router-dom'
 import NavBarContainer from './navbar/nav_bar_container'
 import LogInContainer from './session/login_container'
-
+import ProductIndexContainer from './products/product_index_container'
+import ProductShowContainer from './products/product_show_container'
+import ProductCategoryIndexContainer from './products/product_category_index_container'
 
 export default () => (
+
+
     //i need to add the other routes into this file
     //adding to cart is a protected route
     <div>   
+            <Route path='/' component={NavBarContainer} />
         <Switch>
             {/* <ProtectedRoute path='/signup'  component={SignUpContainer} /> */}
             <AuthRoute exact path='/login' component={LogInContainer}  />
             <AuthRoute exact path='/signup' component={SignUpContainer} />
-            <NavBarContainer />
+            <Route exact path='/products/category/:category' component={ProductCategoryIndexContainer} /> 
+            {/* had to do bottom path because it thinks 'products/category/ for all thinks its a productID */}
+            <Route exact path='/products/category/' component={ProductCategoryIndexContainer} />
+            <Route exact path='/products/:productId' component={ProductShowContainer} />
+            <Route exact path='/products' component={ProductIndexContainer} />
         </Switch>
     </div>
 )
+
+
+//makes a category routes
+

@@ -38,11 +38,11 @@
     "react-redux": "^8.0.1",
     "react-router-dom": "^5.3.1",
     "redux": "^4.2.0",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.4.1",
     "webpack": "^5.72.1"
   },
   "devDependencies": {
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
     "webpack-cli": "^4.9.2"
   }
 }
