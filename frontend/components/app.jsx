@@ -1,4 +1,5 @@
 import React from 'react'
+
 import SignUpContainer from './session/signup_container'
 import { Redirect, Route } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils'
@@ -10,22 +11,27 @@ import ProductIndexContainer from './products/product_index_container'
 import ProductShowContainer from './products/product_show_container'
 import ProductCategoryIndexContainer from './products/product_category_index_container'
 import Home from './home/home'
+import ReviewForm from './reviews/review_form'
+
 
 export default () => (
 
 
     //i need to add the other routes into this file
     //adding to cart is a protected route
-    <div>   
+    <div className='page-container'>   
         <NavBarContainer />
         <Switch>
             {/* <ProtectedRoute path='/signup'  component={SignUpContainer} /> */}
             <AuthRoute exact path='/login' component={LogInContainer}  />
+            {/* authroute not working... find out what is different between auth route and protected route */}
             <AuthRoute exact path='/signup' component={SignUpContainer} />
+            <Route exact path='/reviews/new' component={ReviewForm} />
             <Route exact path='/products' component={ProductIndexContainer} />
             <Route exact path='/products/category/' component={ProductCategoryIndexContainer} />
             <Route exact path='/products/:productId' component={ProductShowContainer} />
             <Route exact path='/products/category/:category' component={ProductCategoryIndexContainer} /> 
+
             {/* had to do bottom path because it thinks 'products/category/ for all thinks its a productID */}
             <Route exact path='/' component={Home} />
             <Route path="*" component={NotFoundPage} />

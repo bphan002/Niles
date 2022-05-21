@@ -53,7 +53,7 @@ export default ({ currentUser, logoutUser }) => {
 
     return (
         //shopping cart/
-        <div>
+        <>
             <header className='headers'>
                     <Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link>
                     <label htmlFor="search-bar"></label>
@@ -66,6 +66,6 @@ export default ({ currentUser, logoutUser }) => {
                     <ProductBar key={idx} category={key} filter={categories[key]} />
                 ))}
             </ul>
-        </div>
+        </>
     )
 }

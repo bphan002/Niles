@@ -1,0 +1,54 @@
+.customer-review-container {
+    padding: 10px 0px 50px;
+    width: 310px;
+    border-bottom: rgb(231,231,231) solid 1px;
+    h4 {
+        font-size: 18px;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+    p {
+        padding-bottom: 30px;
+        width: 200px;
+        font-size: 16px;
+    }
+}
+
+.star {
+    font-size: 1.5em;
+    color: rgb(250,156,27);
+    border-image: black; 
+    cursor: pointer;
+}
+
+.review {
+    width: 300px;
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    border-bottom: rgb(231,231,231) 1px solid;
+}
+
+.rating {
+    display:flex;
+}
+
+.reviewbtn {
+    margin-top: 5px;
+    background-color: rgb(255,255,255);
+    border: rgb(214,217,217) 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 75px;
+
+}
+
+
+input[type='radio'] {
+    display:none;
+}
+
+
+

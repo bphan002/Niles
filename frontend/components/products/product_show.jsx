@@ -1,4 +1,5 @@
 import React from 'react'
+import ProductShowReview from './product_show_review'
 
 class ProductShow extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class ProductShow extends React.Component {
         const isLoaded = this.props.product
         if (isLoaded) {
             return (
-                <div>
+                <>
                     <div className='product-show-container'>
                         <img className='show-image' src={window.sample_image} alt=""/>
                         <div className='product-info'>
@@ -31,7 +32,14 @@ class ProductShow extends React.Component {
                         <h3>Product Description</h3>
                         <p>{this.props.product.description}</p>
                     </div>
-                </div>
+                    <div className='review-show-container'>
+                        {/* think of what props to pass into this product show component */}
+                        {/* current user to know who left the review */}
+                        {/* product id */}
+                        {/* review crud functionality? */}
+                        <ProductShowReview/> 
+                    </div>
+                </>
             )
         } else {
             return (

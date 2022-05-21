@@ -9,6 +9,8 @@ class User < ApplicationRecord
     validates :session_token, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
 
+    has_many :reviews
+
     def self.find_by_credentials(email, password)
         @user = User.find_by(email: email)
         if @user && @user.is_password(password)

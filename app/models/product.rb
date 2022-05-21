@@ -3,4 +3,5 @@ class Product < ApplicationRecord
 
     has_one_attached :picture
     belongs_to :category
+    has_many :reviews
 end
