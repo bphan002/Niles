@@ -11,6 +11,8 @@ class ProductShow extends React.Component {
     }
     
     render() {
+        console.log('this props')
+        // console.log(this.props.product)
         const isLoaded = this.props.product
         if (isLoaded) {
             return (
@@ -37,7 +39,7 @@ class ProductShow extends React.Component {
                         {/* current user to know who left the review */}
                         {/* product id */}
                         {/* review crud functionality? */}
-                        <ProductShowReview/> 
+                        <ProductShowReview products={this.props.product}/> 
                     </div>
                 </>
             )

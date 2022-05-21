@@ -20,10 +20,13 @@ const removeReview = reviewId => ({
     reviewId
 })
 
-export const leaveReview = data => dispatch => (
-    reviewUtils.createReview(data)
-        .then(review => dispatch(createReview(review)))
-)
+export const leaveReview = data => dispatch => {
+    return reviewUtils.createReview(data)
+        .then(review =>     
+        {
+        return dispatch(createReview(review))
+        })      
+}
 
 export const patchReview = data => dispatch => (
     reviewUtils.updateReview(data)
