@@ -8,12 +8,11 @@ const mSTP = (state, ownProps) => {
     return {
         reviews: {
             user_id: state.session.currentUser.id,
-            product_id: ownProps.match.params.id,
+            product_id: ownProps.match.params.productId,
             rating: '',
             comment: '',
             header: ''
         },
-        product: state.entities.products,
         formType: "Create Review",
         fullName: state.session.currentUser.name
     }

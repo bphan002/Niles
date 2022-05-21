@@ -5,14 +5,15 @@ class ReviewForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            user_id: '',
-            product_id: '',
+            user_id: this.props.reviews.user_id,
+            product_id: this.props.reviews.product_id,
             rating: '',
             comment: '',
             header: '',
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleRating = this.handleRating.bind(this)
     }
     //need user name to display at the top
     //need to pass in image as props from product show page
@@ -24,6 +25,19 @@ class ReviewForm extends React.Component {
         this.props.action(this.state)
     }
 
+    handleRating(rating) {
+        this.setState({...this.state,rating})
+    }
+
+    handleChange(field) {
+        return e => {
+            this.setState({...this.state,[field]: e.currentTarget.value})
+            console.log(this.state)
+        }
+    }
+
+
+
     render() {
         console.log(this.props)
         return (
@@ -34,16 +48,25 @@ class ReviewForm extends React.Component {
                         <h1>{this.props.formType}</h1>
                         <img src="" alt="" />
                         <h2>Overall Rating</h2>
-                        <Rating />
+                        <Rating updateStars={this.handleRating} />
                         <form className='review-form' onSubmit={this.handleSubmit}>
                             <label htmlFor="headline"><h2>Add a headline</h2></label>{"\n"}
-                            <input id="headline" name="headline" type="text" placeholder="What's most important to know?"/>
+                            <input 
+                                id="header" 
+                                name="header" 
+                                type="text" 
+                                placeholder="What's most important to know?"
+                                value={this.state.header}
+                                onChange={this.handleChange('header')}
+                                />
                             <br/>
                             <label htmlFor="written-review"><h2>Add a written review</h2></label>
                             <textarea 
                                 placeholder="What did you like or dislike? What did you use this product for?"
                                 name="written-review" 
-                                id="written-review" 
+                                id="written-review"
+                                value={this.state.comment} 
+                                onChange={this.handleChange('comment')}
                                 />
                             <input type="submit" classname='submit-form' value='Submit'/>
                         </form>

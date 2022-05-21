@@ -8,7 +8,14 @@ class Rating extends React.Component {
             rating: null,
             hover: null
         }
+        this.changeRating = this.changeRating.bind(this)
     }
+
+    changeRating(ratingValue) {
+        this.setState({rating: ratingValue})
+        this.props.updateStars(ratingValue)
+    }
+
     render() {
         return(
             <div className='rating'>
@@ -19,7 +26,7 @@ class Rating extends React.Component {
                         <input 
                             type="radio" 
                             name='radio' 
-                            onClick={()=>this.setState({rating: ratingValue})}
+                            onClick={()=>this.changeRating(ratingValue)}
                             value={ratingValue}
                             />
                         <IoIosStar 

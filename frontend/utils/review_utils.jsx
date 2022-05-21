@@ -1,10 +1,11 @@
-export const createReview = review => (
-    $.ajax({
+export const createReview = review => {
+    console.log('create review util', review)
+    return $.ajax({
         method: 'POST',
         url: 'api/reviews',
         data: {review}
     })
-)
+}
 
 export const updateReview = review => (
     $.ajax({
@@ -21,6 +22,13 @@ export const deleteReview = id => (
     })
 )
 
+
+export const getReviews = productId => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/${productId}`
+    })
+)
 
 
 

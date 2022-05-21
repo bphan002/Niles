@@ -5,7 +5,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render "api/products/show"
         else
-            render json: @review.errors.full_messages, status 422
+            render json: @review.errors.full_messages, status: 422
         end
     end
 
@@ -15,7 +15,7 @@ class Api::ReviewsController < ApplicationController
         if @review.update(review_params)
             render "api/products/show"
         else
-            render json: @review.erors.full_messages, status 422
+            render json: @review.erors.full_messages, status: 422
         end
     end
 
@@ -31,6 +31,6 @@ class Api::ReviewsController < ApplicationController
 
     private
     def review_params
-        params.require(:review).permit(:user_id, :product_id, :rating, :comment, :header)
+        params.require(:review).permit(:header, :user_id, :product_id, :rating, :comment)
     end
 end

@@ -10,9 +10,13 @@
 
 User.destroy_all
 Product.destroy_all
+Review.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('products')
-ActiveRecord::Base.connection.reset_pk_sequence!('categories')
+ActiveRecord::Base.connection.reset_pk_sequence!('reviews')
+
+
+
 
 demoUser = User.create(
     name:'demo',email: 'demouser@gmail.com', password:'123456')
@@ -34,8 +38,8 @@ toys1 = Product.create(
     price: 17.45,
     quantity: 5
 )
-toys1Image = open('https://niles-product-seeds.s3.us-west-1.amazonaws.com/products/toys/toys1.jpg')
-toys1.picture.attach( io: toys1Image, filename:'toys1.jpg')
+# toys1Image = open('https://niles-product-seeds.s3.us-west-1.amazonaws.com/products/toys/toys1.jpg')
+# toys1.picture.attach( io: toys1Image, filename:'toys1.jpg')
 
 toys2 = Product.create(
     title: "ThinkFun Circuit Maze Electric Current Brain Game and STEM Toy for Boys and Girls Age 8 and Up - Toy of the Year Finalist, Teaches Players about Circuitry through Fun Gameplay",
@@ -1966,6 +1970,8 @@ automotive11 = Product.create(
     quantity: 3
 )
 
+
+
 automotive12 = Product.create(
     title: "Unique RV Digest-It Black Tank Treatment - Concentrated Drop-in Pod Toilet Treatment - Eliminates Odors, Breaks Down Waste (20 Treatments) - 41G-4", 
     bullet:[
@@ -1980,3 +1986,9 @@ automotive12 = Product.create(
     price: 25.99,
     quantity: 2
 )
+
+
+
+# review
+review1 = Review.create(user_id: 1, product_id: automotive12.id, rating: 5, comment: 'ths is a good product', header: 'solid product')
+review1 = Review.create(user_id: 1, product_id: automotive12.id, rating: 1, comment: 'ths is the worst product', header: 'worst product')
