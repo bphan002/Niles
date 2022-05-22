@@ -20,7 +20,7 @@ const categories = {
 
 //function if they are logged in they will see Logout button
 //else they will see Sign Up and Login links
-export default ({ currentUser, logoutUser }) => {
+export default ({ currentUser, logoutUser,updateSearch }) => {
     const display = currentUser ? (
         <div className='logged-in'>
             <div className='greeting'>
@@ -48,7 +48,7 @@ export default ({ currentUser, logoutUser }) => {
     )
     {/* <FontAwesomeIcon className='caret-down' icon="fas fa-caret-down" /> */}
 
-  
+    
 
 
     return (
@@ -57,7 +57,7 @@ export default ({ currentUser, logoutUser }) => {
             <header className='headers'>
                     <Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link>
                     <label htmlFor="search-bar"></label>
-                    <input className='search-bar' type="text" id='search-bar' name='search-bar'/>
+                    <input onChange={(e)=>updateSearch(e.currentTarget.value)} className='search-bar' type="text" id='search-bar' name='search-bar'/>
                 {display}
     
             </header>

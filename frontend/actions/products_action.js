@@ -23,3 +23,15 @@ export const requestProduct = id => dispatch => (
     productAPIUtils.fetchProduct(id)
         .then( product => dispatch(receiveProduct(product)))
 )
+
+export const UPDATE_SEARCH = 'UPDATE_SEARCH'
+
+const updatingSearch = query=> ({
+    type: UPDATE_SEARCH,
+    query
+})
+
+
+export const updateSearch = query => dispatch => (
+    dispatch(updatingSearch(query))
+)
