@@ -13,15 +13,13 @@ class ProductShow extends React.Component {
         this.props.requestProduct(this.props.match.params.productId)
     }
 
-    handleRemove() {
-        // deleteReview(this.props.product.reviews.id)
-        console.log(this.props.product.reviews)
+    handleRemove(review) {
+        this.props.deleteReview(review.id)
     }
     
     render() {
         const isLoaded = this.props.product
-        if (isLoaded) {
-            console.log('current prop we r looking at',this.props.product.reviews)
+        if (isLoaded) {        
             return (
                 <>
                     <div className='product-show-container'>
@@ -54,12 +52,11 @@ class ProductShow extends React.Component {
                             {Object.values(this.props.product.reviews??{}).map((review) =>  
                             
                              {
-                                 console.log('this is inside',review,'this is props',this.props)
                                  return <> {/* <h1>{review.user.name}</h1> */}
                                     <h3><span>{review.rating}</span> {review.header}</h3>
                                     <p>{review.comment}</p>
                                     {/* <Link class='review-btn btn'>Edit Review</Link> */}
-                                    <button onClick={()=>this.props.deleteReview(review.id)} class='review-btn btn'>Delete Review</button>
+                                    <button onClick={()=>this.handleRemove(review)} class='review-btn btn'>Delete Review</button>
                                 </>
         })}
                         </div>

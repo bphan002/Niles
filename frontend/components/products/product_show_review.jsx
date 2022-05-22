@@ -13,8 +13,6 @@ class ProductShowReview extends React.Component {
     }
 
     render() {
-        console.log('these are props')
-        console.log(this.props)
         return(
             <div className='customer-review-container'>
                 <h3 className='review'>Customer reviews</h3>

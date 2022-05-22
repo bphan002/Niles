@@ -4,7 +4,6 @@ import { leaveReview } from '../../actions/reviews_action'
 
 
 const mSTP = (state, ownProps) => {
-    console.log(state.entities.users)
     return {
         reviews: {
             user_id: state.session.currentUser.id,

@@ -32,14 +32,12 @@ class ReviewForm extends React.Component {
     handleChange(field) {
         return e => {
             this.setState({...this.state,[field]: e.currentTarget.value})
-            console.log(this.state)
         }
     }
 
 
 
     render() {
-        console.log(this.props)
         return (
             <>
                 {/* <p className='username'><span><img src={window.avatar_image} alt=""/></span>   {this.props.fullName}</p> */}

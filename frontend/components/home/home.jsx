@@ -24,7 +24,6 @@ function Home() {
             requestedPage += carouselConfig.length
         }
         requestedPage %= carouselConfig.length
-        console.log(carouselConfig,requestedPage)
         linkRef.to = carouselConfig[requestedPage].href
         imgContainerRef.current.scrollTo({
             top: 0,

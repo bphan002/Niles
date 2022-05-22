@@ -10,7 +10,6 @@ class ProductIndexItem extends React.Component {
         const {product} = this.props
         // let money = this.props.product.price
         // let result = money.indexOf(".")
-        console.log(this.product)
         return (
    
             <div className='product-container'>

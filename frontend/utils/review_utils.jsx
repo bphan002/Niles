@@ -1,5 +1,4 @@
 export const createReview = review => {
-    console.log('create review util', review)
     return $.ajax({
         method: 'POST',
         url: 'api/reviews',

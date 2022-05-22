@@ -11,7 +11,6 @@ const productReducer = (oldState = {}, action) => {
         case RECEIVE_PRODUCTS:
             return action.products
         case RECEIVE_PRODUCT:
-            // console.log(action)
             nextState[action.product.id] = action.product
             return nextState;
         default:
