@@ -3,7 +3,7 @@ class Api::ReviewsController < ApplicationController
         @review = Review.create(review_params)
         @product = @review.product
         if @review.save
-            render "api/products/show"
+            render json: @review
         else
             render json: @review.errors.full_messages, status: 422
         end

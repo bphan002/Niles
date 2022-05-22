@@ -22,7 +22,7 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        this.props.action(this.state)
+        this.props.action(this.state).then(this.props.history.push(`/products/${this.state.product_id}`))
     }
 
     handleRating(rating) {
@@ -50,10 +50,9 @@ class ReviewForm extends React.Component {
                         <h2>Overall Rating</h2>
                         <Rating updateStars={this.handleRating} />
                         <form className='review-form' onSubmit={this.handleSubmit}>
-                            <label htmlFor="headline"><h2>Add a headline</h2></label>{"\n"}
+                            <label htmlFor="header"><h2>Add a headline</h2></label>{"\n"}
                             <input 
-                                id="header" 
-                                name="header" 
+                                id="header"  
                                 type="text" 
                                 placeholder="What's most important to know?"
                                 value={this.state.header}
@@ -62,13 +61,12 @@ class ReviewForm extends React.Component {
                             <br/>
                             <label htmlFor="written-review"><h2>Add a written review</h2></label>
                             <textarea 
-                                placeholder="What did you like or dislike? What did you use this product for?"
-                                name="written-review" 
+                                placeholder="What did you like or dislike? What did you use this product for?" 
                                 id="written-review"
                                 value={this.state.comment} 
                                 onChange={this.handleChange('comment')}
                                 />
-                            <input type="submit" classname='submit-form' value='Submit'/>
+                            <input type="submit" className='submit-form' value='Submit'/>
                         </form>
                     </div>
                 </div>

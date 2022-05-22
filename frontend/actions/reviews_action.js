@@ -46,7 +46,7 @@ export const deleteReview = id => dispatch => (
 )
 
 
-export const getReviews = productId => dispatch => (
-    reviewUtils.getReview(productId)
+export const getReviews = productId=> dispatch => (
+    reviewUtils.getReviews(productId)
         .then( reviews => dispatch(receiveReviews(reviews)))
 )

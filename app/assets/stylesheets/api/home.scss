@@ -1,0 +1,31 @@
+.carousel-images {
+    overflow-x: scroll;
+    overflow-y: scroll;
+    display: flex;
+    
+    img {
+         width: 100%;
+     }
+}
+
+.link {
+    display:block;
+    height:100%;
+    flex: 1 100%;
+    background-color: red;
+}
+
+.carousel-main {
+    display: flex;
+    height: 20px;
+    .carousel-btn {
+        display:block;
+        height: 100%;
+        width: 100px;
+    }
+}
+
+
+
+// change the button to the top and change it to 200px or semtihgn
+
