@@ -15,10 +15,6 @@ class ProductShow extends React.Component {
         this.props.deleteReview(review.id)
     }
 
-    handleEdit(review) {
-  
-    }
-    
     render() {
         const isLoaded = this.props.product
         if (isLoaded) {        
@@ -58,9 +54,7 @@ class ProductShow extends React.Component {
                                  return <div key={idx}> {/* <h1>{review.user.name}</h1> */}
                                     <h3 ><span>{review.rating}</span> {review.header}</h3>
                                     <p>{review.comment}</p>
-                                    {/* <Link class='review-btn btn'>Edit Review</Link> */}
                                     <button onClick={()=>this.handleRemove(review)} className='review-btn btn'>Delete Review</button>
-                                    {/* <button onClick={()=>this.handleEdit(review)} class='review-btn btn'>Edit Review</button> */}
                                     <Link to={`/reviews/${review.id}/edit`}>Edit Button</Link>
                                 </div>
         })}
