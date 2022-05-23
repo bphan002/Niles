@@ -1,19 +1,25 @@
 class Api::ReviewsController < ApplicationController
     def create
-        @review = Review.create(review_params)
+        @review = Review.new(review_params)
+        @review.user_id = current_user.id
         @product = @review.product
         if @review.save
-            render json: @review
+            render :show
         else
             render json: @review.errors.full_messages, status: 422
         end
+    end
+
+    def show 
+        @review = Review.find_by(id: params[:id])
+        render :show
     end
 
     def update
         @review = Review.find_by(id: params[:id])
         @product = @review.product
         if @review.update(review_params)
-            render "api/products/show"
+            render :show
         else
             render json: @review.erors.full_messages, status: 422
         end
@@ -31,6 +37,6 @@ class Api::ReviewsController < ApplicationController
 
     private
     def review_params
-        params.require(:review).permit(:header, :user_id, :product_id, :rating, :comment)
+        params.require(:review).permit(:header, :product_id, :rating, :comment)
     end
 end

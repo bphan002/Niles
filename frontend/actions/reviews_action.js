@@ -4,6 +4,7 @@ export const CREATE_REVIEW = 'RECEIVE_REVIEW'
 export const REMOVE_REVIEW = 'DELETE_REVIEW'
 export const UPDATE_REVIEW = 'UPDATE_REVIEW' 
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS'
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW'
 
 const createReview = review => ({
     type: CREATE_REVIEW,
@@ -14,6 +15,12 @@ const receiveReviews = reviews => ({
     type: RECEIVE_REVIEWS,
     reviews
 })
+
+const receiveReview = review => ({
+    type: RECEIVE_REVIEW,
+    review
+})
+
 
 const updateReview = review => ({
     type: UPDATE_REVIEW,
@@ -46,7 +53,8 @@ export const deleteReview = id => dispatch => (
 )
 
 
-export const getReviews = productId=> dispatch => (
-    reviewUtils.getReviews(productId)
-        .then( reviews => dispatch(receiveReviews(reviews)))
+export const getReview = reviewId => dispatch => (
+    reviewUtils.getReview(reviewId)
+        .then( review => dispatch(receiveReview(review)))
 )
+

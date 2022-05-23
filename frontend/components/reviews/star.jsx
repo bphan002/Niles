@@ -22,7 +22,7 @@ class Rating extends React.Component {
                 {[...Array(5)].map(( star,idx ) => {
                     const ratingValue = idx + 1
                     return (
-                    <label>
+                    <label key={idx}>
                         <input 
                             type="radio" 
                             name='radio' 

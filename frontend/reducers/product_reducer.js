@@ -7,13 +7,14 @@ import {
 const productReducer = (oldState = {}, action) => {
     // debugger
     Object.freeze(oldState)
-    let nextState = Object.assign({}, oldState)
+    let nextState = Object.assign({products:{}}, oldState)
     switch (action.type) {
         case RECEIVE_PRODUCTS:
             nextState.products = action.products
             return nextState
         case RECEIVE_PRODUCT:
-            nextState.products[action.product.id] = action.product
+            nextState.products[action.product.id] = Object.assign({},action.product)
+            delete nextState.products[action.product.id]['reviews']
             return nextState;
         case UPDATE_SEARCH:
             nextState.query = action.query

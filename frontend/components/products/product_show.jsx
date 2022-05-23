@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import ProductShowReview from './product_show_review'
-import { deleteReview } from '../../utils/review_utils'
-
+import { Link } from 'react-router-dom'
 class ProductShow extends React.Component {
     constructor(props) {
         super(props)
@@ -15,6 +13,10 @@ class ProductShow extends React.Component {
 
     handleRemove(review) {
         this.props.deleteReview(review.id)
+    }
+
+    handleEdit(review) {
+  
     }
     
     render() {
@@ -34,6 +36,7 @@ class ProductShow extends React.Component {
                                         }
                                 </p>
                         </div>
+
                     </div>
                     <div className='description-container'>
                         <h3>Product Description</h3>
@@ -49,15 +52,17 @@ class ProductShow extends React.Component {
                         </div>
                         <div className='user-review'>
                             <h2>Top reviews from the United States</h2>
-                            {Object.values(this.props.product.reviews??{}).map((review) =>  
+                            {Object.values(this.props.reviews??{}).map((review,idx) =>  
                             
                              {
-                                 return <> {/* <h1>{review.user.name}</h1> */}
-                                    <h3><span>{review.rating}</span> {review.header}</h3>
+                                 return <div key={idx}> {/* <h1>{review.user.name}</h1> */}
+                                    <h3 ><span>{review.rating}</span> {review.header}</h3>
                                     <p>{review.comment}</p>
                                     {/* <Link class='review-btn btn'>Edit Review</Link> */}
-                                    <button onClick={()=>this.handleRemove(review)} class='review-btn btn'>Delete Review</button>
-                                </>
+                                    <button onClick={()=>this.handleRemove(review)} className='review-btn btn'>Delete Review</button>
+                                    {/* <button onClick={()=>this.handleEdit(review)} class='review-btn btn'>Edit Review</button> */}
+                                    <Link to={`/reviews/${review.id}/edit`}>Edit Button</Link>
+                                </div>
         })}
                         </div>
                     </div>

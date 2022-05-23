@@ -6,6 +6,13 @@ export const createReview = review => {
     })
 }
 
+export const requestReport = reportId => dispatch => (
+    ReportAPIUtil.fetchReport(reportId)
+        .then(report => dispatch(receiveReport(report)))
+)
+
+
+
 export const updateReview = review => (
     $.ajax({
         method: 'PATCH',
@@ -13,6 +20,15 @@ export const updateReview = review => (
         data: {review}
     })
 )
+
+export const getReview = reviewId => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/reviews/${reviewId}`
+    })
+)
+
+
 
 export const deleteReview = id => (
     $.ajax({
@@ -22,12 +38,6 @@ export const deleteReview = id => (
 )
 
 
-export const getReviews = productId => (
-    $.ajax({
-        method: 'GET',
-        url: `/api/${productId}`
-    })
-)
 
 
 

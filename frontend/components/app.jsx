@@ -12,6 +12,8 @@ import ProductShowContainer from './products/product_show_container'
 import ProductCategoryIndexContainer from './products/product_category_index_container'
 import Home from './home/home'
 import LeaveReviewFormContainer from './reviews/leave_review_form_container'
+import EditReviewFormContainer from './reviews/edit_review_form_container'
+
 
 export default () => (
 
@@ -27,6 +29,7 @@ export default () => (
             <AuthRoute exact path='/signup' component={SignUpContainer} />
             {/* <Route exact path='/products/reviews/new' component={LeaveReviewFormContainer} /> */}
             <Route exact path='/products/:productId/reviews/new' component={LeaveReviewFormContainer} />
+            <Route exact path="/reviews/:reviewId/edit" component={EditReviewFormContainer} />
             <Route exact path='/products' component={ProductIndexContainer} />
             <Route exact path='/products/category/' component={ProductCategoryIndexContainer} />
             <Route exact path='/products/:productId' component={ProductShowContainer} />

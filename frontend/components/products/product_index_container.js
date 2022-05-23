@@ -16,6 +16,7 @@ const mSTP = state => {
         products: toArray(state.entities.products)
     }
 }
+
 const mDTP = dispatch => ({
     requestProducts: () => dispatch(requestProducts())
 })
