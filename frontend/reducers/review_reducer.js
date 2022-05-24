@@ -5,7 +5,6 @@ import {
     UPDATE_REVIEW,
     RECEIVE_REVIEW
 } from "../actions/reviews_action";
-
 const reviewReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
     let nextState = Object.assign({}, oldState)
