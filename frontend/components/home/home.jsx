@@ -6,7 +6,7 @@ function Home() {
     const imgContainerRef = useRef(null)
 
     const carouselConfig = [
-        {image:window.purina_image,href:"#"}, 
+        // {image:window.purina_image,href:"#"}, 
         {image:window.carousel2_image,href:"#"},
         {image:window.carousel3_image,href:"#"},
     ]
