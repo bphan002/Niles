@@ -27,7 +27,7 @@ class ProductShow extends React.Component {
             return (
                 <>
                     <div className='product-show-container'>
-                        <img className='show-image' src={window.sample_image} alt=""/>
+                        <img className='show-image' src={this.props.picture} alt=""/>
                         <div className='product-info'>
                                 <h1 className='show-title'>{this.props.product.title}</h1>
                                 <p className='show-price'><span className='invisible'>$</span>{this.props.product.price}</p>

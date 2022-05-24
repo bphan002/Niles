@@ -10,6 +10,7 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6, allow_nil: true}
 
     has_many :reviews
+    has_many :cart_items
 
     def self.find_by_credentials(email, password)
         @user = User.find_by(email: email)
