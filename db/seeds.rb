@@ -15,9 +15,6 @@ ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('products')
 ActiveRecord::Base.connection.reset_pk_sequence!('reviews')
 
-
-
-
 demoUser = User.create(
     name:'demo',email: 'demouser@gmail.com', password:'123456')
 

@@ -49,7 +49,7 @@ export const patchReview = data => dispatch => (
 
 export const deleteReview = id => dispatch => (
     reviewUtils.deleteReview(id)
-        .then(review => dispatch(removeReview(review)))
+        .then(review => dispatch(removeReview(id)))
 )
 
 

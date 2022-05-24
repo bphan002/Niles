@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ProductBar from './product_bar_item'
 const categories = {
     "All": '',
@@ -27,6 +26,7 @@ export default ({ currentUser, logoutUser,updateSearch }) => {
                 <p>Hello, {currentUser.name}</p>
                 <p className='account'>Account & Lists</p>
             </div>
+            <img className='cart-image' src={window.cart_image} alt="" />
             <button className='btn logout' onClick={logoutUser}>Log Out</button>
         </div>
     ) : (

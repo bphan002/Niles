@@ -1,6 +1,9 @@
 import React from 'react'
 import ProductShowReview from './product_show_review'
 import { Link } from 'react-router-dom'
+import CartPanel from '../cart/cart_panel'
+import DisplayRating from '../reviews/display_rating.jsx'
+
 class ProductShow extends React.Component {
     constructor(props) {
         super(props)
@@ -16,6 +19,9 @@ class ProductShow extends React.Component {
     }
 
     render() {
+        console.log('available props',this.props)
+
+        // const decimal = this.props.product.price.indexOf(".")
         const isLoaded = this.props.product
         if (isLoaded) {        
             return (
@@ -24,6 +30,8 @@ class ProductShow extends React.Component {
                         <img className='show-image' src={window.sample_image} alt=""/>
                         <div className='product-info'>
                                 <h1 className='show-title'>{this.props.product.title}</h1>
+                                <p className='show-price'><span className='invisible'>$</span>{this.props.product.price}</p>
+
                                 <p>About this item</p>
                                 <p>
                                     {
@@ -32,7 +40,9 @@ class ProductShow extends React.Component {
                                         }
                                 </p>
                         </div>
-
+                        <div className='cart-panel'>
+                            <CartPanel props={this.props} />
+                        </div>
                     </div>
                     <div className='description-container'>
                         <h3>Product Description</h3>
@@ -49,13 +59,13 @@ class ProductShow extends React.Component {
                         <div className='user-review'>
                             <h2>Top reviews from the United States</h2>
                             {Object.values(this.props.reviews??{}).map((review,idx) =>  
-                            
-                             {
+                            {
+                                 console.log('review',review.rating)
                                  return <div key={idx}> {/* <h1>{review.user.name}</h1> */}
-                                    <h3 ><span>{review.rating}</span> {review.header}</h3>
+                                    <h3 className='review-headline'><DisplayRating rating={review.rating} header={review.header}/> </h3>
                                     <p>{review.comment}</p>
                                     <button onClick={()=>this.handleRemove(review)} className='review-btn btn'>Delete Review</button>
-                                    <Link to={`/reviews/${review.id}/edit`}>Edit Button</Link>
+                                    <Link className='edit-btn' to={`/reviews/${review.id}/edit`}>Edit Button</Link>
                                 </div>
         })}
                         </div>

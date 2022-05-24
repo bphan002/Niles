@@ -15,13 +15,12 @@ const reviewReducer = (oldState = {}, action) => {
             return nextState
         case REMOVE_REVIEW:
             delete nextState[action.reviewId]
-            console.log('remove review', nextState)
             return nextState
         case UPDATE_REVIEW:
             nextState[action.review.id] = action.review
             return nextState
         case RECEIVE_PRODUCT:
-            return action.product.reviews 
+            return Object.assign({},action.product.reviews) 
         case RECEIVE_REVIEW:
             nextState[action.review.id] = action.review
             return nextState         

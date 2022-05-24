@@ -1,0 +1,90 @@
+.cart-panel {
+    width: 300px;
+    padding: 20px;
+    border: rgb(199,199,199) 1px solid;
+    margin: 20px 30px;
+    // margin-left: 30px;
+    // margin-right: 30px;
+    border-radius: 5px;
+    margin-left: 6ls
+    0px;
+}
+
+.cart-btn {
+    background-color: rgb(255,216,20);
+    border-radius: 9px;
+    border-color: rgb(255,216,20);
+    margin-bottom: 15px;
+    
+}
+
+.free-return, .eligible {
+    color: rgb(29,128,146);
+}
+
+.cart-show-container {
+    p{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.chevron {
+    color: gray;
+}
+
+.show-price {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.prime-parent {
+    position: relative;
+}
+
+.prime-logo {
+    width: 55px;
+    padding-bottom: 2px;
+ 
+}
+
+.one-day {
+    position: absolute;
+    top: .1em;
+    margin-left: 1px;
+}
+
+.in-stock {
+    color: rgb(50,145,50);
+    font-size: 24px;
+
+}
+
+.secure {
+    color:rgb(29,128,146);
+    font-size: 18px;
+    margin-bottom: 10px;
+
+}
+
+
+.sold {
+    font-size: 14px;
+}
+
+.gray {
+    margin-bottom: 0px;
+    color:gray;
+    font-size:14px;
+    margin-top: 5px;
+}
+
+.gift {
+    display:flex;
+    justify-content: start;
+    input, label {
+        margin: 0px;
+        width: 600px;
+    }
+}
