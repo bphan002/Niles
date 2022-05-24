@@ -23,11 +23,15 @@ class ProductShow extends React.Component {
 
         // const decimal = this.props.product.price.indexOf(".")
         const isLoaded = this.props.product
-        if (isLoaded) {        
+        if (isLoaded) {       
+            console.log('product-show',this.props.product) 
             return (
+                
                 <>
                     <div className='product-show-container'>
-                        <img className='show-image' src={this.props.picture} alt=""/>
+                        <div className='show-image-container'>
+                            <img className='show-image' src={this.props.product.photoUrl} alt=""/>
+                        </div>
                         <div className='product-info'>
                                 <h1 className='show-title'>{this.props.product.title}</h1>
                                 <p className='show-price'><span className='invisible'>$</span>{this.props.product.price}</p>
