@@ -11,8 +11,6 @@ export const requestReport = reportId => dispatch => (
         .then(report => dispatch(receiveReport(report)))
 )
 
-
-
 export const updateReview = review => (
     $.ajax({
         method: 'PATCH',
