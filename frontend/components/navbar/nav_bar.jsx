@@ -26,7 +26,7 @@ export default ({ currentUser, logoutUser,updateSearch }) => {
                 <p>Hello, {currentUser.name}</p>
                 <p className='account'>Account & Lists</p>
             </div>
-            <img className='cart-image' src={window.cart_image} alt="" />
+            <Link to={'/checkout'}><img className='cart-image' src={window.cart_image} alt="" /></Link>
             <button className='btn logout' onClick={logoutUser}>Log Out</button>
         </div>
     ) : (

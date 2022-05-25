@@ -22,8 +22,8 @@ class CartPanel extends React.Component {
                 <button className='cart-btn'>Add to Cart</button>
                 <FaLock /> <span className='secure'>Secure transaction</span>
 
-                <p className='sold'><span className='gray'>Ships from</span> Amazon.com</p>
-                <p className='sold'><span className='gray'>Sold by</span> Amazon.com</p>
+                <p className='sold'><span className='gray'>Ships from</span> Niles.com</p>
+                <p className='sold'><span className='gray'>Sold by</span> Niles.com</p>
 
                 <p>Return policy:<span className='eligible'> Eligible for Return, Refund or Replacement within 30 days of receipt</span></p>
 

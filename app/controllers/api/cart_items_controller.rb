@@ -37,8 +37,6 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy(cart_item)
-        # @cart_item = CartItem.find_by(id: params[:id])
-        # @cart_item.destroy
         if cart_item.destroy
             render 'api/users/show'
         end

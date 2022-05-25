@@ -7,7 +7,6 @@ class ReviewForm extends React.Component {
         super(props)
         console.log('leave_review_form',this.props)
         this.state = {
-
             product_id: this.props.review.product_id,
             rating: this.props.review.rating,
             comment: this.props.review.comment,

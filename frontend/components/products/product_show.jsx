@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductShowReview from './product_show_review'
 import { Link } from 'react-router-dom'
-// import CartPanel from '../cart/cart_panel'
+import CartPanel from '../cart/cart_panel'
 import DisplayRating from '../reviews/display_rating.jsx'
 
 class ProductShow extends React.Component {
@@ -45,7 +45,7 @@ class ProductShow extends React.Component {
                                 </p>
                         </div>
                         <div className='cart-panel'>
-                            {/* <CartPanel props={this.props} /> */}
+                            <CartPanel props={this.props} />
                         </div>
                     </div>
                     <div className='description-container'>
