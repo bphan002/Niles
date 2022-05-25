@@ -17,7 +17,7 @@ class ProductIndexItem extends React.Component {
                   <Link to={`/products/${product.id}`}><img className='image' src={product.photoUrl} alt="" /></Link>
                 </div>
                 <Link to={`/products/${product.id}`}><h1 className='prod-title'>{product.title}</h1></Link>
-                <p className='price'><span className='invisible'>$</span>{product.price}</p>
+                <p className='price'><span className='invisible'>$</span>{product.price.toFixed(2)}</p>
             </div>
         )
     }

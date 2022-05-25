@@ -7,7 +7,7 @@ import {
         currentUser: null
     }
 
-    export const sessionReducer = (oldState = _nullSession, action) => {
+    const sessionReducer = (oldState = _nullSession, action) => {
         Object.freeze(oldState)
         switch (action.type) {
             case RECEIVE_CURRENT_USER:
@@ -18,3 +18,5 @@ import {
                 return oldState
         }
     }
+
+    export default sessionReducer

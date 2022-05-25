@@ -1,8 +1,8 @@
-//check url for this
-export const fetchCartItemsByUserId = userId => (
+
+export const fetchCartItems = () => (
     $.ajax({
         method: 'GET',
-        url: `api/users/${userId}/cart_items`,
+        url: `api/cart_items`,
     })
 )
 

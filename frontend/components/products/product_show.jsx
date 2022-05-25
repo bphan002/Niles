@@ -34,7 +34,7 @@ class ProductShow extends React.Component {
                         </div>
                         <div className='product-info'>
                                 <h1 className='show-title'>{this.props.product.title}</h1>
-                                <p className='show-price'><span className='invisible'>$</span>{this.props.product.price}</p>
+                                <p className='show-price'><span className='invisible'>$</span>{this.props.product.price.toFixed(2)}</p>
 
                                 <p>About this item</p>
                                 <p>

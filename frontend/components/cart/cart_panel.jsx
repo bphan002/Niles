@@ -5,21 +5,30 @@ import { AiOutlineDown } from 'react-icons/ai'
 class CartPanel extends React.Component {
     constructor(props) {
         super(props)
+        this.addCart = this.addCart.bind(this)
     }
 
+
+    addCart () {
+        console.log('inside addCart function',this.props.props.addToCart(0))
+    }
+
+
+
     render() {
+        console.log('cart-panel',this.props)
         console.log('cart_show',this.props)
         const {price, quantity} = this.props.props.product
         return(
             <div className='cart-show-container'>
-                <p className='show-price'><span className='invisible'>$</span>{price}</p>
+                <p className='show-price'><span className='invisible'>$</span>{price.toFixed(2)}</p>
                 <div className='prime-parent'>
                     <img className='prime-logo' src={window.amazonprime_image} alt="" /><span className='one-day'> One-Day</span>
                 </div>
                 <p>&<span className='free-return'> FREE Returns</span><span className='chevron'>   <AiOutlineDown/></span></p>
                 
                 { quantity > 0 ? <p className='in-stock'>In stock</p> : <p>Out of stock</p>}
-                <button className='cart-btn'>Add to Cart</button>
+                <button onClick={this.addCart} className='cart-btn'>Add to Cart</button>
                 <FaLock /> <span className='secure'>Secure transaction</span>
 
                 <p className='sold'><span className='gray'>Ships from</span> Niles.com</p>

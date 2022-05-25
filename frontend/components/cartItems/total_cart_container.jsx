@@ -1,21 +1,20 @@
 import { connect } from "react-redux";
 import TotalCart from "./total_cart";
-import { receiveCartItemsByUserId,
-    requestCartItem, 
-    patchCartItem, 
-    deleteCartItem 
-} 
-    from "../../actions/cartItems_action";
-
+import { 
+    requestCartItems,
+    addToCart, 
+    updateCartItems,
+    deleteCartItem  
+} from "../../actions/cartItems_action";
 
 const mSTP = state => ({
     cartItems: Object.values(state.entities.cartItems)
 })
 
 const mDTP = dispatch => ({
-    receiveCartItemsByUserId: userId => dispatch(receiveCartItemsByUserId(userId)),
-    requestCartItem: cartItem => dispatch(requestCartItem(cartItem)),
-    patchCartItem: cartItem => dispatch(patchCartItem(cartItem)),
+    requestCartItems: () => dispatch(requestCartItems()),
+    addToCart: cartItem => dispatch(addToCart(cartItem)),
+    updateCartItems: cartItem => dispatch(updateCartItems(cartItem)),
     deleteCartItem: cartItemId => dispatch(deleteCartItem(cartItemId))
 })
 
