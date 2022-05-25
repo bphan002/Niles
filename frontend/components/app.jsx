@@ -30,7 +30,7 @@ export default () => (
             <AuthRoute exact path='/signup' component={SignUpContainer} />
             <Route exact path='/checkout' component={TotalCartContainer} />
             {/* <Route exact path='/products/reviews/new' component={LeaveReviewFormContainer} /> */}
-            // <Route exact path='/products/:productId/reviews/new' component={LeaveReviewFormContainer} />
+             <Route exact path='/products/:productId/reviews/new' component={LeaveReviewFormContainer} />
             <Route exact path="/reviews/:reviewId/edit" component={EditReviewFormContainer} />
             <Route exact path='/products' component={ProductIndexContainer} />
             <Route exact path='/products/category/' component={ProductCategoryIndexContainer} />
