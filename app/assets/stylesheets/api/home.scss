@@ -1,31 +1,54 @@
-.carousel-images {
-    overflow-x: scroll;
-    overflow-y: scroll;
-    display: flex;
-    
-    img {
-         width: 100%;
-     }
+// *,
+// ::before,
+// ::after {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box
+// }
+
+.container {
+    position:relative;
+    min-height: 90vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.link {
-    display:block;
-    height:100%;
-    flex: 1 100%;
-    background-color: red;
-}
-
-.carousel-main {
-    display: flex;
-    height: 20px;
-    .carousel-btn {
-        display:block;
-        height: 100%;
-        width: 100px;
-    }
+.carousel {
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    // width: 100%;
 }
 
 
+.carousel-item {
+    display: inline-block;
+    width: 100%;
+}
 
-// change the button to the top and change it to 200px or semtihgn
+.carousel-inner {
+    white-space: nowrap;
+    transition: ease 1s;
+}
 
+.carousel-control {
+    position: absolute;
+    background-color: none;
+    border: none;
+    display: inline-block;
+    position: absolute;
+    height: 50px;
+    width: 70px;
+    top: calc(50%-25px);
+    color: black;;
+    cursor: pointer;
+}
+
+.left {
+    left:0
+}
+
+.right {
+    right:0
+}

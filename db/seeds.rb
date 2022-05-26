@@ -2384,5 +2384,9 @@
     automotive12Image = open('https://niles-product-seeds.s3.us-west-1.amazonaws.com/products/automotive/automotive12.jpg')
     automotive12.picture.attach( io: automotive12Image, filename:'automotive12.jpg')
     
-    review1 = Review.create(user_id: 1, product_id: automotive12.id, rating: 5, comment: 'ths is a good product', header: 'solid product')
-    review1 = Review.create(user_id: 1, product_id: automotive12.id, rating: 1, comment: 'ths is the worst product', header: 'worst product')
+    review1 = Review.create(user_id: 1, product_id: 1, rating: 1, comment: 'ths is a good product', header: 'solid product')
+    review2 = Review.create(user_id: 1, product_id: 2, rating: 2, comment: 'ths is the worst product', header: 'worst product') 
+    review3 = Review.create(user_id: 1, product_id: 3, rating: 3, comment: 'ths is the worst product', header: 'worst product') 
+    review4 = Review.create(user_id: 1, product_id: 4, rating: 4, comment: 'ths is the worst product', header: 'worst product') 
+
+

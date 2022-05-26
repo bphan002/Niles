@@ -1,57 +1,62 @@
-import React, { useRef } from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState} from 'react'
 
 function Home() {
-    const linkRef = useRef(null)
-    const imgContainerRef = useRef(null)
-
-    const carouselConfig = [
-        // {image:window.purina_image,href:"#"}, 
-        {image:window.carousel2_image,href:"#"},
-        {image:window.carousel3_image,href:"#"},
+    const slides = [
+        sample_carousel1_image,
+        sample_carousel2_image,
+        sample_carousel3_image
     ]
 
-    const currentPage = 0
+    const [currentSlide, setCurrentSlide] = useState(2)
 
-    const changePage = direction => {
 
-        
-        let requestedPage = currentPage + direction
-        if (requestedPage >= carouselConfig.length) {
-            requestedPage -= carouselConfig.length
-        }
-        if (requestedPage < 0) {
-            requestedPage += carouselConfig.length
-        }
-        requestedPage %= carouselConfig.length
-        linkRef.to = carouselConfig[requestedPage].href
-        imgContainerRef.current.scrollTo({
-            top: 0,
-            left: requestedPage*imgContainerRef.offsetWidth,
-            behavior: 'smooth'
-          });
+    const prev = () => {
+        const index = currentSlide > 0 ? currentSlide -1 : slides.length -1
+        setCurrentSlide(index)
     }
 
+    const next = () => {
+        const index = currentSlide < slides.length - 1 ? currentSlide + 1 : 0
+        setCurrentSlide(index)
+    }
 
     return (
-        <div classname='carousel'>
-            <div ref={imgContainerRef} className='carousel-images'>
-                {carouselConfig.map(obj => (
-                    <img src={obj.image} alt="" />
-                ))}
-                {carouselConfig.map(obj => (
-                    <img src={obj.image} alt="" />
-                ))}
-                {carouselConfig.map(obj => (
-                    <img src={obj.image} alt="" />
-                ))}
+        <div className='container'>
+            <div className="carousel">
+                <div 
+                    className="carousel-inner" 
+                    style={{ transform: `translateX(${-currentSlide * 100}%)`}}
+                >
+                    {slides.map((slide,index) =>(
+                        <div key={index} className="carousel-item">
+                            <img src={slide} />
+                        </div>
+                    ))}
+                        <img src="" alt="" />
+                </div>
             </div>
-            <div className='carousel-main'>
-                <button className='carousel-btn' onClick={()=>changePage(-1)}>{'<'}</button>
-                <Link className='link' to='#' ref={linkRef}></Link>
-                <button className='carousel-btn' onClick={()=>changePage(1)}>{'>'}</button>
+            <div>
+                <button onClick={prev} className='carousel-control left'>{'<'}</button>
+                <button onClick={next} className='carousel-control right'>{'>'}</button>            
             </div>
         </div>
+        
+
+        // <section aria-label='newest photos'>
+        //     <div className='carousel'> 
+        //     <button className='carousel-btn prev'>{'<'}</button>         
+        //     <button className='carousel-btn next'>{'>'}</button>         
+        //         <ul>
+        //             <li class='slides' data-active>
+        //             </li>
+        //             <li class='slides'>
+
+        //             </li>
+        //             <li class='slides'>
+        //             </li>
+        //         </ul>
+        //     </div>
+    // </section>
     )
 }
 
