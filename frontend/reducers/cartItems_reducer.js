@@ -8,7 +8,7 @@ import {
 
 const cartItemsReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
-    let nextState = Object.assign({cartItems:{}}, oldState)
+    let nextState = Object.assign({}, oldState)
 
     switch (action.type) {
         case RECEIVE_CART_ITEMS:
@@ -21,7 +21,7 @@ const cartItemsReducer = (oldState = {}, action) => {
             delete nextState[action.cartItemId]
             return nextState
         case UPDATE_CART_ITEM:
-            nextState[cartItem.id] = action.cartItem.quantity
+            nextState[action.cartItem.id] = action.cartItem.quantity
             return nextState
         default:
             return oldState

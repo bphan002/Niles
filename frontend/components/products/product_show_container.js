@@ -14,6 +14,7 @@ const mSTP = (state, ownProps) => {
     return {
         product: product,
         reviews: state.entities.reviews,
+        currentUser: state.session.currentUser
     }
 }
 

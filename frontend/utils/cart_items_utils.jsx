@@ -6,26 +6,27 @@ export const fetchCartItems = () => (
     })
 )
 
-export const addCartItem = cartItem => (
+export const addCartItem = cart_item => (
     $.ajax({
         method: 'POST',
         url: '/api/cart_items',
-        data: {cartItem}
+        data: {cart_item}
     })
 )  
 
-export const updateCartItem = cartItem => (
+export const updateCartItem = cart_item => (
     $.ajax({
         method: 'PATCH',
-        url:`/api/cart_items/${cartItem.id}`,
-        data: { cartItem }
+        url:`/api/cart_items/${cart_item.id}`,
+        data: { cart_item }
     })
 )
 
-export const deleteCartItem = cartItemId => (
+export const deleteCartItem = cart_item => (
     $.ajax ({
         method: 'DELETE',
-        url: `/api/cart_items/${cartItemId}`
+        url: `/api/cart_items/${cart_item.id}`,
+        data: {cart_item}
     })
 )
 

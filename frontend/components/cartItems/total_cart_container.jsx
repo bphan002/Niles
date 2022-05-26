@@ -7,8 +7,9 @@ import {
     deleteCartItem  
 } from "../../actions/cartItems_action";
 
+
 const mSTP = state => ({
-    cartItems: Object.values(state.entities.cartItems)
+    cartItems: Object.values(state.entities.cartItems),
 })
 
 const mDTP = dispatch => ({

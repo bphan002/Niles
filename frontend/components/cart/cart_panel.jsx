@@ -5,19 +5,33 @@ import { AiOutlineDown } from 'react-icons/ai'
 class CartPanel extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            productQuantity: 1
+        }
         this.addCart = this.addCart.bind(this)
+        this.addToCartQuantity = this.addToCartQuantity.bind(this)
     }
 
 
     addCart () {
-        console.log('inside addCart function',this.props.props.addToCart(0))
+        console.log(this.state)
+        this.props.props.addToCart({
+            product_id: this.props.props.product.id,
+            user_id: this.props.props.currentUser.id,
+            quantity: this.state.productQuantity
+        })
+    }
+
+    addToCartQuantity(e) {
+        this.setState({productQuantity: e.currentTarget.value})
     }
 
 
 
+
+
     render() {
-        console.log('cart-panel',this.props)
-        console.log('cart_show',this.props)
+        console.log('cart panel props', this.props)
         const {price, quantity} = this.props.props.product
         return(
             <div className='cart-show-container'>
@@ -28,6 +42,15 @@ class CartPanel extends React.Component {
                 <p>&<span className='free-return'> FREE Returns</span><span className='chevron'>   <AiOutlineDown/></span></p>
                 
                 { quantity > 0 ? <p className='in-stock'>In stock</p> : <p>Out of stock</p>}
+
+                <select onChange={this.addToCartQuantity}>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                </select>
+            
                 <button onClick={this.addCart} className='cart-btn'>Add to Cart</button>
                 <FaLock /> <span className='secure'>Secure transaction</span>
 

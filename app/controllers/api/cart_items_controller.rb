@@ -1,7 +1,7 @@
 class Api::CartItemsController < ApplicationController
     def index
         if logged_in?
-            @cart = current_user.cart_items
+            @cart = current_user.cart_items.includes(:product)
             @products = current_user.cart_items
             render :index
         end
@@ -9,11 +9,11 @@ class Api::CartItemsController < ApplicationController
 
 
     def create
-        @user = current_user
-        @cart_item = current_user.cart_items.create(cart_items_params)
-
+        # @user = current_user
+        # @cart_item = current_user.cart_items.create(cart_items_params)
+        @cart_item = CartItem.create(cart_items_params)
         if @cart_item.save
-            render json: @cart_item
+            render :show
         end
     end
 
@@ -32,13 +32,14 @@ class Api::CartItemsController < ApplicationController
             destroy(@cart_item[0])
         else
             @cart_item.update(quantity: @updated_quantity)
-            render 'api/users/show'
+            render :index
         end
     end
 
     def destroy(cart_item)
-        if cart_item.destroy
-            render 'api/users/show'
+        @cart_item = CartItem.find_by(id: params[:id])
+        if @cart_item.destroy
+            render :index
         end
     end
 

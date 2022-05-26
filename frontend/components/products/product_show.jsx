@@ -25,6 +25,7 @@ class ProductShow extends React.Component {
         const isLoaded = this.props.product
         if (isLoaded) {       
             console.log('product-show',this.props.product) 
+            
             return (
                 
                 <>
