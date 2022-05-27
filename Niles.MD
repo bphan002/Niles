@@ -1,6 +1,6 @@
 
 
-<img src="https://photos.google.com/search/_tra_/photo/AF1QipOrx7z4EC7H2QVL9pkB_VrHTPYAGwXIaYjPqKnw" height="32px"/>
+<span><img src="https://photos.google.com/search/_tra_/photo/AF1QipOrx7z4EC7H2QVL9pkB_VrHTPYAGwXIaYjPqKnw" height="32px"/>
 
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" height="32"/>
 
@@ -32,6 +32,6 @@
 
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="32" />
 
-<img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" height="32" />
+<img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" height="32" /></span>
 
 
