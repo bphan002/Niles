@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ProductBar from './product_bar_item'
-import { IoMdArrowDropdown } from "react-icons/io";
-
+import { IoMdArrowDropdown } from "react-icons/io"
+import { BsSearch } from "react-icons/bs"
+BsSearch
 const categories = {
     "All": '',
     "Toys & Games": 'toys',
@@ -18,6 +19,7 @@ const categories = {
     "Automotive": 'automotive',
     "Sports": 'sports',
 }
+
 
 
 export default ({ currentUser, cartItems,logoutUser,updateSearch }) => {
@@ -62,7 +64,9 @@ export default ({ currentUser, cartItems,logoutUser,updateSearch }) => {
             <header className='headers'>
                     <Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link>
                     <label htmlFor="search-bar"></label>
-                    <input onChange={(e)=>updateSearch(e.currentTarget.value)} className='search-bar' type="text" id='search-bar' name='search-bar'/>
+                    <input onChange={(e)=>updateSearch(e.currentTarget.value)} className='search-bar' type="text" id='search-bar' name='search-bar'>
+                    </input>
+                    <div className='search-glass'><BsSearch size={20} color={'black'}/></div>
                 {display}
     
             </header>
