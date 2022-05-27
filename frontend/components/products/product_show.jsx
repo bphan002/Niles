@@ -19,6 +19,7 @@ class ProductShow extends React.Component {
     
     
     render() {
+  
         const d = new Date()
 
         const monthArr= [
@@ -97,7 +98,7 @@ class ProductShow extends React.Component {
                                  return <div className='avatar-container' key={idx}>
                                      <div className='avatar-user'>
                                         <img className='review-logo' src={window.avatar_image} alt=""/>
-                                        <p>{this.props.currentUser.name}</p>
+                                        <p>{review.username.name}</p>
                                      </div>
                                     <h3 className='review-headline'><DisplayRating displayType='displaystar' rating={review.rating} header={review.header}/> </h3>
                                     <p className='date'>Reviewed in the United States on {month} {dayNum}, {year}</p>
