@@ -8,14 +8,7 @@ class TotalCart extends React.Component {
         super(props)
     }
 
-    componentDidMount() {
-        console.log('mount working')
-    }
-
-    
-
     render() {
-        console.log('cart_items',this.props)
         return (
             <div className='entire-page'>
                 <div className='shopping-cart-container'>

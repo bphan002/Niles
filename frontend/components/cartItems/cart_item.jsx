@@ -14,16 +14,7 @@ class CartItem extends React.Component {
     //     })
     // }
 
-    render() {
-        console.log('check functions avaialble',this.props)
-        // const product = this.props.item.id
-        // console.log('this is the one cart_items',this.props)
-        // console.log('title', this.props.cartItems)
-        // console.log('product_id', product)
-        // console.log('product name', this.props.products.product )
-        // console.log('product_title', this.props.products)
-        
-        
+    render() {        
         return (
             <div className='one-item-container'>
                 <div className='one-image-container'>

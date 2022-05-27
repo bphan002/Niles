@@ -13,39 +13,27 @@ import ProductCategoryIndexContainer from './products/product_category_index_con
 import Home from './home/home'
 import LeaveReviewFormContainer from './reviews/leave_review_form_container'
 import EditReviewFormContainer from './reviews/edit_review_form_container'
-// import CartItemsIndexContainer from './cartItems/cartItems_index_container
 import TotalCartContainer from './cartItems/total_cart_container'
 
 export default () => (
-
-
-    //i need to add the other routes into this file
-    //adding to cart is a protected route
     <div className='page-container'>   
 
         <NavBarContainer />
  
         <Switch>
-            {/* <ProtectedRoute path='/signup'  component={SignUpContainer} /> */}
             <AuthRoute exact path='/login' component={LogInContainer}  />
-            {/* authroute not working... find out what is different between auth route and protected route */}
             <AuthRoute exact path='/signup' component={SignUpContainer} />
             <Route exact path='/checkout' component={TotalCartContainer} />
-            {/* <Route exact path='/products/reviews/new' component={LeaveReviewFormContainer} /> */}
              <Route exact path='/products/:productId/reviews/new' component={LeaveReviewFormContainer} />
             <Route exact path="/reviews/:reviewId/edit" component={EditReviewFormContainer} />
             <Route exact path='/products' component={ProductIndexContainer} />
             <Route exact path='/products/category/' component={ProductCategoryIndexContainer} />
             <Route exact path='/products/:productId' component={ProductShowContainer} />
             <Route exact path='/products/category/:category' component={ProductCategoryIndexContainer} /> 
-            
-            {/* had to do bottom path because it thinks 'products/category/ for all thinks its a productID */}
             <Route exact path='/' component={Home} />
             <Route path="*" component={NotFoundPage} />
         </Switch>
     </div>
 )
 
-
-//makes a category routes
 

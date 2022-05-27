@@ -6,8 +6,6 @@ import { addToCart } from '../../actions/cartItems_action'
 
 const mSTP = (state, ownProps) => {
     let product
-    // this checks if this exist first before returning so 
-    // we don't get an error when the page trys to load something that doesn't exist yet
     if (state.entities.products.products) {
         product = state.entities.products.products[ownProps.match.params.productId]
     }

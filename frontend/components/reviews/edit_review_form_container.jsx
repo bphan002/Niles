@@ -18,17 +18,10 @@ class EditReviewForm extends React.Component {
         if (!this.props.review) return null;
         return (
             <ReviewForm
-                // action={this.props.action}
-                // formType={this.props.formType}
-                // review={this.props.review}
-                // history={this.props.history}
                 {...this.props}
             />
         )
     }
-
-
-
 }
 
 const mSTP = (state,ownProps) =>
@@ -43,6 +36,5 @@ const mDTP = dispatch => ({
     getReview: reviewId => dispatch(getReview(reviewId)),
     action: review => dispatch(patchReview(review))
 })
-
 
 export default withRouter(connect(mSTP,mDTP)(EditReviewForm))

@@ -1,12 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
-//now we can pass in this.props.createNewUser(pass in a json object to create a new user)
 class Signup extends React.Component {
     constructor(props) {
         super(props)
-        //creating localState
         this.state = {
             name: '',
             email: '',
@@ -24,7 +21,6 @@ class Signup extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         this.props.createNewUser(this.state)
-                //put in push where you want to go to
             .then( ()=> this.props.history.push())
     }
 
@@ -84,20 +80,6 @@ class Signup extends React.Component {
 
                     <p><span className="i">i</span>Passwords must be at least 6 characters</p>
                    
-                    {
-                        
-                    //put a component will unmount to remove errors
-
-                    /*
-                    go back to this later if i have time 
-                    <label htmlFor='password2'>Re-enter password</label>
-                    <input
-                        name='password2'
-                        id='password2'
-                        type='password'
-                        
-                    /> */}
-
                     <input
                         className='btn' 
                         type='submit' 

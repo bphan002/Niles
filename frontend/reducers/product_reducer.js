@@ -5,7 +5,6 @@ import {
 } from "../actions/products_action";
 
 const productReducer = (oldState = {}, action) => {
-    // debugger
     Object.freeze(oldState)
     let nextState = Object.assign({products:{}}, oldState)
     switch (action.type) {

@@ -19,8 +19,6 @@ const categories = {
     "Sports": 'sports',
 }
 
-//function if they are logged in they will see Logout button
-//else they will see Sign Up and Login links
 export default ({ currentUser, logoutUser,updateSearch }) => {
     const display = currentUser ? (
         <div className='logged-in'>
@@ -54,7 +52,6 @@ export default ({ currentUser, logoutUser,updateSearch }) => {
 
 
     return (
-        //shopping cart/
         <>
             <header className='headers'>
                     <Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link>

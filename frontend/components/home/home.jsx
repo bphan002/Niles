@@ -40,23 +40,6 @@ function Home() {
                 <button onClick={next} className='carousel-control right'>{'>'}</button>            
             </div>
         </div>
-        
-
-        // <section aria-label='newest photos'>
-        //     <div className='carousel'> 
-        //     <button className='carousel-btn prev'>{'<'}</button>         
-        //     <button className='carousel-btn next'>{'>'}</button>         
-        //         <ul>
-        //             <li class='slides' data-active>
-        //             </li>
-        //             <li class='slides'>
-
-        //             </li>
-        //             <li class='slides'>
-        //             </li>
-        //         </ul>
-        //     </div>
-    // </section>
     )
 }
 

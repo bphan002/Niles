@@ -9,12 +9,9 @@ class ProductIndex extends React.Component {
 
     componentDidMount() {
         this.props.requestProducts()
-        console.log('check props',this.props)
     }
 
     searchMatches(query, product) {
-        console.log('query',query)
-        console.log('product',product)
         return product.title.includes(query)
     }
 

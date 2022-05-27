@@ -10,7 +10,6 @@ class ProductShow extends React.Component {
         this.handleRemove = this.handleRemove.bind(this)
     }
     componentDidMount() {
-       console.log('component show product didmount')
         this.props.requestProduct(this.props.match.params.productId)
     }
     
@@ -20,8 +19,6 @@ class ProductShow extends React.Component {
     
     
     render() {
-        console.log('available props',this.props)
-        
         const d = new Date()
 
         const monthArr= [
@@ -54,14 +51,9 @@ class ProductShow extends React.Component {
         const year = d.getFullYear()
         const isLoaded = this.props.product
         if (isLoaded) {       
-            // console.log('product-show',this.props.product) 
-            // console.log(year)
             const reviewArray= Object.values(this.props.reviews)
             const totalStars = Object.values(this.props.reviews).reduce((acc,review) => acc + review.rating,0)
             const avgRating=Math.floor(totalStars/reviewArray.length)
-            // const average = Math.floor(total/this.props.reviews.length)
-            // console.log('average',average)
-            console.log('average',avgRating)
             return (
                 <>
                    

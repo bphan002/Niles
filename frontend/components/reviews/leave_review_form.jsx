@@ -15,14 +15,9 @@ class ReviewForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleRating = this.handleRating.bind(this)
     }
-    //need user name to display at the top
-    //need to pass in image as props from product show page
-    //need to pass in title as props from product show page
-    //
 
     handleSubmit(e) {
         e.preventDefault()
-        console.log(this.props)
         this.props.action(this.state).then(this.props.history.push(`/products/${this.state.product_id}`))
     }
 

@@ -7,8 +7,6 @@ class DisplayRating extends React.Component {
         }
     
     render() {
-    
-        console.log('rating',this.props.rating)
         return(
             <div className='rating'>
                 {[...Array(5)].map(( star,idx ) => {

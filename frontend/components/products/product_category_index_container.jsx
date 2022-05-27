@@ -28,9 +28,7 @@ class ProductCategoryIndex extends React.Component {
     }
 
     render() {
-        
         const {products} = this.props
-        console.log('products',products)
         return (
                 <div className='index-container'>
                     {Object.values(products.products??{}).filter((product)=>this.searchMatches(products.query,product)).map(product => (
@@ -56,7 +54,6 @@ const toArray = vals => {
 
 const mSTP = state => 
 {
-    console.log('product_category_index_container state:',state.entities.products)
     return {
         products: state.entities.products
     }

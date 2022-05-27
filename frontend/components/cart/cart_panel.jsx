@@ -14,7 +14,6 @@ class CartPanel extends React.Component {
 
 
     addCart () {
-        console.log(this.state)
         this.props.props.addToCart({
             product_id: this.props.props.product.id,
             user_id: this.props.props.currentUser.id,
@@ -32,7 +31,6 @@ class CartPanel extends React.Component {
 
 
     render() {
-        console.log('cart panel props', this.props)
         const {price, quantity} = this.props.props.product
 
         const d = new Date()

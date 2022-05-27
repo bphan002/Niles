@@ -12,10 +12,8 @@ class ProductIndexItem extends React.Component {
     titleChopper(title) {
         if (title.length > 25) {
             title = title.substring(0,24) + "..."
-            console.log('title',title)
             return title
         } else {
-            console.log('title',title)
             return title
         }
     }
@@ -52,8 +50,7 @@ class ProductIndexItem extends React.Component {
         const dayNum = d.getDate()
         const month = monthArr[d.getMonth()]
         const year = d.getFullYear()
-
-        console.log('check this!!!!',this.props.product.stars)
+        
         return (
    
             <div className='product-container'>
