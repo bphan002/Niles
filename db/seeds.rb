@@ -43,14 +43,6 @@
         name:'The Real Billy Phan',email: 'bphan@gmail.com', password:'1sx32s32'
     )
 
-
-
-
-
-    
-
-    
-    
     require 'open-uri'
     
     # toys
