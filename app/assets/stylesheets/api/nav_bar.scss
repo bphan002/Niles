@@ -16,6 +16,15 @@
     padding:2px 10px;
 }
 
+#cartamt {
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    font-size: 18px;
+    color: rgb(237,134,5);
+    font-weight: bold;
+    z-index: 20;
+}
 
 
 .whiteLogo:hover {
@@ -99,7 +108,7 @@ ul li:hover ul {
 .cart-image {
     position: relative;
     border: 1px solid transparent;
-    width: 40px;
+    width: 50px;
     margin-right: 10px;
     margin-left: 10px;
     padding-top: 5px;

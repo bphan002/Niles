@@ -35,7 +35,7 @@ function Home() {
                         <img src="" alt="" />
                 </div>
             </div>
-            <div>
+            <div className='carousel-btn'>
                 <button onClick={prev} className='carousel-control left'>{'<'}</button>
                 <button onClick={next} className='carousel-control right'>{'>'}</button>            
             </div>

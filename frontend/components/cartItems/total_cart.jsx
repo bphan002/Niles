@@ -9,11 +9,19 @@ class TotalCart extends React.Component {
     }
 
     render() {
+        let cartArray = Object.values(this.props.cartItems)
+
+        //have an array of objects
+        // console.log('quantity', cartArray.reduce(cart => cart.quantity) )
+        
+        let quantity = cartArray.reduce((sum, item) => sum + item.quantity,0)
+        let totalCost = cartArray.reduce((sum, item) => sum + ((item.quantity)*(item.price)),0)
+        console.log(totalCost)
         return (
             <div className='entire-page'>
                 <div className='shopping-cart-container'>
                     <div className='title-container'>
-                        <h1>Shopping Cart</h1>
+                        <h1 className='shopping-cart-title'>Shopping Cart</h1>
                         {this.props.cartItems.length === 0 ? <EmptyCart /> : this.props.cartItems.map(
                             item => (
                                 <>
@@ -21,12 +29,13 @@ class TotalCart extends React.Component {
                                 </>
                             )
                         )}
+                {this.props.cartItems.length <1 ? null : 
+                <div className='checkout-container'>
+                <p className='subtotal'>Subtotal ({quantity}): <span className='total-cost'>${totalCost.toFixed(2)}</span></p>
+                <Link className='checkout-btn bigger' to='/products/checkout/'>Proceed to checkout</Link>
+                </div>}
                     </div>
                 </div>
-                <div className='checkout-container'>
-                    <p>Subtotal</p>
-                    <Link className='checkout-btn bigger' to='/'>Proceed to checkout</Link>
-                 </div>
             </div>
         )
     }

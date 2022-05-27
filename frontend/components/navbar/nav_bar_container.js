@@ -5,8 +5,8 @@ import { updateSearch } from '../../actions/products_action'
 
 
 const mSTP = state => ({
-    currentUser: state.session.currentUser
-
+    currentUser: state.session.currentUser,
+    cartItems: state.cartItems
 })
 
 const mDTP = dispatch => ({

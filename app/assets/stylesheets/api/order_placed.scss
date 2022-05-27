@@ -1,4 +1,26 @@
-.orderplaced {
-    color:rgb(6,125,98)
+
+.orderplaced-container {
+    h1 {
+        font-size: 26px;
+        color:rgb(6,125,98);
+        padding:20px;
+        margin: 20px;
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 20px;
+        margin: 30px;
+
+    }
+
+    svg path {
+        width: 200px;
+    }
 }
+
+.thanks {
+    margin-left: 20px;
+}
+
+
 

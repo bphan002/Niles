@@ -1,3 +1,8 @@
+.one-item-container {
+    display:flex;
+    align-items: center;
+}
+
 .entire-page {
     background-color: rgb(234,237,237);
     height: 2000px;
@@ -10,12 +15,20 @@
     background-color: rgb(255,216,20);
     border-radius: 9px;
     border-color: rgb(255,216,20);
-    margin-bottom: 15px;
+    margin-bottom: 45px;
     margin-top: 20px;
     padding: 6px 40px;
-    font-size: 13px;
-    
-    
+    font-size: 13px;    
 }
 
+.subtotal {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    font-size: 20px;
+}
 
+.total-cost {
+    font-weight: bold;
+    font-size: 20px;
+}

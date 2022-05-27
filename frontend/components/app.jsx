@@ -14,6 +14,7 @@ import Home from './home/home'
 import LeaveReviewFormContainer from './reviews/leave_review_form_container'
 import EditReviewFormContainer from './reviews/edit_review_form_container'
 import TotalCartContainer from './cartItems/total_cart_container'
+import OrderPlaced from './cartItems/order_placed'
 
 export default () => (
     <div className='page-container'>   
@@ -28,6 +29,7 @@ export default () => (
             <Route exact path="/reviews/:reviewId/edit" component={EditReviewFormContainer} />
             <Route exact path='/products' component={ProductIndexContainer} />
             <Route exact path='/products/category/' component={ProductCategoryIndexContainer} />
+            <Route exact path='/products/checkout/' component={OrderPlaced} />
             <Route exact path='/products/:productId' component={ProductShowContainer} />
             <Route exact path='/products/category/:category' component={ProductCategoryIndexContainer} /> 
             <Route exact path='/' component={Home} />

@@ -9,8 +9,10 @@ class Api::CartItemsController < ApplicationController
 
 
     def create
-        # @user = current_user
-        # @cart_item = current_user.cart_items.create(cart_items_params)
+        # @cart_item = CartItem.find_by(product_id: params[:product_id])
+        # if @cart_item.nil?
+        #     render :show
+        # else
         @cart_item = CartItem.create(cart_items_params)
         if @cart_item.save
             render :show

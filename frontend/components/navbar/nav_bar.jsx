@@ -19,10 +19,16 @@ const categories = {
     "Sports": 'sports',
 }
 
-export default ({ currentUser, logoutUser,updateSearch }) => {
+
+export default ({ currentUser, cartItems,logoutUser,updateSearch }) => {
+    let cartArray = Object.values(cartItems)
+    let quantity = cartArray.reduce((sum, item) => sum + item.quantity,0)
+    
     const display = currentUser ? (
         <div className='logged-in'>
+           
             <div className='greeting'>
+            <p id='cartamt'>{quantity}</p>
                 <p>Hello, {currentUser.name}</p>
                 <p className='account'>Account & Lists<IoMdArrowDropdown className='arrow-down'/></p>
             </div>
