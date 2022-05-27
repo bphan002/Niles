@@ -11,12 +11,9 @@ class TotalCart extends React.Component {
     render() {
         let cartArray = Object.values(this.props.cartItems)
 
-        //have an array of objects
-        // console.log('quantity', cartArray.reduce(cart => cart.quantity) )
-        
         let quantity = cartArray.reduce((sum, item) => sum + item.quantity,0)
         let totalCost = cartArray.reduce((sum, item) => sum + ((item.quantity)*(item.price)),0)
-        console.log(totalCost)
+    
         return (
             <div className='entire-page'>
                 <div className='shopping-cart-container'>
