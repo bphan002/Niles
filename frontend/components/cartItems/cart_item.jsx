@@ -5,7 +5,9 @@ class CartItem extends React.Component {
         super(props)
     }
 
-    render() {        
+    render() {  
+        
+        console.log(this.props.item)
         return (
             <div className='one-item-container'>
                 <div className='one-image-container'>

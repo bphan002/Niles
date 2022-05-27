@@ -40,7 +40,6 @@ class ReviewForm extends React.Component {
                 <p className='username'>  <span><img src={window.avatar_image} alt=""/>  </span>{this.props.fullName}</p>
                         <h1>{this.props.userId}</h1>
                         <h1>{this.props.productId}</h1>
-                        {/* <h1>{this.props.reviews}</h1> */}
                 <div className='review-page'>
                     <div className='review-container'>
                         <h1>{this.props.formType}</h1>
