@@ -21,7 +21,7 @@ class DisplayRating extends React.Component {
                             value={ratingValue}
                             />
                         <IoIosStar 
-                            className='displaystar'
+                            className={this.props.displayType}
                             color={ratingValue <= this.props.rating ? "rgb(250,156,27)" : "lightgray"}     
                             />
                     </label>

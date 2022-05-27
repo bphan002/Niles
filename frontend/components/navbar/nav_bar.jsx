@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ProductBar from './product_bar_item'
+import { IoMdArrowDropdown } from "react-icons/io";
+
 const categories = {
     "All": '',
     "Toys & Games": 'toys',
@@ -24,7 +26,7 @@ export default ({ currentUser, logoutUser,updateSearch }) => {
         <div className='logged-in'>
             <div className='greeting'>
                 <p>Hello, {currentUser.name}</p>
-                <p className='account'>Account & Lists</p>
+                <p className='account'>Account & Lists<IoMdArrowDropdown className='arrow-down'/></p>
             </div>
             <Link to={'/checkout'}><img className='cart-image' src={window.cart_image} alt="" /></Link>
             <button className='btn logout' onClick={logoutUser}>Log Out</button>

@@ -1,13 +1,14 @@
 .index-container {
     display:flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1%;
 }
 
 .product-container {
     border-radius: 3px;
-    padding: 3px 3px;
-    margin-bottom: 2px;
+    padding: 10px 210x;
+    margin-top: 5px;
     display:flex;
     align-items: center;
     flex-direction: column;
@@ -29,6 +30,10 @@
     font-size: 14px;
     // border: 3px solid green;
     line-height: 1.1;
+}
+
+.prod-title:hover {
+    color:rgb(255,170,1)
 }
 
 .image-container {

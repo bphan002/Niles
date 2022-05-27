@@ -10,13 +10,46 @@
 
     User.destroy_all
     Product.destroy_all
-    # Review.destroy_all
+    Review.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('users')
     ActiveRecord::Base.connection.reset_pk_sequence!('products')
-    # ActiveRecord::Base.connection.reset_pk_sequence!('reviews')
+    ActiveRecord::Base.connection.reset_pk_sequence!('reviews')
     
     demoUser = User.create(
         name:'demo',email: 'demouser@gmail.com', password:'123456')
+
+    demoUser2 = User.create(
+        name:'FakeReviewer',email: 'faker@gmail.com', password:'12345632e32'
+    )
+
+    demoUser3 = User.create(
+        name:'FakeLiker',email: 'fakeliker@gmail.com', password:'12332s32'
+    )
+
+    demoUser4 = User.create(
+        name:'ReviewsForFreeItems',email: 'freeakeliker@gmail.com', password:'12332s32'
+    )
+
+    demoUser5 = User.create(
+        name:'Sora',email: 'frdfasder@gmail.com', password:'1s32ss32'
+    )
+
+    demoUser6 = User.create(
+        name:'Musashi Miyamoto',email: 'fadfdfder@gmail.com', password:'zz32s32'
+    )
+
+
+    demoUser7 = User.create(
+        name:'The Real Billy Phan',email: 'bphan@gmail.com', password:'1sx32s32'
+    )
+
+
+
+
+
+    
+
+    
     
     require 'open-uri'
     
@@ -2384,9 +2417,551 @@
     automotive12Image = open('https://niles-product-seeds.s3.us-west-1.amazonaws.com/products/automotive/automotive12.jpg')
     automotive12.picture.attach( io: automotive12Image, filename:'automotive12.jpg')
     
-    review1 = Review.create(user_id: 1, product_id: 1, rating: 1, comment: 'ths is a good product', header: 'solid product')
-    review2 = Review.create(user_id: 1, product_id: 2, rating: 2, comment: 'ths is the worst product', header: 'worst product') 
-    review3 = Review.create(user_id: 1, product_id: 3, rating: 3, comment: 'ths is the worst product', header: 'worst product') 
-    review4 = Review.create(user_id: 1, product_id: 4, rating: 4, comment: 'ths is the worst product', header: 'worst product') 
-
+    review1 = Review.create(
+        user_id: 1,
+        product_id: 1,
+        rating: 5,
+        comment: 'ths is a good product',
+        header: 'solid product'
+    )
+    review2 = Review.create(
+        user_id: 2,
+        product_id: 2,
+        rating: 2,
+        comment: 'Such shot, many gradient, so magnificent',
+        header: 'do not purchase'
+    ) 
+    review3 = Review.create(
+        user_id: 3,
+        product_id: 3,
+        rating: 3,
+        comment: 'This should be nominated for service of the year. You wont regret it.',
+        header: 'average at best'
+    ) 
+    review4 = Review.create(
+        user_id: 4,
+        product_id: 4,
+        rating: 4,
+        comment: 'Its really wonderful. This is the most valuable business resource we have EVER purchased. This is awesome!',
+        header: 'pretty good product'
+    ) 
+    review5 = Review.create(
+        user_id: 5,
+        product_id: 4,
+        rating: 5,
+        comment: 'It\'s incredible. I would like to personally thank you for your outstanding product. This is exactly what our business has been lacking.',
+        header: 'solid product woot!'
+    ) 
+    review6 = Review.create(
+        user_id: 6,
+        product_id: 4,
+        rating: 1,
+        comment: 'never again will i purchase this',
+        header: 'worst product'
+    ) 
+    review7 = Review.create(
+        user_id: 7,
+        product_id: 5,
+        rating: 2,
+        comment: 'if you are a budget this prouct will last a week before it breaks',
+        header: 'not my cup of tea product'
+    ) 
+    review8 = Review.create(
+        user_id: 1,
+        product_id: 6,
+        rating: 3,
+        comment: 'this was average at best.  would not repurchase this product',
+        header: 'mediocore product'
+    ) 
+    review9 = Review.create(
+        user_id: 2,
+        product_id: 7,
+        rating: 4,
+        comment: 'not the best but the price point was too good to pass up',
+        header: 'great product'
+    ) 
+    review10 = Review.create(
+        user_id: 3,
+        product_id: 8,
+        rating: 5,
+        comment: 'A++++++++++',
+        header: 'great product'
+    ) 
+    review11 = Review.create(
+        user_id: 4,
+        product_id: 1,
+        rating: 1,
+        comment: 'do not buy fake review',
+        header: 'scam product'
+    ) 
+    review12 = Review.create(
+        user_id: 5,
+        product_id: 2,
+        rating: 2,
+        comment: 'broke after a month of using it',
+        header: 'not the best product'
+    ) 
+    review13 = Review.create(
+        user_id: 6,
+        product_id: 3,
+        rating: 3,
+        comment: 'C+++++++++++ at best',
+        header: 'average product'
+    ) 
+    review14 = Review.create(
+        user_id: 7,
+        product_id: 4,
+        rating: 4,
+        comment: 'does the job and no complaints',
+        header: 'not bad for the price point for this product'
+    ) 
+    review15 = Review.create(
+        user_id: 1,
+        product_id: 5,
+        rating: 5,
+        comment: 'best product on the market',
+        header: 'A+ product'
+    ) 
+    review16 = Review.create(
+        user_id: 2,
+        product_id: 6,
+        rating: 1,
+        comment: 'buyers beware',
+        header: 'lowsy'
+    ) 
+    review17 = Review.create(
+        user_id: 3,
+        product_id: 7,
+        rating: 2,
+        comment: 'i bought this because of the price point and now i regret it',
+        header: 'stay away'
+    ) 
+    review18 = Review.create(
+        user_id: 4,
+        product_id: 8,
+        rating: 3,
+        comment: 'C product.  I would probably not rebuy',
+        header: 'average'
+    ) 
+    review19 = Review.create(
+        user_id: 5,
+        product_id: 9,
+        rating: 4,
+        comment: 'B+ product.  It was a bit small',
+        header: 'great product'
+    ) 
+    review20 = Review.create(
+        user_id: 6,
+        product_id: 10,
+        rating: 5,
+        comment: 'OMG THIS WAS D BEST PROJECT IN DA WHOLE WORLD',
+        header: 'excellent product'
+    ) 
+    review21 = Review.create(
+        user_id: 7,
+        product_id: 11,
+        rating: 1,
+        comment: 'SAVE YOUR WALLET AND DO  NOT BUY THIS',
+        header: 'worst product'
+    ) 
+    review22 = Review.create(
+        user_id: 1,
+        product_id: 12,
+        rating: 1,
+        comment: 'HORRIBLE HORRIBLE HORRIBLE PRODUCT',
+        header: 'THE ABSOLUTE WORST product'
+    ) 
+    review23 = Review.create(
+        user_id: 2,
+        product_id: 13,
+        rating: 5,
+        comment: 'NOTHING ELSE BETTER ON THE MARKET TODAY. A+++++',
+        header: 'would buy this product again and again'
+    ) 
+    review24 = Review.create(
+        user_id: 3,
+        product_id: 14,
+        rating: 2,
+        comment: 'didnt think it would be this bad but it was okay at first',
+        header: 'didnt work after a while'
+    ) 
+    review25 = Review.create(
+        user_id: 4,
+        product_id: 15,
+        rating: 3,
+        comment: 'meh it was so-so',
+        header: 'meh product'
+    ) 
+    review26 = Review.create(
+        user_id: 5,
+        product_id: 16,
+        rating: 5,
+        comment: 'would repurchase this',
+        header: 'outstanding product'
+    ) 
+    review27 = Review.create(
+        user_id: 6,
+        product_id: 17,
+        rating: 2,
+        comment: 'expected more for the price point',
+        header: 'too expensive for this product'
+    ) 
+    review28 = Review.create(
+        user_id: 7,
+        product_id: 18,
+        rating: 1,
+        comment: 'would not buy again',
+        header: 'worst product'
+    ) 
+    review29 = Review.create(
+        user_id: 1,
+        product_id: 19,
+        rating: 1,
+        comment: 'this product stank',
+        header: 'worst product'
+    ) 
+    review30 = Review.create(
+        user_id: 2,
+        product_id: 20,
+        rating: 3,
+        comment: 'so-so',
+        header: 'so-so'
+    ) 
+    review31 = Review.create(
+        user_id: 3,
+        product_id: 21,
+        rating: 1,
+        comment: 'buyers beware',
+        header: 'seller wont refund'
+    ) 
+    review32 = Review.create(
+        user_id: 4,
+        product_id: 22,
+        rating: 2,
+        comment: 'Niles sent me the wrong product',
+        header: 'wrong product received'
+    ) 
+    review33 = Review.create(
+        user_id: 5,
+        product_id: 23,
+        rating: 4,
+        comment: 'only complaint waas the price point',
+        header: 'pretty good product'
+    ) 
+    review34 = Review.create(
+        user_id: 6,
+        product_id: 24,
+        rating: 5,
+        comment: 'this product did the job and it was cheap',
+        header: 'MAGNIFICENT product'
+    ) 
+    review35 = Review.create(
+        user_id: 7,
+        product_id: 25,
+        rating: 2,
+        comment: 'it was too expensive for what it did',
+        header: 'did not like this product too much'
+    ) 
+    review36 = Review.create(
+        user_id: 1,
+        product_id: 26,
+        rating: 3,
+        comment: 'wasnt good or wasnt bad',
+        header: 'not sure what to feel'
+    ) 
+    review37 = Review.create(
+        user_id: 2,
+        product_id: 27,
+        rating: 4,
+        comment: 'hope to get more of this but the price was a bit high',
+        header: 'pretty good product'
+    ) 
+    review38 = Review.create(
+        user_id: 3,
+        product_id: 28,
+        rating: 4,
+        comment: 'it is definitely good for the price but others are better',
+        header: 'would buy this again but others products are slightly better'
+    ) 
+    review39 = Review.create(
+        user_id: 4,
+        product_id: 29,
+        rating: 4,
+        comment: 'muy excellenete',
+        header: 'excellente product'
+    ) 
+    review40 = Review.create(
+        user_id: 5,
+        product_id: 30,
+        rating: 5,
+        comment: 'have not found anything else that is better than this',
+        header: 'can i say best product?'
+    ) 
+    review41 = Review.create(
+        user_id: 6,
+        product_id: 31,
+        rating: 4,
+        comment: 'pretty good product',
+        header: 'not bad at all'
+    ) 
+    review42 = Review.create(
+        user_id: 7,
+        product_id: 32,
+        rating: 2,
+        comment: 'pretty bad for what it does',
+        header: 'bottom of the barrel product'
+    ) 
+    review43 = Review.create(
+        user_id: 1,
+        product_id: 33,
+        rating: 4,
+        comment: 'only complaint was it was a little pricey',
+        header: 'B+ product'
+    ) 
+    review44 = Review.create(
+        user_id: 2,
+        product_id: 34,
+        rating: 4,
+        comment: 'didnt think it was worth the price',
+        header: 'B- product'
+    ) 
+    review45 = Review.create(
+        user_id: 3,
+        product_id: 35,
+        rating: 3,
+        comment: 'average at best',
+        header: 'average product'
+    ) 
+    review46 = Review.create(
+        user_id: 4,
+        product_id: 36,
+        rating: 2,
+        comment: 'it broke after a couple of use',
+        header: 'this shouldnt be sold'
+    ) 
+    review47 = Review.create(
+        user_id: 5,
+        product_id: 37,
+        rating: 1,
+        comment: 'THE WORST PRODUCT',
+        header: 'DO NOT BUY'
+    ) 
+    review48 = Review.create(
+        user_id: 6,
+        product_id: 38,
+        rating: 4,
+        comment: 'solid product and solid price point',
+        header: 'B+ product'
+    ) 
+    review49 = Review.create(
+        user_id: 7,
+        product_id: 39,
+        rating: 4,
+        comment: 'great product at the right price point',
+        header: 'pretty good'
+    ) 
+    review50 = Review.create(
+        user_id: 1,
+        product_id: 40,
+        rating: 4,
+        comment: 'This was a greaet product I would deinitely rebuy',
+        header: 'not a bad product'
+    ) 
+    review51 = Review.create(
+        user_id: 2,
+        product_id: 41,
+        rating: 4,
+        comment: 'great product and would definitely rebuy',
+        header: 'would definitely rebuy'
+    ) 
+    review52 = Review.create(
+        user_id: 3,
+        product_id: 42,
+        rating: 5,
+        comment: 'pretty solid product no complaints about it',
+        header: 'the best product I have ever used.  Highly recommeneded'
+    ) 
+    review53 = Review.create(
+        user_id: 4,
+        product_id: 43,
+        rating: 4,
+        comment: 'the price was great and cant complain much about this at all',
+        header: 'didnt think it would work this well'
+    ) 
+    review54 = Review.create(
+        user_id: 5,
+        product_id: 44,
+        rating: 1,
+        comment: 'i threw it in the trash immediately',
+        header: 'worsttttttttttttt product'
+    ) 
+    review55 = Review.create(
+        user_id: 6,
+        product_id: 45,
+        rating: 4,
+        comment: 'was skeptical but it was a good product',
+        header: 'worked pretty well'
+    ) 
+    review56 = Review.create(
+        user_id: 7,
+        product_id: 46,
+        rating: 3,
+        comment: 'average',
+        header: 'average product'
+    ) 
+    review57 = Review.create(
+        user_id: 1,
+        product_id: 47,
+        rating: 4,
+        comment: 'great nothing much else to say',
+        header: 'great product'
+    ) 
+    review58 = Review.create(
+        user_id: 2,
+        product_id: 48,
+        rating: 5,
+        comment: 'they are raving about this product',
+        header: 'my whole family loved this product'
+    ) 
+    review59 = Review.create(
+        user_id: 3,
+        product_id: 49,
+        rating: 4,
+        comment: 'it did a great job and would gift it',
+        header: 'not much to complain about'
+    ) 
+    review60 = Review.create(
+        user_id: 4,
+        product_id: 50,
+        rating: 5,
+        comment: 'I would give it a 10 star if I could',
+        header: 'A+++++++'
+    ) 
+    review61 = Review.create(
+        user_id: 5,
+        product_id: 51,
+        rating: 4,
+        comment: 'Yep it worked well',
+        header: 'worked extremely well'
+    ) 
+    review62 = Review.create(
+        user_id: 6,
+        product_id: 52,
+        rating: 2,
+        comment: 'just didnt like it',
+        header: 'not my cup of tea'
+    ) 
+    review63= Review.create(
+        user_id: 7,
+        product_id: 53,
+        rating: 1,
+        comment: 'threw it in the garbage after a day',
+        header: 'worst product EVER'
+    ) 
+    review64 = Review.create(
+        user_id: 1,
+        product_id: 54,
+        rating: 3,
+        comment: 'meh',
+        header: 'meh'
+    ) 
+    review65 = Review.create(
+        user_id: 2,
+        product_id: 55,
+        rating: 4,
+        comment: 'it was a bit small but worked well',
+        header: 'worked out well'
+    ) 
+    review66 = Review.create(
+        user_id: 3,
+        product_id: 56,
+        rating: 4,
+        comment: 'did its job',
+        header: 'great!!!'
+    ) 
+    review67 = Review.create(
+        user_id: 4,
+        product_id: 57,
+        rating: 3,
+        comment: 'average',
+        header: 'average product'
+    ) 
+    review68 = Review.create(
+        user_id: 5,
+        product_id: 58,
+        rating: 4,
+        comment: 'paid customer review',
+        header: 'great product'
+    ) 
+    review69 = Review.create(
+        user_id: 6,
+        product_id: 59,
+        rating: 2,
+        comment: 'lets hope this isnt on the market for long',
+        header: 'was too expensive'
+    ) 
+    review70 = Review.create(
+        user_id: 7,
+        product_id: 60,
+        rating: 1,
+        comment: 'broke after an hour',
+        header: 'scam product'
+    ) 
+    review71 = Review.create(
+        user_id: 1,
+        product_id: 61,
+        rating: 1,
+        comment: 'didnt like it',
+        header: 'worst product'
+    ) 
+    review72 = Review.create(
+        user_id: 2,
+        product_id: 62,
+        rating: 1,
+        comment: 'ugh!!! I paid money for this and it broke!!!!!',
+        header: 'worst product'
+    ) 
+    review73 = Review.create(
+        user_id: 3,
+        product_id: 63,
+        rating: 2,
+        comment: 'didnt work out too well',
+        header: 'not worth the money'
+    ) 
+    review74 = Review.create(
+        user_id: 4,
+        product_id: 64,
+        rating: 3,
+        comment: 'average product and average price',
+        header: 'average product'
+    ) 
+    review75 = Review.create(
+        user_id: 5,
+        product_id: 65,
+        rating: 4,
+        comment: 'yippeeeeee great product',
+        header: 'great great great product'
+    ) 
+    review76 = Review.create(
+        user_id: 6,
+        product_id: 66,
+        rating: 4,
+        comment: 'did its job would get it again',
+        header: 'solid product'
+    ) 
+    review77 = Review.create(
+        user_id: 7,
+        product_id: 67,
+        rating: 5,
+        comment: 'was a very well made product and loved it',
+        header: 'Would give it 10 stars'
+    ) 
+    review78 = Review.create(
+        user_id: 1,
+        product_id: 68,
+        rating: 2,
+        comment: 'do not buy. The product did not work well',
+        header: 'confused.....'
+    ) 
+    
 

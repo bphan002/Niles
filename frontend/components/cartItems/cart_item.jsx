@@ -34,7 +34,7 @@ class CartItem extends React.Component {
                     <p>${this.props.item.price}</p>
                     <div>
                         <p>Quantity: {this.props.item.quantity} </p>
-                        <button onClick={()=>this.props.deleteCartItem(this.props.item)}>Delete</button>
+                        <button className='checkout-btn' onClick={()=>this.props.deleteCartItem(this.props.item)}>Delete</button>
                     </div>
                 </div>
             </div>

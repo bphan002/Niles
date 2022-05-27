@@ -13,7 +13,8 @@ const toArray = vals => {
 
 const mSTP = state => { 
     return {
-        products: toArray(state.entities.products)
+        products: toArray(state.entities.products),
+        reviews: state.entities.reviews
     }
 }
 

@@ -168,20 +168,31 @@ input[type=placehoder] {
 .logged-in {
     display:flex;
     p {
-        width: 120px;
-        size: 12px; 
+        width: 130px;
+        size: 10px; 
         color: white;
     }
 }
 
 .greeting {
+    width: 160px;
     display:flex;
     flex-direction: column;
+    border: 1px solid transparent;
+    align-items: center;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.greeting:hover {
+    display:flex;
+    flex-direction: column;
+    border: 1px solid white;
 }
 
 .account {
-    width: 180px;
-    size: 16px; 
+    width: 50px;
+    font-size: 15px; 
     font-weight: bold;
     color: white;
 }

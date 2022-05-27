@@ -5,7 +5,6 @@ import Rating from './star'
 class ReviewForm extends React.Component {
     constructor(props) {
         super(props)
-        console.log('leave_review_form',this.props)
         this.state = {
             product_id: this.props.review.product_id,
             rating: this.props.review.rating,
@@ -40,11 +39,10 @@ class ReviewForm extends React.Component {
 
 
     render() {
-        console.log(this.props.productId)
         return (
 
             <>
-                <p className='username'><span><img src={window.avatar_image} alt=""/></span>   {this.props.fullName}</p>
+                <p className='username'>  <span><img src={window.avatar_image} alt=""/>  </span>{this.props.fullName}</p>
                         <h1>{this.props.userId}</h1>
                         <h1>{this.props.productId}</h1>
                         {/* <h1>{this.props.reviews}</h1> */}

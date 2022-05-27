@@ -22,7 +22,9 @@ export default () => (
     //i need to add the other routes into this file
     //adding to cart is a protected route
     <div className='page-container'>   
+
         <NavBarContainer />
+ 
         <Switch>
             {/* <ProtectedRoute path='/signup'  component={SignUpContainer} /> */}
             <AuthRoute exact path='/login' component={LogInContainer}  />

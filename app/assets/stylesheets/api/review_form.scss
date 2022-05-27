@@ -9,20 +9,28 @@
 }
 
 .username {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 200px;
     background-color: rgb(221,250,255);
     padding: 12px;
+    padding-right: 840px;
     font-size: 16px;
-
+    padding-left: 60px;
     img {
         width: 30px;
+        margin-right: 10px;
     }
    
 }
 .review-container {
+    
     width: 900px;
     height: 900px;
     display: flex;
     flex-direction: column;
+    padding-left: 20px;
 
     img {
         width: 300px;

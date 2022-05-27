@@ -13,28 +13,65 @@ class ProductShow extends React.Component {
        console.log('component show product didmount')
         this.props.requestProduct(this.props.match.params.productId)
     }
-
+    
     handleRemove(review) {
         this.props.deleteReview(review.id)
     }
-
+    
+    
     render() {
         console.log('available props',this.props)
+        
+        const d = new Date()
 
-        // const decimal = this.props.product.price.indexOf(".")
+        const monthArr= [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ]
+
+        const weekDay= [
+            'Sunday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+        ]
+        const day = weekDay[d.getDay()]
+        const dayNum = d.getDate()
+        const month = monthArr[d.getMonth()]
+        const year = d.getFullYear()
         const isLoaded = this.props.product
         if (isLoaded) {       
-            console.log('product-show',this.props.product) 
-            
+            // console.log('product-show',this.props.product) 
+            // console.log(year)
+            const reviewArray= Object.values(this.props.reviews)
+            const totalStars = Object.values(this.props.reviews).reduce((acc,review) => acc + review.rating,0)
+            const avgRating=Math.floor(totalStars/reviewArray.length)
+            // const average = Math.floor(total/this.props.reviews.length)
+            // console.log('average',average)
+            console.log('average',avgRating)
             return (
-                
                 <>
+                   
                     <div className='product-show-container'>
                         <div className='show-image-container'>
                             <img className='show-image' src={this.props.product.photoUrl} alt=""/>
                         </div>
                         <div className='product-info'>
                                 <h1 className='show-title'>{this.props.product.title}</h1>
+                                <span><DisplayRating displayType='big-display-star' rating={avgRating}/></span>
                                 <p className='show-price'><span className='invisible'>$</span>{this.props.product.price.toFixed(2)}</p>
 
                                 <p>About this item</p>
@@ -65,9 +102,13 @@ class ProductShow extends React.Component {
                             <h2>Top reviews from the United States</h2>
                             {Object.values(this.props.reviews??{}).map((review,idx) =>  
                             {
-                                 console.log('review',review.rating)
-                                 return <div key={idx}> {/* <h1>{review.user.name}</h1> */}
-                                    <h3 className='review-headline'><DisplayRating rating={review.rating} header={review.header}/> </h3>
+                                 return <div className='avatar-container' key={idx}>
+                                     <div className='avatar-user'>
+                                        <img className='review-logo' src={window.avatar_image} alt=""/>
+                                        <p>{this.props.currentUser.name}</p>
+                                     </div>
+                                    <h3 className='review-headline'><DisplayRating displayType='displaystar' rating={review.rating} header={review.header}/> </h3>
+                                    <p className='date'>Reviewed in the United States on {month} {dayNum}, {year}</p>
                                     <p>{review.comment}</p>
                                     <button onClick={()=>this.handleRemove(review)} className='review-btn btn'>Delete Review</button>
                                     <Link className='edit-btn' to={`/reviews/${review.id}/edit`}>Edit Button</Link>

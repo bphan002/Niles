@@ -24,6 +24,12 @@
     font-size: 1em;
 }
 
+.big-display-star {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+
 .review-headline {
     width: 300px;
 }
@@ -51,10 +57,14 @@
     margin-top: 5px;
     background-color: rgb(255,255,255);
     border: rgb(214,217,217) 2px solid;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     padding: 5px 35px;
 
+}
+
+.reviewbtn:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05) 0 0);
 }
 
 
