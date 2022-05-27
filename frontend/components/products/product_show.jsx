@@ -19,7 +19,6 @@ class ProductShow extends React.Component {
     
     
     render() {
-  
         const d = new Date()
 
         const monthArr= [
@@ -103,8 +102,16 @@ class ProductShow extends React.Component {
                                     <h3 className='review-headline'><DisplayRating displayType='displaystar' rating={review.rating} header={review.header}/> </h3>
                                     <p className='date'>Reviewed in the United States on {month} {dayNum}, {year}</p>
                                     <p>{review.comment}</p>
+                                    <div>
+                                        {review.user_id === this.props.currentUser.id ?
+                                    <div>
                                     <button onClick={()=>this.handleRemove(review)} className='review-btn btn'>Delete Review</button>
                                     <Link className='edit-btn' to={`/reviews/${review.id}/edit`}>Edit Button</Link>
+                                    </div>
+                                     : null
+                                    }
+                                    </div>
+                                    
                                 </div>
         })}
                         </div>
