@@ -24,18 +24,20 @@
 }
 
 .one-item-info {
-    margin-top: 20px;
+    margin-top: 170px;
     display:flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .one-image-container {
     margin-left: 20px;
     padding-left: 20px;
-    padding-top: 20px;
+    padding-top: 10px;
     background-color: white;;
     display:flex;
     justify-content: center;
+    align-items: center;
     width: 250px;
     height: 250px;
     padding: 10px;
