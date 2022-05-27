@@ -22,14 +22,38 @@ class ProductIndexItem extends React.Component {
     
     render() {
         const {product} = this.props
-        // let money = this.props.product.price
-        // let result = money.indexOf(".")
+        const d = new Date()
 
-        // const reviewArray= Object.values(this.props.reviews)
-        // const totalStars = Object.values(this.props.reviews).reduce((acc,review) => acc + review.rating,0)
-        // const avgRating=Math.floor(totalStars/reviewArray.length)
-        // const average = Math.floor(total/this.props.reviews.length)
-        // console.log('average',average)
+        const monthArr= [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ]
+
+        const weekDay= [
+            'Sun',
+            'Mon',
+            'Tues',
+            'Wed',
+            'Thurs',
+            'Fri',
+            'Sat',
+        ]
+        const day = weekDay[d.getDay()+2]
+        const dayNum = d.getDate()
+        const month = monthArr[d.getMonth()]
+        const year = d.getFullYear()
+
+        console.log('check this!!!!',this.props.product.stars)
         return (
    
             <div className='product-container'>
@@ -38,8 +62,17 @@ class ProductIndexItem extends React.Component {
                 </div>
                 <div>
                     <Link to={`/products/${product.id}`}><h1 className='prod-title'>{product.title.length > 102 ? product.title + '...' : product.title}</h1></Link>
-                    {/* <DisplayRating displayType='displaystar' rating={avgRating} /> */}
+                    <DisplayRating 
+                        displayType='displaystar' 
+                        rating={this.props.product.stars} 
+                        />
                     <Link to={`/products/${product.id}`}><p className='price'><span className='invisible'>$</span>{product.price.toFixed(2)}</p></Link>
+                    <span className='prime-free'>
+                        <img className='prime-index-logo' src={window.amazonprime_image} alt="" />
+                         <p className='free-index'> FREE Delivery</p>
+                         <p className='delivery-index'> {day}, {month} {dayNum}</p>
+                    </span>
+
                 </div>
             </div>
         )

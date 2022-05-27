@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import ProductIndex from './product_index'
 import { requestProducts } from '../../actions/products_action'
+import { requestReviews } from '../../actions/reviews_action'
 
 
 const toArray = vals => {
@@ -19,7 +20,8 @@ const mSTP = state => {
 }
 
 const mDTP = dispatch => ({
-    requestProducts: () => dispatch(requestProducts())
+    requestProducts: () => dispatch(requestProducts()),
+    requestsReviews: () => dispatch(requestReviews())
 })
 
 export default connect(mSTP,mDTP)(ProductIndex)

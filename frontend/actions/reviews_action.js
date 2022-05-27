@@ -11,10 +11,7 @@ const createReview = review => ({
     review
 })
 
-const receiveReviews = reviews => ({
-    type: RECEIVE_REVIEWS,
-    reviews
-})
+
 
 const receiveReview = review => ({
     type: RECEIVE_REVIEW,
@@ -31,6 +28,11 @@ const removeReview = reviewId => ({
     type: REMOVE_REVIEW,
     reviewId
 })
+
+export const requestReviews = data => dispatch => (
+    reviewUtils.getReviews(data)
+        .then(reviews => dispatch(receiveReviews(reviews)))
+)
 
 
 

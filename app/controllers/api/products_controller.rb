@@ -1,6 +1,6 @@
 class Api::ProductsController < ApplicationController
     def index
-        @products = Product.where(params.permit(:category).as_json)
+        @products = Product.where(params.permit(:category).as_json).includes(:reviews)
         render :index
     end
 

@@ -9,6 +9,7 @@ class ProductIndex extends React.Component {
 
     componentDidMount() {
         this.props.requestProducts()
+        console.log('check props',this.props)
     }
 
     searchMatches(query, product) {
@@ -20,7 +21,6 @@ class ProductIndex extends React.Component {
 
     render() {
         const {products} = this.props
-        console.log('products_index', products)
         return(
             <div className='index-container'>
                 {products.products.filter((product)=>this.searchMatches(products.query,product))

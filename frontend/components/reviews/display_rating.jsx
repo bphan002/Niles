@@ -7,6 +7,7 @@ class DisplayRating extends React.Component {
         }
     
     render() {
+    
         console.log('rating',this.props.rating)
         return(
             <div className='rating'>
@@ -27,7 +28,9 @@ class DisplayRating extends React.Component {
                     </label>
                     )
                 })}
-                <h3 className='review-header'>{this.props.header}</h3>
+                <div>
+                     <h3 id='review-header'>{this.props.header}</h3>
+                </div>
             </div>
         )
     }

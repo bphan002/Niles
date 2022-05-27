@@ -3,12 +3,16 @@ import {
     CREATE_REVIEW, 
     REMOVE_REVIEW, 
     UPDATE_REVIEW,
-    RECEIVE_REVIEW
+    RECEIVE_REVIEW,
+    RECEIVE_REVIEWS
 } from "../actions/reviews_action";
+
 const reviewReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
     let nextState = Object.assign({}, oldState)
     switch (action.type) {
+        case RECEIVE_REVIEWS:
+            nextState.reviews = action.reviews
         case CREATE_REVIEW:
             nextState[action.review.id] = action.review
             return nextState
