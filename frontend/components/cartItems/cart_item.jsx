@@ -4,16 +4,7 @@ class CartItem extends React.Component {
     constructor(props) {
         super(props)
     }
-
-
-    // addCart () {
-    //     this.props.props.addToCart({
-    //         product_id: this.props.props.product.id,
-    //         user_id: this.props.props.currentUser.id,
-    //         quantity: this.state.productQuantity
-    //     })
-    // }
-
+    
     render() {        
         return (
             <div className='one-item-container'>
