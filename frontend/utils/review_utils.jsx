@@ -26,11 +26,6 @@ export const getReview = reviewId => (
     })
 )
 
-
-
-
-
-
 export const deleteReview = id => (
     $.ajax({
         method: 'DELETE',

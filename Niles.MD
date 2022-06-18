@@ -34,4 +34,15 @@
 
 <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" height="32" /></span>
 
+<p>
+    Nile's, which is the longest river in the world, is a website clone of the company Amazon(www.amazon.com).  Code implmentation used React, Redux, and Ruby on Rails for the backend. In a nutshell, Niles is an e-commerce store where you can view/purchase a variety of products.     
+</p>
 
+<h1>How to use</h1>
+
+Niles requires Ruby on Rails 5.2.8, Rubygems, and npm packages installed on your local machine. You can view Niles [here](https://niles-app-academy.herokuapp.com/#/)
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ bundle install</code></pre></figure>
+
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ npm install</code></pre></figure>

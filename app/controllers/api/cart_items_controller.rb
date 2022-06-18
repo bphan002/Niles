@@ -8,11 +8,18 @@ class Api::CartItemsController < ApplicationController
     end
 
 
+    ## may need a def new
+        #@cartItem  = current_user.cartItems.build
+    #end
+
     def create
         # @cart_item = CartItem.find_by(product_id: params[:product_id])
         # if @cart_item.nil?
         #     render :show
         # else
+        ##i think its giogn to be something like
+        # @cart_item = current_user.cart_items assosiation.build(cart_items_params)
+
         @cart_item = CartItem.create(cart_items_params)
         if @cart_item.save
             render :show
