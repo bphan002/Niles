@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ProductBar from './product_bar_item'
 import { IoMdArrowDropdown } from "react-icons/io"
@@ -22,15 +22,30 @@ const categories = {
 
 
 
-export default ({ currentUser, cartItems,logoutUser,updateSearch }) => {
+export default ({ currentUser, cartItems,logoutUser,updateSearch, requestCartItems }) => {
     let cartArray = Object.values(cartItems)
-    let quantity = cartArray.reduce((sum, item) => sum + item.quantity,0)
-    
+
+    useEffect(() => {
+        console.log(requestCartItems)
+        requestCartItems()
+    },[])
+
+    let quantity = 0
+    let arrayObject =Object.values(cartItems)
+    console.log('array',arrayObject)
+    arrayObject.forEach(object => {
+        quantity += object.quantity
+        //  console.log('itemQuantity',itemQuantity)
+    })
+
+    // console.log(itemQuantity)
+
+    // console.log(itemQuantity)
     const display = currentUser ? (
         <div className='logged-in'>
            
             <div className='greeting'>
-            <p id='cartamt'>{quantity}</p>
+            <p id='cartamt'>{quantity === 0 ? "": quantity}</p>
                 <p>Hello, {currentUser.name}</p>
                 <p className='account'>Account & Lists<IoMdArrowDropdown className='arrow-down'/></p>
             </div>

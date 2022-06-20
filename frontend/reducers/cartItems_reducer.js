@@ -12,7 +12,7 @@ const cartItemsReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_CART_ITEMS:
-            nextState.cartItems = action.cartItems
+            nextState = action.cartItems
             return nextState
         case ADD_CART_ITEM:
             nextState[action.cartItem.id] = action.cartItem

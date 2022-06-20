@@ -16,7 +16,9 @@ import EditReviewFormContainer from './reviews/edit_review_form_container'
 import TotalCartContainer from './cartItems/total_cart_container'
 import OrderPlaced from './cartItems/order_placed'
 
-export default () => (
+export default (props) => 
+console.log(props)
+(
     <div className='page-container'>   
 
         <NavBarContainer />

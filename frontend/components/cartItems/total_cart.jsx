@@ -2,10 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import EmptyCart from './empty_cart'
 import CartItem from './cart_item'
+import { requestCartItems } from '../../actions/cartItems_action'
 
 class TotalCart extends React.Component {
     constructor(props) {
         super(props)
+    }
+
+
+    componentDidMount() {
+        this.props.requestCartItems()
     }
 
     render() {

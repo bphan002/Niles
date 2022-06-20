@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaLock } from "react-icons/fa";
 import { AiOutlineDown } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 
 class CartPanel extends React.Component {
     constructor(props) {
