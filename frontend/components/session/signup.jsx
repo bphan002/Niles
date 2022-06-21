@@ -88,10 +88,9 @@ class Signup extends React.Component {
                     />
 
                     <div className='border-shadow'>
-                        <p>By creating an account, you agree to Nile's <Link to='/' className='text-link'><span>Conditions of Use</span></Link> and <Link to='/' className='text-link'><span>Privacy Notice.</span></Link></p>
+                        <p>By creating an account, you agree to Nile's Conditions of Use and Privacy Notice.</p>
                     </div>
                     <p >Already have an account?<span><Link to='/login' className='text-link'> Sign-In</Link></span></p>
-                    <p className='business' >Buying for work?<Link to='/signup' className='text-link'><span>Create a free business account</span></Link></p>
                 </div>
 
                 

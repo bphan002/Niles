@@ -22,13 +22,12 @@ const categories = {
 
 
 
-export default ({ currentUser, cartItems,logoutUser,updateSearch, requestCartItems }) => {
+export default ({ currentUser, cartItems,logoutUser,updateSearch, requestCartItems, addToCart }) => {
     let cartArray = Object.values(cartItems)
-
+    console
     useEffect(() => {
-        console.log(requestCartItems)
         requestCartItems()
-    },[])
+    },[addToCart])
 
     let quantity = 0
     let arrayObject =Object.values(cartItems)

@@ -1,6 +1,4 @@
 import { connect } from 'react-redux';
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { loginUser } from '../../actions/session_actions';
 import Login from './login';
 import { clearErrors } from '../../actions/session_actions';

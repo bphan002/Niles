@@ -71,10 +71,11 @@ label {
 
 .container-form {
     padding: 25px;
+    margin-top: -20px;
     align-self: center;
     border-radius: 3px;
     width: 300px;
-    height: 500px;
+    height: 400px;
     border: rgb(227,227,227) solid;
 }
 
@@ -133,6 +134,10 @@ input {
     border-bottom: 1px solid rgb(234,234,234);
     padding-bottom: 20px;
     padding-top: 20px;
+    p {
+        line-height: 1.1;
+        margin-bottom: 2px;
+    }
 }
 
 input[type=placehoder] {
@@ -146,7 +151,7 @@ input[type=placehoder] {
 .logo img {
     width: 200px;
     padding-bottom: 0px;
-    align-items: center;
+
 }
 
 .logo {
@@ -197,3 +202,4 @@ input[type=placehoder] {
     margin-bottom: 8px;
 
 }
+
