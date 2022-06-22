@@ -4,28 +4,28 @@ import React from 'react'
 class CartItem extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = {
-        //     productQuantity: this.props.item.quantity,
-        // }
-        // this.addToCartQuantity = this.addToCartQuantity.bind(this)
+        this.state = {
+            productQuantity: this.props.item.quantity,
+        }
+        this.addToCartQuantity = this.addToCartQuantity.bind(this)
     }
 
 
-    // this.props.addToCart({
-    //     product_id: this.props.item.product.id,
-    //     usesr_d: this.props.user_id,
-    //     quantity: 4
-    // })
-    // addToCartQuantity(e) {
-    //     console.log('e value',e.currentTarget.value)
-    //     this.setState({productQuantity: e.currentTarget.value})
+    this.props.addToCart({
+        product_id: this.props.item.product.id,
+        usesr_d: this.props.user_id,
+        quantity: 4
+    })
+    addToCartQuantity(e) {
+        console.log('e value',e.currentTarget.value)
+        this.setState({productQuantity: e.currentTarget.value})
 
-    //     this.props.addToCart({
-    //         product_id: this.props.item.product_id,
-    //         user_id: this.props.user_id,
-    //         quantity: this.state.productQuantity
-    //     })
-    // }
+        this.props.addToCart({
+            product_id: this.props.item.product_id,
+            user_id: this.props.user_id,
+            quantity: this.state.productQuantity
+        })
+    }
 
    
     
