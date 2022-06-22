@@ -80,8 +80,8 @@ class Login extends React.Component {
               <p>By continuing, you agree to Nile's Conditions of Use and Privacy Notice.</p>
               
               <p> Need help?</p>
-              <h2 className='line'><span>New to Amazon?</span></h2>
-              <Link className='account-button' to='/signup'>Create your Amazon Account</Link>
+              <h2 className='line'><span>New to Niles?</span></h2>
+              <Link className='account-button' to='/signup'>Create your Niles Account</Link>
             </div>
             
 

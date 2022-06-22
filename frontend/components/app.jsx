@@ -25,8 +25,8 @@ export default (props) =>
             <AuthRoute exact path='/login' component={LogInContainer}  />
             <AuthRoute exact path='/signup' component={SignUpContainer} />
             <ProtectedRoute exact path='/checkout' component={TotalCartContainer} />
-             <Route exact path='/products/:productId/reviews/new' component={LeaveReviewFormContainer} />
-            <Route exact path="/reviews/:reviewId/edit" component={EditReviewFormContainer} />
+            <ProtectedRoute exact path='/products/:productId/reviews/new' component={LeaveReviewFormContainer} />
+            <ProtectedRoute exact path="/reviews/:reviewId/edit" component={EditReviewFormContainer} />
             <Route exact path='/products' component={ProductIndexContainer} />
             <Route exact path='/products/category/' component={ProductCategoryIndexContainer} />
             <ProtectedRoute exact path='/products/checkout/' component={OrderPlaced} auth={false} />

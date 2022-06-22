@@ -9,17 +9,12 @@ class EditReviewForm extends React.Component {
         super(props)
     }
 
-    componentDidMount() {
-        this.props.getReview(this.props.match.params.reviewId)
-    }
-
     render() {
-
+     
+        console.log('statesssssss',this.state)
         if (!this.props.review) return null;
         return (
-            <ReviewForm
-                {...this.props}
-            />
+            <ReviewForm {...this.props}/>
         )
     }
 }
@@ -28,7 +23,9 @@ const mSTP = (state,ownProps) =>
 {
     return {
         formType: 'Edit Form',
-        review: state.entities.reviews[ownProps.match.params.reviewId]
+        review: state.entities.reviews[ownProps.match.params.reviewId],
+        fullName: state.session.currentUser.name,
+        product: Object.values(state.entities.products.products)[0],
     }  
 }
 

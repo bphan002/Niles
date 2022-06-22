@@ -4,9 +4,11 @@ import { leaveReview } from '../../actions/reviews_action'
 
 
 const mSTP = (state, ownProps) => {
+    Object.values(state.entities.products.products)[0].title
     return {
         formType: "Create Review",
         fullName: state.session.currentUser.name,
+        product: Object.values(state.entities.products.products)[0],
         review : {
             product_id: ownProps.match.params.productId,
             header: '',

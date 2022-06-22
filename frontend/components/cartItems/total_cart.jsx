@@ -13,13 +13,13 @@ class TotalCart extends React.Component {
     componentDidMount() {
         this.props.requestCartItems()
     }
-
     render() {
+        console.log('total cart props',this.props)
         let cartArray = Object.values(this.props.cartItems)
 
         let quantity = cartArray.reduce((sum, item) => sum + item.quantity,0)
         let totalCost = cartArray.reduce((sum, item) => sum + ((item.quantity)*(item.price)),0)
-    
+        console.log('from total cart', this.props)
         return (
             <div className='entire-page'>
                 <div className='shopping-cart-container'>
@@ -28,7 +28,7 @@ class TotalCart extends React.Component {
                         {this.props.cartItems.length === 0 ? <EmptyCart /> : this.props.cartItems.map(
                             item => (
                                 <>
-                                    <CartItem deleteCartItem={this.props.deleteCartItem} props={this.props.products} item={item} />
+                                    <CartItem item={item} />
                                 </>
                             )
                         )}
