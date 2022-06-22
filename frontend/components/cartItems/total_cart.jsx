@@ -28,7 +28,7 @@ class TotalCart extends React.Component {
                         {this.props.cartItems.length === 0 ? <EmptyCart /> : this.props.cartItems.map(
                             item => (
                                 <>
-                                    <CartItem item={item} />
+                                    <CartItem item={item} addToCart={this.props.addToCart} deleteCartItem={this.props.deleteCartItem} />
                                 </>
                             )
                         )}

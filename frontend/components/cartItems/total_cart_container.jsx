@@ -8,9 +8,11 @@ import {
 } from "../../actions/cartItems_action";
 
 
-const mSTP = state => ({
+const mSTP = state =>  {
+    console.log('total_cart_container',state) 
+    return {
     cartItems: Object.values(state.entities.cartItems),
-})
+}}
 
 const mDTP = dispatch => ({
     requestCartItems: () => dispatch(requestCartItems()),
