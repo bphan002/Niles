@@ -163,10 +163,12 @@ input[type=placehoder] {
 .logout {
     width: 100px;
     margin-right: 20px;
+    height: 40px;
 }
 
 .logged-in {
     display:flex;
+    align-items: center;
     p {
         width: 130px;
         size: 10px; 

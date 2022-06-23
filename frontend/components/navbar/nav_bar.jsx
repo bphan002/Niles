@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ProductBar from './product_bar_item'
 import { IoMdArrowDropdown } from "react-icons/io"
 import { BsSearch } from "react-icons/bs"
-BsSearch
+import { GiHamburgerMenu } from "react-icons/gi";
+
+import { proposalPlugins } from '@babel/preset-env/data/shipped-proposals'
+
+
 const categories = {
     "All": '',
     "Toys & Games": 'toys',
@@ -20,26 +24,59 @@ const categories = {
     "Sports": 'sports',
 }
 
+// const hamburger_btn = document.querySelector('.hamburger')
+// const hambuger_menu = document.querySelector('.mobile-nav')
+
+// hamburger_btn.addEventListener('click', ()=> {
+//     hamburger_btn.classList.toggle('is-active')
+//     hambuger_menu.classList.toggle('is-active')
+// })
+
+// import React, { useState } from 'react';
+// import { HamburgerIcon } from 'react-hamburger-icon';
+ 
+// export function Menu() {
+//   const [open, setOpen] = useState(false);
+ 
+//   return <HamburgerIcon open={open} onClick={() => setOpen(!open)} />;
+// }
 
 
-export default ({ currentUser, cartItems,logoutUser,updateSearch, requestCartItems, addToCart }) => {
+export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestCartItems, addToCart }) => {
     let cartArray = Object.values(cartItems)
-    console
+    const [search, setSearch] = useState('')
+
     useEffect(() => {
         requestCartItems()
     },[addToCart])
 
     let quantity = 0
     let arrayObject =Object.values(cartItems)
-    console.log('array',arrayObject)
     arrayObject.forEach(object => {
         quantity += object.quantity
-        //  console.log('itemQuantity',itemQuantity)
     })
 
-    // console.log(itemQuantity)
+    function navSearchSubmit(e) {
+        e.preventDefault()
+        const searchGlass= document.querySelector('.search-glass')
+        // const searchBar = document.getElementById('search-bar')
+        searchGlass.click()
+        // searchBar.value= ''
+        console.log(search)
+    }
 
-    // console.log(itemQuantity)
+    function navSearchClick() {
+        updateSearch(search)
+        // setSearch('')
+    }
+
+
+
+
+
+
+    
+
     const display = currentUser ? (
         <div className='logged-in'>
            
@@ -73,17 +110,29 @@ export default ({ currentUser, cartItems,logoutUser,updateSearch, requestCartIte
     
 
 
-    return (
+return (
         <>
-            <header className='headers'>
+            <nav className='headers'>
                     <Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link>
-                    <label htmlFor="search-bar"></label>
-                    <input onChange={(e)=>updateSearch(e.currentTarget.value)} className='search-bar' type="text" id='search-bar' name='search-bar'>
-                    </input>
-                    <div className='search-glass'><BsSearch size={20} color={'black'}/></div>
+                <form className='nav-search-bar' onSubmit={navSearchSubmit}>
+                    <input onChange={(e)=>setSearch(e.currentTarget.value)} type="text" id='search-bar' name='search-bar'/>
+                   <Link to='/products/category' onClick={navSearchClick} className='search-glass'><BsSearch size={20} color={'black'}/></Link>
+                </form>
                 {display}
-    
-            </header>
+            </nav>
+            <button class='hamburger'>
+                <div class='bar'>
+                    <GiHamburgerMenu/>
+                </div>
+            </button>
+            <nav className='mobile-nav'>
+                <Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link>
+                <form className='nav-search-bar' onSubmit={navSearchSubmit}>
+                    <input onChange={(e)=>setSearch(e.currentTarget.value)} type="text" id='search-bar' name='search-bar'/>
+                    <Link to='/products/category' onClick={navSearchClick} className='search-glass'><BsSearch size={20} color={'black'}/></Link>
+                </form>
+            </nav>
+
             <ul className='category-bar'>
                 {Object.keys(categories).map((key,idx) => (
                     <ProductBar key={idx} category={key} filter={categories[key]} />

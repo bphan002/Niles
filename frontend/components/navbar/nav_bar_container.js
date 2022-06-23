@@ -5,12 +5,15 @@ import { updateSearch } from '../../actions/products_action'
 import { requestCartItems } from '../../actions/cartItems_action'
 import { addCartItem } from '../../utils/cart_items_utils'
 
-const mSTP = state => ({
+const mSTP = (state, ownProps) => {
+    console.log('ownProps',ownProps)
+    return {
     currentUser: state.session.currentUser,
-    cartItems: state.cartItems
-})
+    cartItems: state.cartItems,
+}}
 
 const mDTP = dispatch => ({
+    requestProducts: () => dispatch(requestProducts()),
     requestCartItems: () => dispatch(requestCartItems()),
     addToCart: cartItem => dispatch(addToCart(cartItem)),
     logoutUser: () => dispatch(logoutUser()),

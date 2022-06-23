@@ -1,18 +1,32 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import EmptyCart from './empty_cart'
-import CartItem from './cart_item'
+import CartItemContainer from './cart_item_container'
 import { requestCartItems } from '../../actions/cartItems_action'
 
 class TotalCart extends React.Component {
     constructor(props) {
         super(props)
+        this.emptyCart = this.emptyCart.bind(this)
     }
 
 
     componentDidMount() {
         this.props.requestCartItems()
     }
+
+    emptyCart(e) {
+        console.log(this.props.deleteCartItem)
+
+        let allCartItems = this.props.cartItems
+        console.log('all cart Items',allCartItems)
+        for (let i = 0; i < allCartItems.length; i++) {
+            this.props.deleteCartItem(allCartItems[i])
+        }
+    }
+
+
+
     render() {
         console.log('total cart props',this.props)
         let cartArray = Object.values(this.props.cartItems)
@@ -24,19 +38,28 @@ class TotalCart extends React.Component {
             <div className='entire-page'>
                 <div className='shopping-cart-container'>
                     <div className='title-container'>
-                        <h1 className='shopping-cart-title'>Shopping Cart</h1>
-                        {this.props.cartItems.length === 0 ? <EmptyCart /> : this.props.cartItems.map(
+                        <div className='shopping-cart-header'>
+                            <h1 className='shopping-cart-title'>Shopping Cart</h1>
+                            <span>Price</span>
+                        </div>
+                        {this.props.cartItems.map(
                             item => (
                                 <>
-                                    <CartItem item={item} addToCart={this.props.addToCart} deleteCartItem={this.props.deleteCartItem} />
+                                    <CartItemContainer item={item} />
                                 </>
                             )
                         )}
-                {this.props.cartItems.length <1 ? null : 
-                <div className='checkout-container'>
-                <p className='subtotal'>Subtotal ({quantity}): <span className='total-cost'>${totalCost.toFixed(2)}</span></p>
-                <Link className='checkout-btn bigger' to='/products/checkout/'>Proceed to checkout</Link>
-                </div>}
+                        {this.props.cartItems.length < 1 ? null : 
+                         <div className='checkout-container'>
+                            <p className='subtotal'>Subtotal ({quantity}): <span className='total-cost'>${totalCost.toFixed(2)}</span></p>
+                            <Link 
+                                className='checkout-btn bigger' 
+                                onClick={this.emptyCart} 
+                                to='/products/checkout/'>Proceed to checkout
+                            </Link>
+                        </div>
+                        }
+                             {this.props.cartItems.length === 0 && <EmptyCart /> }
                     </div>
                 </div>
             </div>

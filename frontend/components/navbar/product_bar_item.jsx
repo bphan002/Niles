@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 class ProductBar extends React.Component {
     constructor(props) {
         super(props)
+        
     }
-    
+
     render() {
         const {filter, category} = this.props
         return (
