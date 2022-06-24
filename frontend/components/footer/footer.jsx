@@ -6,12 +6,16 @@ import { ExternalLink } from 'react-external-link'
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='footer'>
             <ul className='footer-container'>
+                <li><Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link></li>
                 <li><ExternalLink href='https://www.linkedin.com/in/billy-phan-41014a40/'><FaLinkedin color='white'size={50} /></ExternalLink></li>
                 <li><ExternalLink href='https://github.com/bphan002'><FaGithubSquare color='white' size={50} /></ExternalLink></li>
                 <li><ExternalLink href='placeholder'><GiHighKick color='white' size={50} /></ExternalLink></li>
             </ul>
+            <div className='trademark'>
+                <p>©June 2022, Niles is an Amazon Clone created by Billy Phan</p>
+            </div>
         </footer>
     )
 }

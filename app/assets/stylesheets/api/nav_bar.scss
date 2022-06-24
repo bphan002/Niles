@@ -124,6 +124,7 @@ a {
     width: 200px;
     height: 100px;
     right: 10px;
+    z-index:4;
 
     p {
         color: black;
@@ -439,7 +440,7 @@ ul li:hover ul {
         .nav-search-bar {
             background-color: rgb(19,25,33);
             overflow: hidden;
-            padding:5px 10px;
+            padding:5px
            
             
             input {

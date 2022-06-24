@@ -18,12 +18,13 @@ class CartPanel extends React.Component {
     addCart () {
         if( this.props.props.currentUser === null) {
             this.props.props.history.push('/login')
+        } else {
+            this.props.props.addToCart({
+                product_id: this.props.props.product.id,
+                user_id: this.props.props.currentUser.id,
+                quantity: this.state.productQuantity
+            })
         }
-        this.props.props.addToCart({
-            product_id: this.props.props.product.id,
-            user_id: this.props.props.currentUser.id,
-            quantity: this.state.productQuantity
-        })
     }
 
     addToCartQuantity(e) {
