@@ -16,10 +16,7 @@ class TotalCart extends React.Component {
     }
 
     emptyCart(e) {
-        console.log(this.props.deleteCartItem)
-
         let allCartItems = this.props.cartItems
-        console.log('all cart Items',allCartItems)
         for (let i = 0; i < allCartItems.length; i++) {
             this.props.deleteCartItem(allCartItems[i])
         }
@@ -28,12 +25,10 @@ class TotalCart extends React.Component {
 
 
     render() {
-        console.log('total cart props',this.props)
         let cartArray = Object.values(this.props.cartItems)
 
         let quantity = cartArray.reduce((sum, item) => sum + item.quantity,0)
         let totalCost = cartArray.reduce((sum, item) => sum + ((item.quantity)*(item.price)),0)
-        console.log('from total cart', this.props)
         return (
             <div className='entire-page'>
                 <div className='shopping-cart-container'>

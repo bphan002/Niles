@@ -103,7 +103,9 @@ class ProductShow extends React.Component {
                                     <p className='date'>Reviewed in the United States on {month} {dayNum}, {year}</p>
                                     <p>{review.comment}</p>
                                     <div>
-                                        {review.user_id === this.props.currentUser.id ?
+                                        
+                                        {review.user_id 
+                                        ? '' : review.user_id === this.props.currentUser.id ?
                                     <div>
                                     <button onClick={()=>this.handleRemove(review)} className='review-btn btn'>Delete Review</button>
                                     <Link className='edit-btn' to={`/reviews/${review.id}/edit`}>Edit Button</Link>

@@ -57,3 +57,21 @@
 .shopping-cart-container {
     width:100%;
 }
+
+@media (max-width: 650px) {
+    .carousel-item {
+        height: 300px;
+        max-width:100%
+    }
+
+    .carousel-control {
+        font-size:10px;
+        width:30px;
+        height:30px;
+        top:60px;
+    }
+
+    .carousel-item img {
+        height:auto;
+    }
+}

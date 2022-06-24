@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Footer from '../footer/footer'
 
 function Home() {
     const slides = [
@@ -21,25 +22,28 @@ function Home() {
     }
 
     return (
-        <div className='container'>
-            <div className="carousel">
-                <div 
-                    className="carousel-inner" 
-                    style={{ transform: `translateX(${-currentSlide * 100}%)`}}
-                >
-                    {slides.map((slide,index) =>(
-                        <div key={index} className="carousel-item">
-                            <img src={slide} />
-                        </div>
-                    ))}
-                        <img src="" alt="" />
+        <>
+            <div className='container'>
+                <div className="carousel">
+                    <div 
+                        className="carousel-inner" 
+                        style={{ transform: `translateX(${-currentSlide * 100}%)`}}
+                        >
+                        {slides.map((slide,index) =>(
+                            <div key={index} className="carousel-item">
+                                <img src={slide} />
+                            </div>
+                        ))}
+                            <img src="" alt="" />
+                    </div>
+                </div>
+                <div className='carousel-btn'>
+                    <button onClick={prev} className='carousel-control left'>{'<'}</button>
+                    <button onClick={next} className='carousel-control right'>{'>'}</button>            
                 </div>
             </div>
-            <div className='carousel-btn'>
-                <button onClick={prev} className='carousel-control left'>{'<'}</button>
-                <button onClick={next} className='carousel-control right'>{'>'}</button>            
-            </div>
-        </div>
+            <Footer/>
+        </>
     )
 }
 

@@ -10,8 +10,7 @@ class EditReviewForm extends React.Component {
     }
 
     render() {
-     
-        console.log('statesssssss',this.state)
+
         if (!this.props.review) return null;
         return (
             <ReviewForm {...this.props}/>

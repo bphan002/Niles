@@ -21,7 +21,6 @@ class ReviewForm extends React.Component {
     }
     
     componentDidMount(){
-        console.log('props review',this.props.review)
         if (this.props.formType === "Edit Form") {
             this.setState({error_comment : false, error_header: false})
         }
@@ -29,8 +28,6 @@ class ReviewForm extends React.Component {
 
 
     handleSubmit(e) {
-        console.log('state', this.state)
-        
         e.preventDefault()
   
         const has_errors = (
@@ -40,12 +37,9 @@ class ReviewForm extends React.Component {
         )
 
         if (has_errors) {
-            console.log('show errors 2',this.state.show_errors)
             this.setState({show_errors:true})
             return
         }
-        console.log('show errors 3',this.state.show_errors)
-        console.log('all states 4', this.state)
         this.props.action(this.state).then(this.props.history.push(`/products/${this.state.product_id}`))
     }
 
@@ -67,7 +61,6 @@ class ReviewForm extends React.Component {
                     this.setState({error_comment: "Comment cannot be blank"})
                 } else {
                     this.setState({error_comment: false})
-                    console.log(this.state.error_comment)
                 }
             }
             if (field === 'header') {
@@ -75,14 +68,11 @@ class ReviewForm extends React.Component {
                     this.setState({error_header: "Header cannot be blank"})
                 } else {
                     this.setState({error_header: false})
-                    console.log(this.state.error_header)
                 }
             }
             this.setState({[field]: value })
         }
     }
-
-
 
     render() {
         return (

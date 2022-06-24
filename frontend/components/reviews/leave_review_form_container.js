@@ -4,7 +4,6 @@ import { leaveReview } from '../../actions/reviews_action'
 
 
 const mSTP = (state, ownProps) => {
-    console.log('leave review', ownProps)
     return {
         formType: "Create Review",
         fullName: state.session.currentUser.name,

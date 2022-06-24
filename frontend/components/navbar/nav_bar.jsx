@@ -4,7 +4,8 @@ import ProductBar from './product_bar_item'
 import { IoMdArrowDropdown } from "react-icons/io"
 import { BsSearch } from "react-icons/bs"
 import { GiHamburgerMenu } from "react-icons/gi";
-
+import { MdOutlinePersonOutline, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { AiOutlineClose, AiOutlineHome } from "react-icons/ai";
 import { proposalPlugins } from '@babel/preset-env/data/shipped-proposals'
 
 
@@ -45,6 +46,7 @@ const categories = {
 export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestCartItems, addToCart }) => {
     let cartArray = Object.values(cartItems)
     const [search, setSearch] = useState('')
+    const [sidebar, setSidebar] = useState(false)
 
     useEffect(() => {
         requestCartItems()
@@ -56,26 +58,22 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
         quantity += object.quantity
     })
 
+
+    const showSidebar = () => setSidebar(!sidebar)
+
     function navSearchSubmit(e) {
         e.preventDefault()
         const searchGlass= document.querySelector('.search-glass')
         // const searchBar = document.getElementById('search-bar')
         searchGlass.click()
         // searchBar.value= ''
-        console.log(search)
+
     }
 
     function navSearchClick() {
         updateSearch(search)
         // setSearch('')
     }
-
-
-
-
-
-
-    
 
     const display = currentUser ? (
         <div className='logged-in'>
@@ -107,10 +105,7 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
     )
     {/* <FontAwesomeIcon className='caret-down' icon="fas fa-caret-down" /> */}
 
-    
-
-
-return (
+    return (
         <>
             <nav className='headers'>
                     <Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link>
@@ -120,24 +115,81 @@ return (
                 </form>
                 {display}
             </nav>
-            <button class='hamburger'>
-                <div class='bar'>
-                    <GiHamburgerMenu/>
-                </div>
-            </button>
+
             <nav className='mobile-nav'>
-                <Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link>
-                <form className='nav-search-bar' onSubmit={navSearchSubmit}>
-                    <input onChange={(e)=>setSearch(e.currentTarget.value)} type="text" id='search-bar' name='search-bar'/>
-                    <Link to='/products/category' onClick={navSearchClick} className='search-glass'><BsSearch size={20} color={'black'}/></Link>
-                </form>
+                <div className='mobile-nav-container'>
+                <div className='navbar'>
+                    <div className='mobile-left-header'>
+                        <Link to="#" className='menu-bars'>
+                            <GiHamburgerMenu size={25} onClick={showSidebar}/>
+                        </Link>
+                        <Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link>
+                    </div>
+                </div>
+                <div className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+                <div className='nav-menu-items' onClick={showSidebar}> 
+                    <div className='nav-menu-header'>
+                            <Link to='#' className='menu-bars'>
+                            <AiOutlineClose size={25} />
+                            </Link>
+                    </div>
+                    <div className='nav-account-info'>
+                        {currentUser ? <p>{currentUser.name}'s Account</p> : <Link to='login'>Sign In</Link>}
+                        <span><Link to='login'><MdOutlinePersonOutline size={40}/></Link></span>
+                    </div>
+                    <p className='browse'>Browse</p>
+                    <p className='nav-menu-amazon'>Amazon</p>
+                    <div className='modal-container'>
+                        <div className='nav-bar-home'>
+                            <Link to='/'><p>Amazon Home</p></Link>
+                            <Link to='/'><AiOutlineHome size={20} color={'black'}/></Link>
+                        </div>
+                        <h3>Top Departments For You</h3>
+                        <ul className='modal-category-list'>
+                            {Object.keys(categories).map((key,idx) => (
+                                <ProductBar key={idx} category={key} filter={categories[key]} />
+                                ))}
+                        </ul>
+                            
+                        {/* <p className='navbar-toggle'> */}
+                        {/* </p> */}
+                    </div>
+                </div>
+            </div>
+                <div className='mobile-nav-right-side'>
+                    { currentUser ? (
+                        <>
+                            <p>{currentUser.name}</p>
+                        </>
+                    ):(
+                        <Link to='login'>Sign In</Link> )
+                    }
+                    <Link to='login'><MdOutlineKeyboardArrowRight  size='20px'/></Link>
+                    <Link to='login'><MdOutlinePersonOutline size='20px'/></Link>
+                    <Link to={'/checkout'}><img className='cart-image2' src={window.cart_image} alt="" /></Link>
+                    <p id='cartamt2'>{quantity === 0 ? "": quantity}</p>
+                    { currentUser && <button className='btn logout' onClick={logoutUser}>Log Out</button>}
+                </div>
+                </div>
+                    <form className='nav-search-bar' onSubmit={navSearchSubmit}>
+                        <input onChange={(e)=>setSearch(e.currentTarget.value)} 
+                            type="text" 
+                            id='search-bar' 
+                            placeholder='   Search Amazon'
+                            name='search-bar'/>
+                        <Link to='/products/category' onClick={navSearchClick} className='search-glass'><BsSearch size={20} color={'black'}/></Link>
+                    </form>
             </nav>
 
             <ul className='category-bar'>
                 {Object.keys(categories).map((key,idx) => (
                     <ProductBar key={idx} category={key} filter={categories[key]} />
-                ))}
+                    ))}
             </ul>
         </>
     )
 }
+
+
+// height: 100vh;
+// width:265px;

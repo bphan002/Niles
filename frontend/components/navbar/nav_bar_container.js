@@ -6,7 +6,6 @@ import { requestCartItems } from '../../actions/cartItems_action'
 import { addCartItem } from '../../utils/cart_items_utils'
 
 const mSTP = (state, ownProps) => {
-    console.log('ownProps',ownProps)
     return {
     currentUser: state.session.currentUser,
     cartItems: state.cartItems,

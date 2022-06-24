@@ -9,7 +9,6 @@ import {
 
 
 const mSTP = state =>  {
-    console.log('total_cart_container',state) 
     return {
     cartItems: Object.values(state.entities.cartItems),
 }}

@@ -11,7 +11,6 @@ class CartItem extends React.Component {
     }
 
     addToCartQuantity(e) {
-        console.log('e value',e.currentTarget.value)
         this.setState({productQuantity: e.currentTarget.value},()=> {
             this.props.updateCartItems({
                 product_id: this.props.item.product_id,
@@ -25,10 +24,6 @@ class CartItem extends React.Component {
    
     
     render() {  
-   
-        console.log('add to cart quantity',this.props)
-
-
         let range = []
 
         for (let i = 0; i < 11; i++) {
