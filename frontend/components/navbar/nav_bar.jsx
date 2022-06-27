@@ -6,8 +6,6 @@ import { BsSearch } from "react-icons/bs"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlinePersonOutline, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { AiOutlineClose, AiOutlineHome } from "react-icons/ai";
-import { proposalPlugins } from '@babel/preset-env/data/shipped-proposals'
-
 
 const categories = {
     "All": '',
@@ -24,23 +22,6 @@ const categories = {
     "Automotive": 'automotive',
     "Sports": 'sports',
 }
-
-// const hamburger_btn = document.querySelector('.hamburger')
-// const hambuger_menu = document.querySelector('.mobile-nav')
-
-// hamburger_btn.addEventListener('click', ()=> {
-//     hamburger_btn.classList.toggle('is-active')
-//     hambuger_menu.classList.toggle('is-active')
-// })
-
-// import React, { useState } from 'react';
-// import { HamburgerIcon } from 'react-hamburger-icon';
- 
-// export function Menu() {
-//   const [open, setOpen] = useState(false);
- 
-//   return <HamburgerIcon open={open} onClick={() => setOpen(!open)} />;
-// }
 
 
 export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestCartItems, addToCart }) => {
@@ -62,7 +43,6 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
  
 
     const showSidebar = () => {
-        // const header = document.getElementById('mobile-nav')
         const body = document.getElementById('black')
         const xbutton = document.getElementById('xbutton')
         if(!sidebar) {
@@ -77,21 +57,17 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
         setSidebar(!sidebar)
     }
 
-    document.addEventListener('click',(e)=>{
-        // console.log(e.target)
-        if (e.path.some((ele) => ele.matches && ele.matches('nav'))) {
-            return
-        }
-        e.preventDefault()
+    function hide() {
         setSidebar(false)
         const body = document.getElementById('black')
         body.classList.remove("toggle")
         const xbutton = document.getElementById('xbutton')
         xbutton.classList.remove("display")
+
+    }
+   
+      
         
-    })
-
-
     function navSearchSubmit(e) {
         e.preventDefault()
         const searchGlass= document.querySelector('.search-glass')
@@ -187,8 +163,14 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                     }
                     <Link to='/login'><MdOutlineKeyboardArrowRight  size='20px'/></Link>
                     <Link to='/login'><MdOutlinePersonOutline size='20px'/></Link>
-                    <Link to={'/checkout'}><img className='cart-image2' src={window.cart_image} alt="" /></Link>
-                    <p id='cartamt2'>{quantity === 0 || currentUser === null ? "": quantity}</p>
+                    <Link
+                        style={{position:'relative'}}
+                        to={'/checkout'}><img className='cart-image2' 
+                        src={window.cart_image} alt="" />
+                        <p id='cartamt2'>{quantity === 0 || currentUser === null ? "": quantity}</p>
+                        
+                        </Link>
+                
                     { currentUser && <button className='btn logout' onClick={logoutUser}>Log Out</button>}
                 </div>
                 </div>
@@ -201,7 +183,7 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                         <Link to='/products/category' onClick={navSearchClick} className='search-glass'><BsSearch size={20} color={'black'}/></Link>
                     </form>
             </nav>
-            <div className='black' id='black'>
+            <div className='black' id='black' onClick={hide}>
 
             </div>
 

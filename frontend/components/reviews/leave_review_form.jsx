@@ -29,12 +29,14 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-  
+        console.log('firing submit')
         const has_errors = (
             this.state.error_comment ||
             this.state.error_header ||
             this.state.error_rating 
         )
+
+        console.log(has_errors)
 
         if (has_errors) {
             this.setState({show_errors:true})
@@ -44,6 +46,8 @@ class ReviewForm extends React.Component {
     }
 
     handleRating(rating) {
+        console.log(' handle rating is  being fired')
+        
         if (rating <= 0) {
             this.setState({error_rating: "Star rating is required"})
         } else {
@@ -55,6 +59,16 @@ class ReviewForm extends React.Component {
 
     handleChange(field) {
         return e => {
+            console.log(this.state)
+            console.log(this.props)
+            console.log('rating',this.state.rating)
+            console.log('comment',this.state.comment)
+            //error comment is workign correctly
+            //looks like error header is working
+            console.log('header',this.state.header)
+            console.log('error rating',this.state.error_rating)
+            console.log('error comment',this.state.error_comment)
+            console.log('error header', this.state.error_header)
             let value = e.currentTarget.value
             if (field === 'comment') {
                 if (value.length <= 0) {
@@ -64,6 +78,7 @@ class ReviewForm extends React.Component {
                 }
             }
             if (field === 'header') {
+                console.log('header field',value)
                 if (value.length <= 0) {
                     this.setState({error_header: "Header cannot be blank"})
                 } else {
@@ -89,10 +104,10 @@ class ReviewForm extends React.Component {
                         </div>
                         <h1>{this.props.formType}</h1>
                         <h2 className='product-title'>{this.props.product.title}</h2>
-                        <img src="" alt="" />
+                        {/* <img src="" alt="" /> */}
                         <h2>Overall Rating</h2>
                         <Rating updateStars={this.handleRating} />
-                        <form className='review-form' onSubmit={this.handleSubmit}>
+                        <form className='review-form'>
                             <label htmlFor="header"><h2>Add a headline</h2></label>{"\n"}
                             <input 
                                 id="header"  
@@ -109,7 +124,7 @@ class ReviewForm extends React.Component {
                                 value={this.state.comment} 
                                 onChange={this.handleChange('comment')}
                                 />
-                            <input type="submit" className='submit-form' value='Submit'/>
+                            <input type="submit" className='submit-form' value='Submit' onClick={this.handleSubmit}/>
                         </form>
                     </div>
                 </div>

@@ -172,7 +172,7 @@ ul li:hover ul {
 
 
 .clickable {
-    display:flex;
+    display:flex;  
     justify-content: center;
     align-items: center;
     width: 190px;
@@ -204,5 +204,9 @@ ul li:hover ul {
 @media (max-width: 1117px) {
     .category-bar {
         justify-content: start;
+    }
+
+    .reviewbtn {
+        white-space:nowrap;
     }
 }

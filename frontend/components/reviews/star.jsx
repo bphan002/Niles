@@ -12,6 +12,7 @@ class Rating extends React.Component {
     }
 
     changeRating(ratingValue) {
+        console.log('change rating?')
         this.setState({rating: ratingValue})
         this.props.updateStars(ratingValue)
     }
@@ -22,20 +23,14 @@ class Rating extends React.Component {
                 {[...Array(5)].map(( star,idx ) => {
                     const ratingValue = idx + 1
                     return (
-                    <label key={idx}>
-                        <input 
-                            type="radio" 
-                            name='radio' 
-                            onClick={()=>this.changeRating(ratingValue)}
-                            value={ratingValue}
-                            />
                         <IoIosStar 
+                            key={idx}
                             className='star'
                             color={ratingValue <= (this.state.hover || this.state.rating) ? "rgb(250,156,27)" : "lightgray"}     
                             onMouseEnter={(() => this.setState({hover: ratingValue}))}
                             onMouseLeave={()=> this.setState({hover: null})}
+                            onClick={()=>this.changeRating(ratingValue)}
                             />
-                    </label>
                     )
                 })}
             </div>

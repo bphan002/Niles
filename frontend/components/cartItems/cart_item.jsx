@@ -42,7 +42,7 @@ class CartItem extends React.Component {
                         <h1 id='checkout-title'>{this.props.item.title}</h1>
                         <p>${this.props.item.price}</p>    
                     </div>
-                    <div>
+                    <div className='checkout-btns'>
                     <select value={this.state.productQuantity} className='qty-btn' onChange={this.addToCartQuantity}>
                     {range.map( number =><option key={number} value={number}>Qty: {number}</option>)
                     }
