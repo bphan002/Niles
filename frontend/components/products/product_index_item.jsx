@@ -57,7 +57,7 @@ class ProductIndexItem extends React.Component {
                 <div className='image-container'>
                   <Link to={`/products/${product.id}`}><img className='image' src={product.photoUrl} alt="" /></Link>
                 </div>
-                <div>
+                <div className='product-footer'>
                     <Link to={`/products/${product.id}`}><h1 className='prod-title'>{product.title.length > 102 ? product.title + '...' : product.title}</h1></Link>
                     <DisplayRating 
                         displayType='displaystar' 

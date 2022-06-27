@@ -90,14 +90,14 @@ class ProductShow extends React.Component {
             <h3>Product Description</h3>
             <p>{this.props.product.description}</p>
           </div>
-          <div className="review-section">
-            <div className="review-show-container">
+          <div className="review-show-container">
+              <ProductShowReview products={this.props.product} />
               {/* think of what props to pass into this product show component */}
               {/* current user to know who left the review */}
               {/* product id */}
               {/* review crud functionality? */}
-              <ProductShowReview products={this.props.product} />
-            </div>
+          </div>
+          <div className="review-section">
             <div className="user-review">
               <h2>Top reviews from the United States</h2>
               {Object.values(this.props.reviews ?? {}).map((review, idx) => {
@@ -123,9 +123,7 @@ class ProductShow extends React.Component {
                     </p>
                     <p>{review.comment}</p>
                     <div>
-                      {review.user_id ? (
-                        ""
-                      ) : review.user_id === this.props.currentUser.id ? (
+                      {review.user_id === this.props?.currentUser?.id ? (
                         <div>
                           <button
                             onClick={() => this.handleRemove(review)}

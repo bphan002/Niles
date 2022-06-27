@@ -1,0 +1,435 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* @import 'sessions.scss'; */
+/* @import 'api/nav_bar.scss'; */
+/* @import 'reset.scss'; */
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ 
+ *= require_tree .
+ *= require_self
+ */
+ @media (max-width: 650px) {
+
+   body {
+           -webkit-overflow-scrolling: touch;
+   }
+   .desktop-only {
+      display:none;
+   }
+
+   .black {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      overflow: auto;
+      z-index: -1;
+ 
+      
+   }
+   
+   .toggle {
+      background-color: black;
+      opacity: .5;
+      z-index:1
+   }
+   .white {
+      background-color: white;
+   }
+
+   .checkout-btn {
+      margin: 5px;
+      color:black;
+   }
+
+   .mobile-left-header {
+      color:white;
+   }
+
+   .display {
+      display:block;
+   }
+
+   .product-info {
+      margin-left:0px;
+         li {
+            padding:0;
+          }
+
+   }
+
+
+
+   .product-show-container {
+      margin:0px;
+      box-sizing: border-box;
+      padding:10px;
+   }
+
+   .user-review {
+      margin: 20px 0px;
+      padding: 0px;
+   }
+
+   .mobile-nav {
+      background-color: rgb(19,25,33);
+      display:block;
+      padding-bottom: 5px;
+  }
+  .navbar {
+      margin-left:10px;
+      height:70px;
+      display:flex;
+      justify-content: start;
+      align-items: center;
+  }
+
+  .menu-bars {
+      font-size: 2rem;
+      background: none;
+      color:white;
+  }
+
+  .xbutton {
+      display:none;
+  }
+
+  .hide {
+      display:none;
+  }
+
+  .nav-menu {
+      background-color: #060b26;
+      width: 265px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left:-100%;
+      transition: 350ms;
+      z-index:4;
+  }
+
+  .nav-menu.active {
+      left: 0;
+      transition: 350ms;
+  }
+
+  .nav-text {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      padding: 8px 0px 8px 16px;
+      list-style: none;
+      height: 60px;
+  }
+
+  .nav-text a {
+      text-decoration: none;
+      color: #f5f5f5;
+      font-size: 18px;
+      width: 95%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      border-radius: 4px;
+  }
+
+  .nav-texxt a:hover {
+      background-color: #1a83ff;
+  }
+
+  .nav-menu-items {
+      width: 100%;
+
+      .nav-menu-amazon {
+          font-size:20px;
+      }
+      p {
+          margin-bottom: 2px;
+          color:white;
+      }
+  }
+
+  .navbar-toggle {
+      background-color: #060b26;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+  }
+
+  span {
+      margin-left: 16px;
+  }
+
+
+  .hamburger {
+      display:flex;
+      cursor: pointer;
+      align-items: center;
+  }
+  //need to target stroke and properties of height and widt to change size
+  //can probalby do it in actual file
+  //need to put css to disable regular nav
+  .mobile-nav-container {
+      height:50px;
+      display: flex;
+      align-items: center;
+      background-color: #131921;
+      justify-content: space-between;
+  }
+
+  .whiteLogo {
+      width: 50px;
+  }
+
+  .mobile-nav-right-side {
+      position: relative;
+      display:flex;
+      align-items: center;
+
+      p {
+          color:white;
+      }
+  
+  }
+  a {
+      color:white;
+  }
+
+  .cart-image2 {
+      position: relative;
+      border: 1px solid transparent;
+      width: 30px;
+      margin-right: 10px;
+      margin-left: 10px;
+      padding-top: 5px;
+      padding-left: 5px;
+      padding-right: 5px;
+      z-index:3
+  }
+
+  #cartamt2 {
+      position: absolute;
+      text-align: center;
+      right: 130px;
+      top: 4px;
+      font-size: 16px;
+      color: rgb(237,134,5);
+      font-weight: bold;
+      z-index: 0;
+  }
+
+  .headers {
+      display:none;
+  }
+
+  .category-bar {
+      height: 40px;
+      display:flex;
+      flex-wrap: nowrap;
+      justify-content: start;
+      background-color:rgb(19,25,33)
+  }
+
+  .price {
+      color:black;
+  }
+
+  .nav-menu-header {
+      color:white;
+      display:flex;
+      justify-content: end;
+      flex-direction: column;
+
+      svg{
+          position:fixed;
+          right: 30px;
+          top:5px;
+      }
+  }
+
+  .nav-account-info {
+      display:flex;
+      justify-content: end;
+      color: white;
+      align-items: center;
+      margin: 5px;
+
+      p {
+          margin-right: 5px;
+      }
+
+  }
+
+  .nav-bar-home {
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding:10px;
+      margin-top: 20px;
+      border-bottom: lightgray 4px solid;
+
+      p {
+          color:black;
+      }
+  }
+
+  .modal-category-list {
+      width:100%;
+      display:flex;
+      flex-direction: column;
+      background-color: white;
+      padding: 6px 0px;
+  
+      .category-item {
+          font-size: 14px;
+          color: black;
+          padding: 5px 10px;
+      }
+
+      li {
+          padding-top: 8px;
+      }
+  }
+
+  .modal-container {
+      height: 100%;
+      background-color: white;
+      padding-left: 7px;
+      
+      h3 {
+          margin-top: 10px;
+          padding-left:7px;
+      }
+  }
+
+  .nav-search-bar {
+      background-color: rgb(19,25,33);
+      overflow: hidden;
+      padding:5px
+     
+      
+      input {
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+       
+      }
+  }
+
+  .mobile-left-header {
+      display:flex;
+      justify-content: start;
+      align-items: center;
+  }
+
+  .btn.logout {
+      margin-right: 10px;
+  }
+
+  .browse {
+      padding-left: 15px;
+      padding-top: 10px;
+  }
+
+  .nav-menu-amazon {
+      padding-left: 15px;
+      padding-bottom:10px;
+  }
+
+  .nav-menu.active {
+      width: 70%;
+  }
+
+
+  .modalBackground {
+      width:100vw;
+      height:100vh;
+      background-color: rgba(200,200,200,.5);
+      position:fixed;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .account-button {
+   color:black;
+  }
+
+  .logo {
+   margin-top: -50px;
+  }
+
+  .login-form-container {
+   padding: 3px 25px;
+   margin-bottom:10px;
+  }
+
+  .checkout-title {
+   font-weight: 14px;
+
+  }
+
+  .product-container {
+   box-sizing: border-box;
+   padding:3px 10px;
+   margin:3px 10px;
+  }
+
+  .image-container {
+   width:85%;
+   height:85%;
+   padding: 5px;
+  }
+
+  .prod-title {
+   color:black;
+   width: 230px;
+   padding: 5px;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+   height: 20px;
+  }
+
+  .prime-free {
+   font-size: 12px;
+   margin: 3px;
+   padding:3px;
+  }
+
+  .product-footer {
+   box-sizing: border-box;
+   padding:5px 5px;
+   margin:5px 5px;
+  }
+
+  .price {
+   margin-top: 5px;
+  }
+
+  
+   
+}
+
+   

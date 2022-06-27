@@ -57,22 +57,49 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
     arrayObject.forEach(object => {
         quantity += object.quantity
     })
+    
+  
+ 
 
+    const showSidebar = () => {
+        // const header = document.getElementById('mobile-nav')
+        const body = document.getElementById('black')
+        const xbutton = document.getElementById('xbutton')
+        if(!sidebar) {
+            
+            body.classList.add("toggle")
+            xbutton.classList.add("display")
+        } else {
+            console.log('false sidebar',sidebar)
+            body.classList.remove("toggle")
+            xbutton.classList.remove("display")
+        }
+        setSidebar(!sidebar)
+    }
 
-    const showSidebar = () => setSidebar(!sidebar)
+    document.addEventListener('click',(e)=>{
+        // console.log(e.target)
+        if (e.path.some((ele) => ele.matches && ele.matches('nav'))) {
+            return
+        }
+        e.preventDefault()
+        setSidebar(false)
+        const body = document.getElementById('black')
+        body.classList.remove("toggle")
+        const xbutton = document.getElementById('xbutton')
+        xbutton.classList.remove("display")
+        
+    })
+
 
     function navSearchSubmit(e) {
         e.preventDefault()
         const searchGlass= document.querySelector('.search-glass')
-        // const searchBar = document.getElementById('search-bar')
         searchGlass.click()
-        // searchBar.value= ''
-
     }
 
     function navSearchClick() {
         updateSearch(search)
-        // setSearch('')
     }
 
     const display = currentUser ? (
@@ -99,12 +126,10 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                             <p>New Customer?<Link to='/signup'><span> Start here</span>.</Link></p></li>
                     </ul>
                 </li>
-                {/* <li><img className='cart-image' src={window.cart_image}></img></li> */}
             </ul>
         </>
     )
-    {/* <FontAwesomeIcon className='caret-down' icon="fas fa-caret-down" /> */}
-
+ 
     return (
         <>
             <nav className='headers'>
@@ -116,13 +141,11 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                 {display}
             </nav>
 
-            <nav className='mobile-nav'>
+            <nav id='mobile-nav' className='mobile-nav'>
                 <div className='mobile-nav-container'>
                 <div className='navbar'>
                     <div className='mobile-left-header'>
-                        <Link to="#" className='menu-bars'>
                             <GiHamburgerMenu size={25} onClick={showSidebar}/>
-                        </Link>
                         <Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link>
                     </div>
                 </div>
@@ -130,12 +153,12 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                 <div className='nav-menu-items' onClick={showSidebar}> 
                     <div className='nav-menu-header'>
                             <Link to='#' className='menu-bars'>
-                            <AiOutlineClose size={25} />
+                            <AiOutlineClose size={25} className='xbutton' id='xbutton'/>
                             </Link>
                     </div>
                     <div className='nav-account-info'>
-                        {currentUser ? <p>{currentUser.name}'s Account</p> : <Link to='login'>Sign In</Link>}
-                        <span><Link to='login'><MdOutlinePersonOutline size={40}/></Link></span>
+                        {currentUser ? <p>{currentUser.name}'s Account</p> : <Link to='/login'>Sign In</Link>}
+                        <span><Link to='/login'><MdOutlinePersonOutline size={40}/></Link></span>
                     </div>
                     <p className='browse'>Browse</p>
                     <p className='nav-menu-amazon'>Amazon</p>
@@ -151,8 +174,6 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                                 ))}
                         </ul>
                             
-                        {/* <p className='navbar-toggle'> */}
-                        {/* </p> */}
                     </div>
                 </div>
             </div>
@@ -162,12 +183,12 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                             <p>{currentUser.name}</p>
                         </>
                     ):(
-                        <Link to='login'>Sign In</Link> )
+                        <Link to='/login'>Sign In</Link> )
                     }
-                    <Link to='login'><MdOutlineKeyboardArrowRight  size='20px'/></Link>
-                    <Link to='login'><MdOutlinePersonOutline size='20px'/></Link>
+                    <Link to='/login'><MdOutlineKeyboardArrowRight  size='20px'/></Link>
+                    <Link to='/login'><MdOutlinePersonOutline size='20px'/></Link>
                     <Link to={'/checkout'}><img className='cart-image2' src={window.cart_image} alt="" /></Link>
-                    <p id='cartamt2'>{quantity === 0 ? "": quantity}</p>
+                    <p id='cartamt2'>{quantity === 0 || currentUser === null ? "": quantity}</p>
                     { currentUser && <button className='btn logout' onClick={logoutUser}>Log Out</button>}
                 </div>
                 </div>
@@ -180,6 +201,9 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                         <Link to='/products/category' onClick={navSearchClick} className='search-glass'><BsSearch size={20} color={'black'}/></Link>
                     </form>
             </nav>
+            <div className='black' id='black'>
+
+            </div>
 
             <ul className='category-bar'>
                 {Object.keys(categories).map((key,idx) => (
@@ -191,5 +215,3 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
 }
 
 
-// height: 100vh;
-// width:265px;

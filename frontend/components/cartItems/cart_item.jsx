@@ -26,7 +26,7 @@ class CartItem extends React.Component {
     render() {  
         let range = []
 
-        for (let i = 0; i < 11; i++) {
+        for (let i = 1; i < 11; i++) {
             range.push(i)
         }
 

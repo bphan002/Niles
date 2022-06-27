@@ -90,6 +90,7 @@ class CartPanel extends React.Component {
                 </select>
             
                 <button onClick={this.addCart} className='cart-btn'>Add to Cart</button>
+                <div className='desktop-only'>
                 <FaLock /> <span className='secure'>Secure transaction</span>
 
                 <p className='sold'><span className='gray'>Ships from</span> Niles.com</p>
@@ -101,6 +102,7 @@ class CartPanel extends React.Component {
                     <input type='checkbox'></input>
                     <label htmlFor="">Add a gift receipt for easy returns</label>
                 </form>
+                </div>
             </div>
         )
     }
