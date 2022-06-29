@@ -19,9 +19,9 @@ Code implmentation used React, Redux, and Ruby on Rails for the backend. For the
  * Shopping Cart with full CRUD functionality
  * Search products
 
-### <b>Highlighted Features</b>
+## <b>Highlighted Features</b>
 
-#### <u>Reviews</u>
+### <u>Reviews</u>
 The items review feature has full CRUD functionality with error handling if a specific portion was missing. A challenge was see if a specific portion of the form was filled out or not for a new or edited form.  This was resolved by using redux state and by checking if the value was truthy or falsy to determine if an error message should be displayed.  The error message was done with a ternary operation. 
 
 ![crud](crud.gif)
@@ -45,7 +45,7 @@ def review_params
 end
 ```
 
-#### <u>Cart Items</u>
+### <u>Cart Items</u>
 A challenge was to make sure the cart session was persisting on refresh based on the current user logged in.  The solution was to use the life cycle method componentDidMount to dispatch a requestCart action to the store's reducer to update the current state of the UI.
 
 ![cart](cart.gif)
@@ -78,7 +78,7 @@ componentDidMount() {
 }
 ```
 
-#### Future Features
+### Future Features
  * Past Order History
  * Add the option to view different photos from a listing
  * Ability to upload pictures and videos to a review
