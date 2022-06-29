@@ -50,7 +50,6 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
             body.classList.add("toggle")
             xbutton.classList.add("display")
         } else {
-            console.log('false sidebar',sidebar)
             body.classList.remove("toggle")
             xbutton.classList.remove("display")
         }

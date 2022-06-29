@@ -12,7 +12,6 @@ class Rating extends React.Component {
     }
 
     changeRating(ratingValue) {
-        console.log('change rating?')
         this.setState({rating: ratingValue})
         this.props.updateStars(ratingValue)
     }

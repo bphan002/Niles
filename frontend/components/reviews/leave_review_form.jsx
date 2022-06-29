@@ -29,14 +29,11 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        console.log('firing submit')
         const has_errors = (
             this.state.error_comment ||
             this.state.error_header ||
             this.state.error_rating 
         )
-
-        console.log(has_errors)
 
         if (has_errors) {
             this.setState({show_errors:true})
@@ -46,8 +43,6 @@ class ReviewForm extends React.Component {
     }
 
     handleRating(rating) {
-        console.log(' handle rating is  being fired')
-        
         if (rating <= 0) {
             this.setState({error_rating: "Star rating is required"})
         } else {
@@ -59,16 +54,6 @@ class ReviewForm extends React.Component {
 
     handleChange(field) {
         return e => {
-            console.log(this.state)
-            console.log(this.props)
-            console.log('rating',this.state.rating)
-            console.log('comment',this.state.comment)
-            //error comment is workign correctly
-            //looks like error header is working
-            console.log('header',this.state.header)
-            console.log('error rating',this.state.error_rating)
-            console.log('error comment',this.state.error_comment)
-            console.log('error header', this.state.error_header)
             let value = e.currentTarget.value
             if (field === 'comment') {
                 if (value.length <= 0) {
@@ -78,7 +63,6 @@ class ReviewForm extends React.Component {
                 }
             }
             if (field === 'header') {
-                console.log('header field',value)
                 if (value.length <= 0) {
                     this.setState({error_header: "Header cannot be blank"})
                 } else {
