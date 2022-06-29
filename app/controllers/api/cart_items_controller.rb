@@ -31,42 +31,8 @@ class Api::CartItemsController < ApplicationController
             @cart_item.save
             render :show
         else
-            render json:['Error']
+            render json:['Error: Cannot update']
         end
-        ## testing dont copy over
-        # @user = current_user
-        # @cart_items = current_user.carts_items
-        # if @cart_items.includes()
-        #testing block
-
-        # @cart_item = cart.where(product_id: params[:cart_items][:product_id])
-
-        # @updated_quantity = @cart_item[0].quantity + (params[:cart_item][:quantity].to_i) 
-
-        # if (@updated_quantity <= 0)
-        #     destroy(@cart_item[0])
-        # else
-        #     @cart_item.update(quantity: @updated_quantity)
-        #     render :index
-        # end
-
-        
-
-
-        # cart = current_user.cart_items
-        # @user = current_user
-        # @cart_items = cart.where(product_id: params[:cart_items][:product_id])
-        
-        # if params[:cart_items][:quantity].to_i == 0
-        #     destroy(@cart_items[0])
-        # else
-        #     new_quantity = @cart_items[0].quantity + (params[:cart_items][:quantity].to_i)
-        #     if (new_quantity <=0)
-        #         destroy(@cart_items[0])
-        #     elsif
-        #         @cart_items.update(quantity: new_quantity)
-        #     end
-        # end
     end
 
 
