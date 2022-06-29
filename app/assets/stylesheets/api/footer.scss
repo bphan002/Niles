@@ -4,7 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(35,47,62)
+    background-color: rgb(35,47,62);
+    margin-top:-5px;
 
   
 }
@@ -33,11 +34,5 @@
     p {
         color: white;
         font-size: 12px;
-    }
-}
-
-@media (max-width:650px) {
-    .footer {
-        margin-top: -45px 
     }
 }
