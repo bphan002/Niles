@@ -11,7 +11,7 @@
 
 [Niles](https://niles-app-academy.herokuapp.com/#/) is the longest river in the world and is a website clone of the company [Amazon](www.amazon.com).  
 
-Code implmentation used React, Redux, and Ruby on Rails for the backend. For the database PostgreSQL was used and Amazon AWS for image storage.  In a nutshell, Niles is an e-commerce store where you can view/purchase a variety of products.
+Code implementation used React, Redux, and Ruby on Rails for the backend. For the database PostgreSQL was used and Amazon AWS for image storage.  In a nutshell, Niles is an e-commerce store where you can view/purchase a variety of products.
 
 ## Features
  * New account creation, login, and demo login
