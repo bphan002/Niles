@@ -21,7 +21,6 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
     requestProducts: () => dispatch(requestProducts()),
-    requestsReviews: () => dispatch(requestReviews())
 })
 
 export default connect(mSTP,mDTP)(ProductIndex)
