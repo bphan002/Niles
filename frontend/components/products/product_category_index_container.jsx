@@ -36,7 +36,7 @@ class ProductCategoryIndex extends React.Component {
                     {Object.values(products.products??{})
                         .filter((product,idx)=>this.searchMatches(products.query,product))
                         .map((product,idx) => (
-                        <div>
+                        <div key={idx}>
                             <ProductIndexItem key={idx} product={product}  />
                         </div>
                     )

@@ -30,7 +30,9 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
     const [sidebar, setSidebar] = useState(false)
 
     useEffect(() => {
-        requestCartItems()
+        if (currentUser) {
+            requestCartItems()
+        }
     },[addToCart])
 
     let quantity = 0
@@ -152,7 +154,7 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                     </div>
                 </div>
             </div>
-                <div className='mobile-nav-right-side'>
+                {/* <div className='mobile-nav-right-side'>
                     { currentUser ? (
                         <>
                             <p>{currentUser.name}</p>
@@ -166,19 +168,17 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                         style={{position:'relative'}}
                         to={'/checkout'}><img className='cart-image2' 
                         src={window.cart_image} alt="" />
+                        {console.log('error?')}
                         <p id='cartamt2'>{quantity === 0 || currentUser === null ? "": quantity}</p>
-                        
-                        </Link>
-                
+                    </Link>
                     { currentUser && <button className='btn logout' onClick={logoutUser}>Log Out</button>}
-                </div>
+                </div> */}
                 </div>
                     <form className='nav-search-bar' onSubmit={navSearchSubmit}>
                         <input onChange={(e)=>setSearch(e.currentTarget.value)} 
                             type="text" 
-                            id='search-bar' 
                             placeholder='   Search Amazon'
-                            name='search-bar'/>
+                            />
                         <Link to='/products/category' onClick={navSearchClick} className='search-glass'><BsSearch size={20} color={'black'}/></Link>
                     </form>
             </nav>
