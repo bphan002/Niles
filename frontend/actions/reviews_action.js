@@ -29,13 +29,6 @@ const removeReview = reviewId => ({
     reviewId
 })
 
-export const requestReviews = data => dispatch => (
-    reviewUtils.getReviews(data)
-        .then(reviews => dispatch(receiveReviews(reviews)))
-)
-
-
-
 export const leaveReview = data => dispatch => {
     return reviewUtils.createReview(data)
         .then(review =>     
@@ -53,7 +46,6 @@ export const deleteReview = id => dispatch => (
     reviewUtils.deleteReview(id)
         .then(review => dispatch(removeReview(id)))
 )
-
 
 export const getReview = reviewId => dispatch => (
     reviewUtils.getReview(reviewId)
