@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bphan002/niles.git"
+    "url": "git+https://github.com/bphan002/Niles.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bphan002/Amazon/issues"
+    "url": "https://github.com/bphan002/Niles/issues"
   },
-  "homepage": "https://github.com/bphan002/Amazon#readme",
+  "homepage": "https://github.com/bphan002/Niles#readme",
   "dependencies": {
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
