@@ -1,5 +1,5 @@
 {
-  "name": "Niles",
+  "name": "niles",
   "private": true,
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bphan002/Niles.git"
+    "url": "git+https://github.com/bphan002/niles.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bphan002/Niles/issues"
+    "url": "https://github.com/bphan002/niles/issues"
   },
-  "homepage": "https://github.com/bphan002/Niles#readme",
+  "homepage": "https://github.com/bphan002/niles#readme",
   "dependencies": {
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
