@@ -10,7 +10,7 @@ const Footer = () => {
                 <li><Link to='/'><img className='whiteLogo' src={window.white_logo} alt="" /></Link></li>
                 <li><a href="https://www.linkedin.com/in/billy-phan-41014a40/" target="_blank"><FaLinkedin color='white'size={50} /></a></li>
                 <li><a href='https://github.com/bphan002'><FaGithubSquare color='white' size={50} /></a></li>
-                <li><a href='placeholder'><GiHighKick color='white' size={50} /></a></li>
+                <li><a href='https://bphan002-porftolio-website.herokuapp.com/'><GiHighKick color='white' size={50} /></a></li>
             </ul>
             <div className='trademark'>
                 <p>©June 2022, Niles is an Amazon Clone created by Billy Phan</p>
