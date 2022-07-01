@@ -138,10 +138,10 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                         <span><Link to='/login'><MdOutlinePersonOutline size={40}/></Link></span>
                     </div>
                     <p className='browse'>Browse</p>
-                    <p className='nav-menu-amazon'>Amazon</p>
+                    <p className='nav-menu-amazon'>Niles</p>
                     <div className='modal-container'>
                         <div className='nav-bar-home'>
-                            <Link to='/'><p>Amazon Home</p></Link>
+                            <Link to='/'><p>Niles Home</p></Link>
                             <Link to='/'><AiOutlineHome size={20} color={'black'}/></Link>
                         </div>
                         <h3>Top Departments For You</h3>
