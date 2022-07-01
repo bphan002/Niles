@@ -177,7 +177,7 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                     <form className='nav-search-bar' onSubmit={navSearchSubmit}>
                         <input onChange={(e)=>setSearch(e.currentTarget.value)} 
                             type="text" 
-                            placeholder='   Search Amazon'
+                            placeholder='   Search Niles'
                             />
                         <Link to='/products/category' onClick={navSearchClick} className='search-glass'><BsSearch size={20} color={'black'}/></Link>
                     </form>
