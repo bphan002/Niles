@@ -168,7 +168,6 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                         style={{position:'relative'}}
                         to={'/checkout'}><img className='cart-image2' 
                         src={window.cart_image} alt="" />
-                        {console.log('error?')}
                         <p id='cartamt2'>{quantity === 0 || currentUser === null ? "": quantity}</p>
                     </Link>
                     { currentUser && <button className='btn logout' onClick={logoutUser}>Log Out</button>}
