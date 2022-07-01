@@ -154,7 +154,7 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                     </div>
                 </div>
             </div>
-                {/* <div className='mobile-nav-right-side'>
+                <div className='mobile-nav-right-side'>
                     { currentUser ? (
                         <>
                             <p>{currentUser.name}</p>
@@ -172,7 +172,7 @@ export default ({ test, currentUser, cartItems,logoutUser,updateSearch, requestC
                         <p id='cartamt2'>{quantity === 0 || currentUser === null ? "": quantity}</p>
                     </Link>
                     { currentUser && <button className='btn logout' onClick={logoutUser}>Log Out</button>}
-                </div> */}
+                </div>
                 </div>
                     <form className='nav-search-bar' onSubmit={navSearchSubmit}>
                         <input onChange={(e)=>setSearch(e.currentTarget.value)} 
