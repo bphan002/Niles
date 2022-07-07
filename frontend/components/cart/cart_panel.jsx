@@ -87,6 +87,11 @@ class CartPanel extends React.Component {
                     <option value='3'>Qty: 3</option>
                     <option value='4'>Qty: 4</option>
                     <option value='5'>Qty: 5</option>
+                    <option value='6'>Qty: 6</option>
+                    <option value='7'>Qty: 7</option>
+                    <option value='8'>Qty: 8</option>
+                    <option value='9'>Qty: 9</option>
+                    <option value='10'>Qty: 10</option>
                 </select>
             
                 <button onClick={this.addCart} className='cart-btn'>Add to Cart</button>
