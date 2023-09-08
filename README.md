@@ -35,7 +35,7 @@ def update
     if @review.update(review_params)
         render :show
     else
-        render json: @review.erors.full_messages, status: 422
+        render json: @review.errors.full_messages, status: 422
     end
 end
 
