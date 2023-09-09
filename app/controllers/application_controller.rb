@@ -5,15 +5,13 @@ class ApplicationController < ActionController::Base
     def current_user
         @current_user = User.find_by(session_token: session[:session_token])
     end
-
-    ##fix this to go to a different route later
+    
     def require_logged_in
         unless current_user
             render json: { base: ['invalid credentials'] }, status: 401
         end
     end
     
-    ##fix this to go to a differnt route later
     def require_logged_out
         redirect_to user_url(current_user) if logged_in?
     end
